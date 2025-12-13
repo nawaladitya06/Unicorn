@@ -278,3 +278,106 @@ function renderFeaturedEvents() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', renderFeaturedEvents);
+
+// ==========================================
+//  4. EVENT TIMELINE (Locked vs Unlocked)
+// ==========================================
+
+function renderEventTimeline() {
+    const container = document.getElementById('timeline-dynamic-container');
+    if (!container) return;
+
+    const now = new Date();
+    // Re-use the same date configuration and bypass check
+    const isDev = localStorage.getItem('unicorn_bypass') === 'true';
+    const isUnlocked = now >= EVENTS_REVEAL_DATE || isDev;
+
+    let html = '';
+
+    if (!isUnlocked) {
+        // --- LOCKED STATE ---
+        const lockedDays = ['Day 01', 'Day 02'];
+        
+        lockedDays.forEach(day => {
+            html += `
+            <div class="relative pl-8 md:pl-12 reveal opacity-70">
+                <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-pitch border-4 border-gold/50"></div>
+                
+                <div class="glass-panel p-6 rounded-xl border border-white/5 bg-pitch/50 cursor-not-allowed group hover:border-gold/30 transition duration-300">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-white/40 font-bold text-xs tracking-widest uppercase">
+                            <i class="fa-solid fa-lock text-gold mr-1 text-[10px]"></i> ${day}
+                        </span>
+                        <span class="text-beige/20 text-xs font-mono">Jan 2026</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white/50 mt-1 group-hover:text-gold/70 transition-colors">
+                        Agenda Locked
+                    </h3>
+                    <p class="text-beige/30 mt-2 text-sm">
+                        Classified information. Clearance required for access.
+                    </p>
+                </div>
+            </div>`;
+        });
+
+    } else {
+        // --- UNLOCKED STATE ---
+        const unlockedDays = [
+            {
+                day: "Day 01",
+                date: "Jan 16",
+                title: "The Launch",
+                desc: "Opening Ceremony, Wolf of Dalal St, Startup Heist & EA FC Showdown.",
+                color: "emerald-glow" // Accent color
+            },
+            {
+                day: "Day 02",
+                date: "Jan 17",
+                title: "The Finale",
+                desc: "Valorant LAN, Ad-Pocalypse, Loot Drop, Skin Showcase & DJ Night.",
+                color: "neon" // Accent color
+            }
+        ];
+
+        unlockedDays.forEach(item => {
+            html += `
+            <div class="relative pl-8 md:pl-12 reveal">
+                <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-pitch border-4 border-${item.color} shadow-[0_0_10px_rgba(255,255,255,0.2)]"></div>
+                
+                <div class="glass-panel p-6 rounded-xl border border-white/10 hover:border-${item.color} transition transform hover:-translate-y-1 duration-300">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-${item.color} font-bold text-xs tracking-widest uppercase bg-pitch/80 border border-${item.color}/30 px-2 py-1 rounded">
+                            ${item.day}
+                        </span>
+                        <span class="text-beige/60 text-xs font-mono">${item.date}</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mt-1 group-hover:text-${item.color} transition-colors">
+                        ${item.title}
+                    </h3>
+                    <p class="text-beige/80 mt-2 text-sm leading-relaxed">
+                        ${item.desc}
+                    </p>
+                </div>
+            </div>`;
+        });
+    }
+
+    container.innerHTML = html;
+
+    // Re-trigger reveal animations for new elements
+    setTimeout(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        
+        container.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    }, 100);
+}
+
+// Update the listener to run both functions
+document.addEventListener('DOMContentLoaded', () => {
+    if(typeof renderFeaturedEvents === 'function') renderFeaturedEvents();
+    renderEventTimeline();
+});
