@@ -358,104 +358,32 @@
         <div class="absolute inset-0 opacity-5"
             style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px); background-size: 50px 50px;">
         </div>
+
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
                 <div>
                     <h2 class="font-heading text-4xl md:text-5xl font-bold text-white">Featured <span
                             class="text-emerald-glow">Events</span></h2>
-                    <p class="text-beige/60 font-body text-sm tracking-wider">Competitions · Workshops · Speaker
-                        Sessions</p>
+                    <p id="events-subtitle" class="text-beige/60 font-body text-sm tracking-wider">
+                        Loading Event Details...
+                    </p>
                 </div>
-                <div class="mt-4 md:mt-0 px-4 py-2 border border-gold/30 bg-gold/5 rounded backdrop-blur-sm">
-                    <p class="text-gold font-bold text-xs tracking-widest uppercase"><i
-                            class="fa-regular fa-calendar mr-2"></i> Reveal: Jan 2026</p>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="group relative overflow-hidden rounded-2xl reveal border border-white/5 hover:border-gold/30 transition duration-500 bg-pitch">
-                    <div class="relative h-96 overflow-hidden">
-                        <div class="absolute inset-0 bg-pitch/80 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80"
-                            class="w-full h-full object-cover blur-sm opacity-50">
-                        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center">
-                            <div
-                                class="w-16 h-16 rounded-full border border-gold/50 flex items-center justify-center mb-4 bg-pitch/90 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                                <i class="fa-solid fa-lock text-gold text-2xl"></i>
-                            </div>
-                            <span class="font-heading text-xl font-bold text-white tracking-widest uppercase">Flagship
-                                Event</span>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <span
-                            class="bg-emerald-dark/50 text-emerald-glow border border-emerald-glow/20 text-[10px] font-bold px-3 py-1 rounded mb-3 inline-block tracking-widest uppercase">Business
-                            Track</span>
-                        <p class="text-sm text-beige/50 font-body mb-4">Details regarding the flagship business
-                            competition will be unveiled soon.</p>
-                    </div>
-                </div>
-                <div
-                    class="group relative overflow-hidden rounded-2xl reveal border border-white/5 hover:border-gold/30 transition duration-500 bg-pitch">
-                    <div class="relative h-96 overflow-hidden">
-                        <div class="absolute inset-0 bg-pitch/80 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                            class="w-full h-full object-cover blur-sm opacity-50">
-                        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center">
-                            <div
-                                class="w-16 h-16 rounded-full border border-gold/50 flex items-center justify-center mb-4 bg-pitch/90 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                                <i class="fa-solid fa-lock text-gold text-2xl"></i>
-                            </div>
-                            <span class="font-heading text-xl font-bold text-white tracking-widest uppercase">Finance
-                                Event</span>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <span
-                            class="bg-emerald-dark/50 text-emerald-glow border border-emerald-glow/20 text-[10px] font-bold px-3 py-1 rounded mb-3 inline-block tracking-widest uppercase">Finance
-                            Track</span>
-                        <p class="text-sm text-beige/50 font-body mb-4">Details regarding the finance simulation will be
-                            unveiled soon.</p>
-                    </div>
-                </div>
-                <div
-                    class="group relative overflow-hidden rounded-2xl reveal border border-white/5 hover:border-gold/30 transition duration-500 bg-pitch">
-                    <div class="relative h-96 overflow-hidden">
-                        <div class="absolute inset-0 bg-pitch/80 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                            class="w-full h-full object-cover blur-sm opacity-50">
-                        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center">
-                            <div
-                                class="w-16 h-16 rounded-full border border-gold/50 flex items-center justify-center mb-4 bg-pitch/90 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                                <i class="fa-solid fa-lock text-gold text-2xl"></i>
-                            </div>
-                            <span class="font-heading text-xl font-bold text-white tracking-widest uppercase">Tech
-                                Event</span>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <span
-                            class="bg-emerald-dark/50 text-emerald-glow border border-emerald-glow/20 text-[10px] font-bold px-3 py-1 rounded mb-3 inline-block tracking-widest uppercase">Innovation
-                            Track</span>
-                        <p class="text-sm text-beige/50 font-body mb-4">Details regarding the hackathon challenge will
-                            be unveiled soon.</p>
-                    </div>
+                <div id="events-status-badge" class="mt-4 md:mt-0 px-4 py-2 rounded backdrop-blur-sm border transition-all duration-300">
                 </div>
             </div>
 
-            <div class="text-center mt-12 md:hidden">
-                <span
-                    class="px-6 py-3 border border-white/10 text-white/50 rounded-full text-sm font-bold bg-pitch/50 cursor-not-allowed">
-                    <i class="fa-solid fa-lock mr-2"></i> Reveal Pending
-                </span>
+            <div id="home-events-grid" class="grid md:grid-cols-3 gap-8">
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="events.html"
+                    class="inline-block px-8 py-3 bg-white/5 hover:bg-gold text-white hover:text-pitch rounded-lg transition-all duration-300 font-bold tracking-wide border border-white/10 hover:border-gold">
+                    VIEW ALL EVENTS
+                </a>
             </div>
         </div>
     </section>
-
+    
     <section id="past-glory" class="py-24 relative border-y border-white/5 bg-[#080808]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 reveal">

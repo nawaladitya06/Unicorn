@@ -121,3 +121,160 @@ function renderPastGlory() {
 
 // Run the render function when script loads
 renderPastGlory();
+
+// ==========================================
+//  3. FEATURED EVENTS (Locked vs Unlocked)
+// ==========================================
+
+// 🔴 CONFIGURATION: DATE TO UNLOCK
+// Format: YYYY-MM-DDTHH:MM:SS
+const EVENTS_REVEAL_DATE = new Date("2025-12-13T21:30:00"); 
+
+// DATA: LOCKED STATE (Mystery Cards)
+const lockedData = [
+    {
+        title: "Flagship Event",
+        category: "Business Track",
+        desc: "Details regarding the flagship business competition will be unveiled soon.",
+        img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80",
+        icon: "fa-lock"
+    },
+    {
+        title: "Finance Event",
+        category: "Finance Track",
+        desc: "Details regarding the finance simulation will be unveiled soon.",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+        icon: "fa-lock"
+    },
+    {
+        title: "Tech Event",
+        category: "Innovation Track",
+        desc: "Details regarding the hackathon challenge will be unveiled soon.",
+        img: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        icon: "fa-lock"
+    }
+];
+
+// DATA: UNLOCKED STATE (Real Events)
+const unlockedData = [
+    {
+        title: "Startup Heist",
+        subtitle: "Grand Theft Pitch",
+        category: "BUSINESS",
+        colorClass: "border-purple-500 text-purple-400",
+        desc: "Plan the ultimate business heist. Pitch your startup idea to the investors before the timer runs out.",
+        img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+        link: "registration.html"
+    },
+    {
+        title: "Wolf of Dalal St",
+        subtitle: "Market Crash",
+        category: "FINANCE",
+        colorClass: "border-emerald-500 text-emerald-400",
+        desc: "Virtual stock market simulation. Buy low, sell high, and survive the market volatility.",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+        link: "registration.html"
+    },
+    {
+        title: "Code Matrix",
+        subtitle: "Hack The Mainframe",
+        category: "TECH",
+        colorClass: "border-green-500 text-green-400",
+        desc: "Competitive coding marathon. Break the firewall and solve complex algorithms before time runs out.",
+        img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+        link: "registration.html"
+    }
+];
+
+function renderFeaturedEvents() {
+    const container = document.getElementById('home-events-grid');
+    const badgeContainer = document.getElementById('events-status-badge');
+    const subtitle = document.getElementById('events-subtitle');
+    
+    if (!container) return;
+
+    const now = new Date();
+    // Check if Developer Bypass is on (optional, helpful for testing)
+    const isDev = localStorage.getItem('unicorn_bypass') === 'true';
+    
+    const isUnlocked = now >= EVENTS_REVEAL_DATE || isDev;
+
+    let html = '';
+
+    if (!isUnlocked) {
+        // --- RENDER LOCKED STATE ---
+        subtitle.innerHTML = "Competitions · Workshops · Speaker Sessions";
+        
+        badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-gold/30 bg-gold/5 rounded backdrop-blur-sm";
+        badgeContainer.innerHTML = `<p class="text-gold font-bold text-xs tracking-widest uppercase"><i class="fa-regular fa-calendar mr-2"></i> Reveal: Dec 13</p>`;
+
+        lockedData.forEach(item => {
+            html += `
+            <div class="group relative overflow-hidden rounded-2xl reveal border border-white/5 hover:border-gold/30 transition duration-500 bg-pitch">
+                <div class="relative h-96 overflow-hidden">
+                    <div class="absolute inset-0 bg-pitch/80 z-10"></div>
+                    <img src="${item.img}" class="w-full h-full object-cover blur-sm opacity-50">
+                    <div class="absolute inset-0 z-20 flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 rounded-full border border-gold/50 flex items-center justify-center mb-4 bg-pitch/90 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid ${item.icon} text-gold text-2xl"></i>
+                        </div>
+                        <span class="font-heading text-xl font-bold text-white tracking-widest uppercase">${item.title}</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black via-black/90 to-transparent">
+                    <span class="bg-emerald-dark/50 text-emerald-glow border border-emerald-glow/20 text-[10px] font-bold px-3 py-1 rounded mb-3 inline-block tracking-widest uppercase">
+                        ${item.category}
+                    </span>
+                    <p class="text-sm text-beige/50 font-body mb-4">${item.desc}</p>
+                </div>
+            </div>`;
+        });
+
+    } else {
+        // --- RENDER UNLOCKED STATE ---
+        subtitle.innerHTML = "Top Tier Competitions & Challenges";
+        
+        badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-emerald-glow/30 bg-emerald-dark/30 rounded backdrop-blur-sm";
+        badgeContainer.innerHTML = `<p class="text-emerald-glow font-bold text-xs tracking-widest uppercase animate-pulse"><i class="fa-solid fa-circle mr-2 text-[8px]"></i> Registrations Live</p>`;
+
+        unlockedData.forEach(item => {
+            html += `
+            <div class="group relative overflow-hidden rounded-2xl reveal border border-white/5 hover:border-gold/30 transition duration-500 bg-pitch">
+                <div class="relative h-96 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-pitch via-transparent to-transparent z-10"></div>
+                    <img src="${item.img}" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 z-20">
+                        <span class="bg-black/80 border ${item.colorClass} text-[10px] font-gaming px-3 py-1 rounded backdrop-blur-md">
+                            ${item.category}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+                    <h3 class="font-gaming text-2xl font-bold text-white mb-1 group-hover:text-gold transition-colors">${item.title}</h3>
+                    <p class="text-xs text-gold uppercase tracking-wider mb-3">${item.subtitle}</p>
+                    <p class="text-sm text-beige/70 font-body mb-6 line-clamp-2">${item.desc}</p>
+                    <a href="${item.link}" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-emerald-glow transition-colors">
+                        REGISTER NOW <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>`;
+        });
+    }
+
+    container.innerHTML = html;
+    
+    // Re-trigger reveal animations
+    setTimeout(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        
+        container.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    }, 100);
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', renderFeaturedEvents);
