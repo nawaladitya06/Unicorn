@@ -436,24 +436,32 @@ select {
     pointer-events: none;
 }
 /* =========================================
-   8. INTRO UNLOCK ANIMATION (CONTAINER SCOPED)
+   8. INTRO UNLOCK ANIMATION (HYBRID SYSTEM)
    ========================================= */
 
 #intro-lock-screen {
-    position: absolute; /* Changed from fixed to absolute */
-    inset: 0;           /* Covers the parent container completely */
-    z-index: 50;        /* Higher than the content */
-    background-color: #050505; /* Pitch Black */
-    display: none;      /* Hidden by default */
+    /* DEFAULT: FULL PAGE MODE (Fixed) */
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background-color: #050505;
+    display: none; /* Controlled by JS */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem; /* Matches the rounded-2xl of the container */
-    border: 1px solid rgba(212, 175, 55, 0.2); /* Optional: Gold border */
     transition: opacity 0.8s ease-out, visibility 0.8s;
 }
 
-/* Shake Animation for the Lock */
+/* CONTAINER SPECIFIC MODE (Absolute) */
+/* Add class="container-mode" to the div in HTML to use this */
+#intro-lock-screen.container-mode {
+    position: absolute;
+    z-index: 50;
+    border-radius: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Shake Animation */
 .shake-lock {
     animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
 }
@@ -473,7 +481,7 @@ select {
 @keyframes textGlitch {
     0% { opacity: 0; transform: scale(0.8); text-shadow: 2px 0 red, -2px 0 blue; }
     50% { opacity: 1; transform: scale(1.1); text-shadow: -2px 0 red, 2px 0 blue; }
-    100% { opacity: 1; transform: scale(1); text-shadow: 0 0 20px #10B981; } /* Emerald Glow */
+    100% { opacity: 1; transform: scale(1); text-shadow: 0 0 20px #10B981; }
 }
 
 .fade-out-intro {
