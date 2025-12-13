@@ -57,19 +57,39 @@ window.addEventListener('scroll', () => {
         }
     }
 });
-
-// 4. Mobile Menu Toggle
+// 4. Mobile Menu Toggle (Fixed for Animation)
 // ------------------------------------------
-// Used by the hamburger menu button in the navbar
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
+    
     if (menu) {
-        menu.classList.toggle('hidden');
-        
-        // Optional: Add a class for animation if your CSS supports it
-        // menu.classList.toggle('open'); 
+        // Check if the menu is currently hidden (closed)
+        if (menu.classList.contains('hidden')) {
+            // --- OPENING SEQUENCE ---
+            
+            // 1. Remove display:none so it becomes visible in the DOM
+            menu.classList.remove('hidden');
+            
+            // 2. Add a tiny delay to allow the browser to register "display:block"
+            // before we trigger the CSS transition.
+            setTimeout(() => {
+                menu.classList.add('open');
+            }, 10);
+            
+        } else {
+            // --- CLOSING SEQUENCE ---
+            
+            // 1. Remove the open class to trigger the CSS slide-up animation
+            menu.classList.remove('open');
+            
+            // 2. Wait for the CSS transition (300ms) to finish, 
+            // then apply display:none to fully hide it.
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300); 
+        }
     }
 }
 
-// Make function global so onclick="toggleMobileMenu()" works in HTML
+// Make function global
 window.toggleMobileMenu = toggleMobileMenu;
