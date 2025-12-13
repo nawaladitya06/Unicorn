@@ -22,22 +22,37 @@ function unlockSite() {
     // 1. Hide the Static "Classified" Screen immediately
     if(LOCK_OVERLAY) LOCK_OVERLAY.style.display = 'none';
     
-    // 2. Play Animation Sequence (If not already played in this session)
+    // 2. Play Animation Sequence
     if(INTRO_SCREEN && INTRO_SCREEN.style.display !== 'none') {
-        INTRO_SCREEN.style.display = 'flex'; // Make visible
+        INTRO_SCREEN.style.display = 'flex'; 
         playIntroSequence();
     } else {
-        // Fallback if animation html is missing or already played
+        // Fallback: Just show content
         if(CONTENT) {
             CONTENT.classList.remove('encrypted-blur');
             CONTENT.classList.add('decrypted');
         }
     }
 
-    // 3. Mark as unlocked
+    // 3. UPDATE BADGES (New Code)
+    const badge1 = document.getElementById('day1-badge');
+    const badge2 = document.getElementById('day2-badge');
+
+    // Helper function to update style
+    const setUnlockedStyle = (badge) => {
+        if(badge) {
+            badge.innerText = "UNLOCKED";
+            badge.classList.remove('bg-gray-700', 'text-white');
+            badge.classList.add('bg-emerald-glow', 'text-pitch', 'shadow-[0_0_10px_#10B981]');
+        }
+    };
+
+    setUnlockedStyle(badge1);
+    setUnlockedStyle(badge2);
+
+    // 4. Mark as unlocked
     localStorage.setItem('unicorn_schedule_bypass', 'true');
 }
-
 function playIntroSequence() {
     const lockIcon = document.getElementById('intro-lock-icon');
     const modeText = document.getElementById('intro-mode-text');
