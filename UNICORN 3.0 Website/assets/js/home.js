@@ -43,10 +43,30 @@ const timerInterval = setInterval(function () {
 // Data Source: Images from assets/images/glimpses folder
 // We need ~9 items total for a balanced grid
 const pastGloryData = [
-    { type: 'image', src: 'assets/images/glimpses/img1.jpg', title: 'The Beginning', category: 'Event Start' },
-    { type: 'image', src: 'assets/images/glimpses/img2.jpg', title: 'Crowd Energy', category: 'Audience' },
-    { type: 'image', src: 'assets/images/glimpses/img3.jpg', title: 'Learning Session', category: 'Workshops' },
-    { type: 'image', src: 'assets/images/glimpses/img4.jpg', title: 'In Action', category: 'Competition' },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img1.jpg', 
+        title: 'The Grand Launch', 
+        category: 'Event Start' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img2.jpg', 
+        title: 'Captivated Audience', 
+        category: 'Audience' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img3.jpg', 
+        title: 'Strategic Workshop', 
+        category: 'Workshops' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img4.jpg', 
+        title: 'Collaborative Ideas', 
+        category: 'Networking' 
+    },
 
     // *** CENTER ITEM (The Quote) ***
     {
@@ -55,13 +75,37 @@ const pastGloryData = [
         author: "Alumni, 2023"
     },
 
-    { type: 'image', src: 'assets/images/glimpses/img5.jpg', title: 'Key Moment', category: 'Highlights' },
-    { type: 'image', src: 'assets/images/glimpses/img6.jpg', title: 'The Organizers', category: 'Team' },
-    // Reusing images to ensure grid is full if you don't have 9 unique ones yet
-    { type: 'image', src: 'assets/images/glimpses/img1.jpg', title: 'Celebration', category: 'Victory' },
-    { type: 'image', src: 'assets/images/glimpses/img2.jpg', title: 'Full House', category: 'Event Start' }
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img5.jpg', 
+        title: 'Keynote Session', 
+        category: 'Highlights' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img6.jpg', 
+        title: 'Brainstorming Hub', 
+        category: 'Innovation' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img7.jpg', 
+        title: 'Core Management', 
+        category: 'Team' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img8.jpg', 
+        title: 'Victorious Smiles', 
+        category: 'Victory' 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/images/glimpses/img9.jpg', 
+        title: 'The Ultimate Winners', 
+        category: 'Grand Finale' 
+    }
 ];
-
 function renderPastGlory() {
     const container = document.getElementById('past-glory-container');
     if (!container) return; // Exit if element not found (e.g. on other pages)

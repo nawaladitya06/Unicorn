@@ -2,61 +2,73 @@
 //  CONFIGURATION: HIERARCHICAL GRID (Bento Style)
 // ==========================================
 
-const galleryImages = [
+const galleryItems = [
     {
         type: 'image',
-        src: 'assets/images/glimpses/img1.jpg', // Updated Path
+        src: 'assets/images/glimpses/img1.jpg',
         category: 'Event Start',
-        title: 'The Beginning',
+        title: 'The Grand Opening',
         span: 'md:col-span-2 md:row-span-2' // LARGE HERO ITEM
     },
     {
         type: 'image',
         src: 'assets/images/glimpses/img2.jpg',
         category: 'Audience',
-        title: 'Crowd Energy',
+        title: 'Engaged Minds',
         span: 'md:col-span-1 md:row-span-2' // TALL ITEM
     },
     {
         type: 'image',
         src: 'assets/images/glimpses/img3.jpg',
         category: 'Workshops',
-        title: 'Learning Session',
+        title: 'Strategic Planning',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
     {
         type: 'image',
         src: 'assets/images/glimpses/img4.jpg',
-        category: 'Competition',
-        title: 'In Action',
+        category: 'Networking',
+        title: 'Collaborative Spirit',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
+    },
+    {
+        type: 'quote',
+        text: "Unicorn isn't just a festival. It's where the future CEOs of India are born.",
+        author: "Alumni, 2023"
     },
     {
         type: 'image',
         src: 'assets/images/glimpses/img5.jpg',
-        category: 'Highlights',
-        title: 'Key Moment',
+        category: 'Competition',
+        title: 'Pitch Perfect',
         span: 'md:col-span-2 md:row-span-1' // WIDE IMAGE
     },
     {
         type: 'image',
         src: 'assets/images/glimpses/img6.jpg',
-        category: 'Team',
-        title: 'The Organizers',
+        category: 'Innovation',
+        title: 'Ideation in Progress',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img1.jpg', 
-        category: 'Event Start',
-        title: 'Full House',
+        src: 'assets/images/glimpses/img7.jpg',
+        category: 'Leadership',
+        title: 'The Organizing Committee',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
-     {
+    {
         type: 'image',
-        src: 'assets/images/glimpses/img2.jpg', 
-        category: 'Vibe',
-        title: 'Celebration',
+        src: 'assets/images/glimpses/img8.jpg',
+        category: 'Victory',
+        title: 'Celebrating Excellence',
+        span: 'md:col-span-1 md:row-span-1' // STANDARD
+    },
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img9.jpg', 
+        category: 'Grand Finale',
+        title: 'The Champions of Unicorn',
         span: 'md:col-span-2 md:row-span-2' // LARGE FOOTER IMAGE
     }
 ];
