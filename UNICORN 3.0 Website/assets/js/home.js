@@ -99,12 +99,6 @@ const pastGloryData = [
         title: 'Victorious Smiles', 
         category: 'Victory' 
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img9.jpg', 
-        title: 'The Ultimate Winners', 
-        category: 'Grand Finale' 
-    }
 ];
 function renderPastGlory() {
     const container = document.getElementById('past-glory-container');
