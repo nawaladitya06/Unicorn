@@ -13,9 +13,9 @@ const galleryImages = [
     {
         type: 'image',
         src: 'assets/images/glimpses/img8.jpg', // Formal stage group
-        category: 'Inauguration',
-        title: 'Official Launch',
-        span: 'md:col-span-2 md:row-span-2' // TALL ITEM
+        category: 'Unicorn 2.0',
+        title: 'Formal Picture',
+        span: 'md:col-span-3 md:row-span-2' // TALL ITEM
     },
     {
         type: 'image',
@@ -57,14 +57,14 @@ const galleryImages = [
         src: 'assets/images/glimpses/img6.jpg', // Group peace signs
         category: 'Community',
         title: 'Unicorn Family',
-        span: 'md:col-span-1 md:row-span-1' // STANDARD
+        span: 'md:col-span-2 md:row-span-1' // STANDARD
     },
     {
         type: 'image',
         src: 'assets/images/glimpses/img9.jpg', // Massive group celebration
-        category: 'Grand Finale',
-        title: 'Reliving the Glory',
-        span: 'md:col-span-2 md:row-span-2' // LARGE FOOTER IMAGE
+        category: 'Celebration',
+        title: 'Fun after event ends',
+        span: 'md:col-span-1 md:row-span-1' // LARGE FOOTER IMAGE
     }
 ];
 
