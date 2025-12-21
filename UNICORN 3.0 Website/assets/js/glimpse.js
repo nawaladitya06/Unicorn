@@ -2,7 +2,7 @@
 //  CONFIGURATION: HIERARCHICAL GRID (Bento Style)
 // ==========================================
 
-const galleryItems = [
+const galleryImages = [
     {
         type: 'image',
         src: 'assets/images/glimpses/img7.jpg', // Street/Entrance energy
