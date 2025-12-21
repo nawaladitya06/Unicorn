@@ -5,30 +5,30 @@
 const galleryItems = [
     {
         type: 'image',
-        src: 'assets/images/glimpses/img1.jpg',
-        category: 'Event Start',
-        title: 'The Grand Opening',
+        src: 'assets/images/glimpses/img7.jpg', // Crowded street/energy
+        category: 'Atmosphere',
+        title: 'The Buzz of Unicorn',
         span: 'md:col-span-2 md:row-span-2' // LARGE HERO ITEM
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img2.jpg',
-        category: 'Audience',
-        title: 'Engaged Minds',
+        src: 'assets/images/glimpses/img8.jpg', // Faculty/VIPs on stage
+        category: 'Inauguration',
+        title: 'Opening Ceremony',
         span: 'md:col-span-1 md:row-span-2' // TALL ITEM
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img3.jpg',
-        category: 'Workshops',
-        title: 'Strategic Planning',
+        src: 'assets/images/glimpses/img4.jpg', // Small group trophy handoff
+        category: 'Recognition',
+        title: 'Moments of Glory',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img4.jpg',
-        category: 'Networking',
-        title: 'Collaborative Spirit',
+        src: 'assets/images/glimpses/img2.jpg', // 2nd Runner up group
+        category: 'Winners',
+        title: 'Elite Achievers',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
     {
@@ -38,41 +38,40 @@ const galleryItems = [
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img5.jpg',
-        category: 'Competition',
-        title: 'Pitch Perfect',
+        src: 'assets/images/glimpses/img5.jpg', // Wide team shot
+        category: 'Community',
+        title: 'The Heart of the Festival',
         span: 'md:col-span-2 md:row-span-1' // WIDE IMAGE
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img6.jpg',
-        category: 'Innovation',
-        title: 'Ideation in Progress',
+        src: 'assets/images/glimpses/img1.jpg', // 1st Runner up group
+        category: 'Winners',
+        title: 'Rising to the Top',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img7.jpg',
-        category: 'Leadership',
-        title: 'The Organizing Committee',
-        span: 'md:col-span-1 md:row-span-1' // STANDARD
-    },
-    {
-        type: 'image',
-        src: 'assets/images/glimpses/img8.jpg',
+        src: 'assets/images/glimpses/img3.jpg', // 1st Runner up alternative
         category: 'Victory',
-        title: 'Celebrating Excellence',
+        title: 'Champion Spirit',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img9.jpg', 
+        src: 'assets/images/glimpses/img6.jpg', // Team celebration/peace signs
+        category: 'Teamwork',
+        title: 'The Dream Team',
+        span: 'md:col-span-1 md:row-span-1' // STANDARD
+    },
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img9.jpg', // Massive group shot
         category: 'Grand Finale',
-        title: 'The Champions of Unicorn',
+        title: 'The Legacy Continues',
         span: 'md:col-span-2 md:row-span-2' // LARGE FOOTER IMAGE
     }
 ];
-
 // ==========================================
 //  RENDER LOGIC
 // ==========================================
