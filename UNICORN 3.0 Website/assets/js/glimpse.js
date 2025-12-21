@@ -15,7 +15,7 @@ const galleryImages = [
         src: 'assets/images/glimpses/img8.jpg', // Formal stage group
         category: 'Inauguration',
         title: 'Official Launch',
-        span: 'md:col-span-1 md:row-span-2' // TALL ITEM
+        span: 'md:col-span-2 md:row-span-2' // TALL ITEM
     },
     {
         type: 'image',
@@ -30,11 +30,6 @@ const galleryImages = [
         category: 'Winners',
         title: 'Achievement Unlocked',
         span: 'md:col-span-1 md:row-span-1' // STANDARD
-    },
-    {
-        type: 'quote',
-        text: "Unicorn isn't just a festival. It's where the future CEOs of India are born.",
-        author: "Alumni, 2023"
     },
     {
         type: 'image',
