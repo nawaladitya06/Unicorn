@@ -200,7 +200,7 @@ function renderEvents(filterType) {
                 <div class="absolute bottom-2 left-4">
                      <span class="text-white/60 font-mono text-[10px] tracking-widest uppercase">
                         <i class="fa-solid fa-calendar-days mr-1"></i> ${event.day}
-                     </span>
+                     </span><br>
                 </div>
             </div>
             
