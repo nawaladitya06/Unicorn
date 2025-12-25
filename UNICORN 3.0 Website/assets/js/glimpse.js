@@ -175,11 +175,7 @@ function playAfterMovie() {
     const cover = document.getElementById('video-cover');
     const overlay = document.getElementById('video-overlay');
 
-    // Hide cover image and overlay
     cover.classList.add('hidden');
     overlay.classList.add('hidden');
-
-    // Show video and play
     video.classList.remove('hidden');
-    video.play();
 }
