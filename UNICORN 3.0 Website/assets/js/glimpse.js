@@ -3,70 +3,102 @@
 // ==========================================
 
 const galleryImages = [
+    // 1. Inauguration / Opening
     {
         type: 'image',
-        src: 'assets/images/glimpses/img7.jpg', // Street/Entrance energy
+        src: 'assets/images/glimpses/img13.jpg',
+        category: 'Inaugration',
+        title: 'Start of Unicorn 2.0',
+        span: 'md:col-span-2 md:row-span-1'
+    },
+
+    // 2. Event Begins / Ideas
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img11.jpg',
+        category: 'Events',
+        title: 'And the fun Begins',
+        span: 'md:col-span-1 md:row-span-1'
+    },
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img12.jpg',
+        category: 'Events',
+        title: 'where ideas meet',
+        span: 'md:col-span-1 md:row-span-1'
+    },
+
+    // 3. Vibe / Energy
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img7.jpg',
         category: 'Vibe',
         title: 'The Energy of Unicorn',
-        span: 'md:col-span-2 md:row-span-2' // LARGE HERO ITEM
+        span: 'md:col-span-2 md:row-span-2'
     },
+
+    // 4. Networking / Meet
     {
         type: 'image',
-        src: 'assets/images/glimpses/img8.jpg', // Formal stage group
-        category: 'Unicorn 2.0',
-        title: 'Formal Picture',
-        span: 'md:col-span-3 md:row-span-2' // TALL ITEM
+        src: 'assets/images/glimpses/img10.jpg',
+        category: 'Meet',
+        title: 'Netwrking Time',
+        span: 'md:col-span-1 md:row-span-1'
     },
+
+    // 5. Organizers / Team
     {
         type: 'image',
-        src: 'assets/images/glimpses/img4.jpg', // Small group trophy
-        category: 'Awards',
-        title: 'Winning Moments',
-        span: 'md:col-span-1 md:row-span-1' // STANDARD
-    },
-    {
-        type: 'image',
-        src: 'assets/images/glimpses/img2.jpg', // 2nd Runner up
-        category: 'Winners',
-        title: 'Achievement Unlocked',
-        span: 'md:col-span-1 md:row-span-1' // STANDARD
-    },
-    {
-        type: 'image',
-        src: 'assets/images/glimpses/img5.jpg', // Large team pose
+        src: 'assets/images/glimpses/img5.jpg',
         category: 'Team',
         title: 'The Organizers',
-        span: 'md:col-span-2 md:row-span-1' // WIDE IMAGE
+        span: 'md:col-span-2 md:row-span-1'
     },
+
+    // 6. Formal Moments
     {
         type: 'image',
-        src: 'assets/images/glimpses/img1.jpg', // 1st Runner up
+        src: 'assets/images/glimpses/img8.jpg',
+        category: 'Unicorn 2.0',
+        title: 'Formal Picture',
+        span: 'md:col-span-1 md:row-span-1'
+    },
+
+    // 7. Winners / Results
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img1.jpg',
         category: 'Winners',
         title: 'The Finalists',
-        span: 'md:col-span-1 md:row-span-1' // STANDARD
+        span: 'md:col-span-1 md:row-span-1'
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img3.jpg', // 1st Runner up (alt)
-        category: 'Victory',
-        title: 'Pure Joy',
-        span: 'md:col-span-1 md:row-span-1' // STANDARD
+        src: 'assets/images/glimpses/img2.jpg',
+        category: 'Winners',
+        title: 'Achievement Unlocked',
+        span: 'md:col-span-1 md:row-span-1'
     },
+
+    // 8. Awards
     {
         type: 'image',
-        src: 'assets/images/glimpses/img6.jpg', // Group peace signs
-        category: 'Community',
-        title: 'Unicorn Family',
-        span: 'md:col-span-2 md:row-span-1' // STANDARD
+        src: 'assets/images/glimpses/img4.jpg',
+        category: 'Awards',
+        title: 'Winning Moments',
+        span: 'md:col-span-1 md:row-span-1'
     },
+
+    // 9. Celebration / End
     {
         type: 'image',
-        src: 'assets/images/glimpses/img9.jpg', // Massive group celebration
+        src: 'assets/images/glimpses/img9.jpg',
         category: 'Celebration',
         title: 'Fun after event ends',
-        span: 'md:col-span-1 md:row-span-1' // LARGE FOOTER IMAGE
+        span: 'md:col-span-1 md:row-span-1'
     }
 ];
+
 
 // ==========================================
 //  RENDER LOGIC
@@ -137,3 +169,17 @@ function renderGallery() {
 }
 
 renderGallery();
+
+function playAfterMovie() {
+    const video = document.getElementById('afterMovie');
+    const cover = document.getElementById('video-cover');
+    const overlay = document.getElementById('video-overlay');
+
+    // Hide cover image and overlay
+    cover.classList.add('hidden');
+    overlay.classList.add('hidden');
+
+    // Show video and play
+    video.classList.remove('hidden');
+    video.play();
+}
