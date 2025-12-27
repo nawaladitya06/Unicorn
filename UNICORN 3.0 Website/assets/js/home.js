@@ -194,36 +194,40 @@ const lockedData = [
     }
 ];
 
-// DATA: UNLOCKED STATE (Real Events)
+// home.js mein unlockedData ko aise update karein
 const unlockedData = [
     {
+        id: 1, // ID wahi rakhein jo events.js mein hai
         title: "Crisis Cabinet",
         subtitle: "Leadership Under Pressure",
         category: "BUSINESS",
         colorClass: "border-purple-500 text-purple-400",
-        desc: "Represent a business in a global industry and navigate intense environmental and economic crises with strategic thinking.",
+        desc: "Represent a business in a global industry...",
         img: "assets/images/events/event1.jpg",
-        link: "registration.html"
+        link: "registration.html?event=1" // Yahan ID attach karein
     },
     {
+        id: 2,
         title: "Flip the Argument",
         subtitle: "Mind Switch",
         category: "BUSINESS",
         colorClass: "border-green-500 text-green-400",
-        desc: "A two-round challenge featuring a business quiz followed by a round where you must instantly defend opposing viewpoints.",
+        desc: "A two-round challenge featuring a business quiz...",
         img: "assets/images/events/event2.jpg",
-        link: "registration.html"
+        link: "registration.html?event=2"
     },
     {
+        id: 3,
         title: "Flop Tank",
         subtitle: "The Flop Factory",
         category: "BUSINESS",
         colorClass: "border-red-500 text-red-500",
-        desc: "A parody pitch event where you must creatively justify the most impractical and useless product ideas.",
+        desc: "A parody pitch event where you must creatively...",
         img: "assets/images/events/event3.jpg",
-        link: "registration.html"
+        link: "registration.html?event=3"
     }
 ];
+
 function renderFeaturedEvents() {
     const container = document.getElementById('home-events-grid');
     const badgeContainer = document.getElementById('events-status-badge');
