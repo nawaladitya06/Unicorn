@@ -71,6 +71,9 @@
             border-color: #D4AF37;
             background: rgba(4, 120, 87, 0.1);
         }
+        #custom-notification { 
+            transition: all 0.3s ease; 
+        }
     </style>
 </head>
 
@@ -633,6 +636,19 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <div id="custom-notification" class="fixed inset-0 flex items-center justify-center z-[100] hidden backdrop-blur-sm bg-black/40">
+        <div class="bg-pitch border-2 border-emerald-glow p-8 rounded-xl shadow-[0_0_30px_rgba(16,185,129,0.4)] max-w-sm w-full text-center transform scale-90 transition-transform duration-300" id="notification-box">
+            <div class="mb-4 text-emerald-glow text-5xl">
+                <i class="fa-solid fa-circle-check" id="notification-icon"></i>
+            </div>
+            <h2 class="font-gaming text-2xl text-white mb-2 tracking-widest" id="notification-title">MISSION SUCCESS</h2>
+            <p class="font-mono text-beige/70 text-sm mb-6" id="notification-message">Your registration has been deployed to the mainframe.</p>
+            <button onclick="closeNotification()" class="px-8 py-2 bg-emerald-glow text-pitch font-gaming font-bold hover:bg-white transition-colors duration-300">
+                CONFIRM_
+            </button>
+        </div>
     </div>
 
     <script src="assets/js/main.js"></script>
