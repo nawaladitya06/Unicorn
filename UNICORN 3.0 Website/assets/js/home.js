@@ -43,29 +43,29 @@ const timerInterval = setInterval(function () {
 // Data Source: Images from assets/images/glimpses folder
 // We need ~9 items total for a balanced grid
 const pastGloryData = [
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img1.jpg', 
-        title: 'The Grand Launch', 
-        category: 'Event Start' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img1.jpg',
+        title: 'The Grand Launch',
+        category: 'Event Start'
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img2.jpg', 
-        title: 'Captivated Audience', 
-        category: 'Audience' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img2.jpg',
+        title: 'Captivated Audience',
+        category: 'Audience'
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img3.jpg', 
-        title: 'Strategic Workshop', 
-        category: 'Workshops' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img10.jpg',
+        category: 'Meet',
+        title: 'Netwrking Time'
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img4.jpg', 
-        title: 'Collaborative Ideas', 
-        category: 'Networking' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img4.jpg',
+        title: 'Collaborative Ideas',
+        category: 'Networking'
     },
 
     // *** CENTER ITEM (The Quote) ***
@@ -75,31 +75,32 @@ const pastGloryData = [
         author: "Alumni, 2023"
     },
 
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img5.jpg', 
-        title: 'Keynote Session', 
-        category: 'Highlights' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img5.jpg',
+        title: 'Keynote Session',
+        category: 'Highlights'
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img6.jpg', 
-        title: 'Brainstorming Hub', 
-        category: 'Innovation' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img6.jpg',
+        title: 'Brainstorming Hub',
+        category: 'Innovation'
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img7.jpg', 
-        title: 'Core Management', 
-        category: 'Team' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img7.jpg',
+        title: 'Core Management',
+        category: 'Team'
     },
-    { 
-        type: 'image', 
-        src: 'assets/images/glimpses/img8.jpg', 
-        title: 'Victorious Smiles', 
-        category: 'Victory' 
+    {
+        type: 'image',
+        src: 'assets/images/glimpses/img8.jpg',
+        title: 'Victorious Smiles',
+        category: 'Victory'
     },
 ];
+
 function renderPastGlory() {
     const container = document.getElementById('past-glory-container');
     if (!container) return; // Exit if element not found (e.g. on other pages)
@@ -148,10 +149,10 @@ function renderPastGlory() {
     });
 
     container.innerHTML = html;
-    
+
     // Re-trigger observer for new elements so animations play
     setTimeout(() => {
-        if(typeof observer !== 'undefined') {
+        if (typeof observer !== 'undefined') {
             document.querySelectorAll('#past-glory-container .reveal').forEach((el) => observer.observe(el));
         }
     }, 100);
@@ -166,7 +167,7 @@ renderPastGlory();
 
 // 🔴 CONFIGURATION: DATE TO UNLOCK
 // Format: YYYY-MM-DDTHH:MM:SS
-const EVENTS_REVEAL_DATE = new Date("2025-12-13T21:30:00"); 
+const EVENTS_REVEAL_DATE = new Date("2025-12-13T21:30:00");
 
 // DATA: LOCKED STATE (Mystery Cards)
 const lockedData = [
@@ -196,45 +197,44 @@ const lockedData = [
 // DATA: UNLOCKED STATE (Real Events)
 const unlockedData = [
     {
-        title: "Startup Heist",
-        subtitle: "Grand Theft Pitch",
+        title: "Crisis Cabinet",
+        subtitle: "Leadership Under Pressure",
         category: "BUSINESS",
         colorClass: "border-purple-500 text-purple-400",
-        desc: "Plan the ultimate business heist. Pitch your startup idea to the investors before the timer runs out.",
-        img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+        desc: "Represent a business in a global industry and navigate intense environmental and economic crises with strategic thinking.",
+        img: "assets/images/events/event1.jpg",
         link: "registration.html"
     },
     {
-        title: "Wolf of Dalal St",
-        subtitle: "Market Crash",
-        category: "FINANCE",
-        colorClass: "border-emerald-500 text-emerald-400",
-        desc: "Virtual stock market simulation. Buy low, sell high, and survive the market volatility.",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        link: "registration.html"
-    },
-    {
-        title: "Code Matrix",
-        subtitle: "Hack The Mainframe",
-        category: "TECH",
+        title: "Flip the Argument",
+        subtitle: "Mind Switch",
+        category: "BUSINESS",
         colorClass: "border-green-500 text-green-400",
-        desc: "Competitive coding marathon. Break the firewall and solve complex algorithms before time runs out.",
-        img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+        desc: "A two-round challenge featuring a business quiz followed by a round where you must instantly defend opposing viewpoints.",
+        img: "assets/images/events/event2.jpg",
+        link: "registration.html"
+    },
+    {
+        title: "Flop Tank",
+        subtitle: "The Flop Factory",
+        category: "BUSINESS",
+        colorClass: "border-red-500 text-red-500",
+        desc: "A parody pitch event where you must creatively justify the most impractical and useless product ideas.",
+        img: "assets/images/events/event3.jpg",
         link: "registration.html"
     }
 ];
-
 function renderFeaturedEvents() {
     const container = document.getElementById('home-events-grid');
     const badgeContainer = document.getElementById('events-status-badge');
     const subtitle = document.getElementById('events-subtitle');
-    
+
     if (!container) return;
 
     const now = new Date();
     // Check if Developer Bypass is on (optional, helpful for testing)
     const isDev = localStorage.getItem('unicorn_bypass') === 'true';
-    
+
     const isUnlocked = now >= EVENTS_REVEAL_DATE || isDev;
 
     let html = '';
@@ -242,7 +242,7 @@ function renderFeaturedEvents() {
     if (!isUnlocked) {
         // --- RENDER LOCKED STATE ---
         subtitle.innerHTML = "Competitions · Workshops · Speaker Sessions";
-        
+
         badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-gold/30 bg-gold/5 rounded backdrop-blur-sm";
         badgeContainer.innerHTML = `<p class="text-gold font-bold text-xs tracking-widest uppercase"><i class="fa-regular fa-calendar mr-2"></i> Reveal: Dec 13</p>`;
 
@@ -271,7 +271,7 @@ function renderFeaturedEvents() {
     } else {
         // --- RENDER UNLOCKED STATE ---
         subtitle.innerHTML = "Top Tier Competitions & Challenges";
-        
+
         badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-emerald-glow/30 bg-emerald-dark/30 rounded backdrop-blur-sm";
         badgeContainer.innerHTML = `<p class="text-emerald-glow font-bold text-xs tracking-widest uppercase animate-pulse"><i class="fa-solid fa-circle mr-2 text-[8px]"></i> Registrations Live</p>`;
 
@@ -301,7 +301,7 @@ function renderFeaturedEvents() {
     }
 
     container.innerHTML = html;
-    
+
     // Re-trigger reveal animations
     setTimeout(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -309,7 +309,7 @@ function renderFeaturedEvents() {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-        
+
         container.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     }, 100);
 }
@@ -335,7 +335,7 @@ function renderEventTimeline() {
     if (!isUnlocked) {
         // --- LOCKED STATE ---
         const lockedDays = ['Day 01', 'Day 02'];
-        
+
         lockedDays.forEach(day => {
             html += `
             <div class="relative pl-8 md:pl-12 reveal opacity-70">
@@ -409,13 +409,13 @@ function renderEventTimeline() {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-        
+
         container.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     }, 100);
 }
 
 // Update the listener to run both functions
 document.addEventListener('DOMContentLoaded', () => {
-    if(typeof renderFeaturedEvents === 'function') renderFeaturedEvents();
+    if (typeof renderFeaturedEvents === 'function') renderFeaturedEvents();
     renderEventTimeline();
 });

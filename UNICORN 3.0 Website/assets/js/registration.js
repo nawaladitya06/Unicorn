@@ -185,3 +185,44 @@ if(form) {
         }
     });
 }
+
+// registration.js mein ye code add karein
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. URL se event parameter nikalna
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('event');
+
+    // 2. Event ID ko Title ke saath map karna (Jo registration.html ke values hain)
+    const eventMapping = {
+        "1": "Crisis Cabinet",
+        "2": "Flip the Argument",
+        "3": "Flop Tank",
+        "4": "Solo Surge",
+        "5": "The Grand Choreo",
+        "6": "Unicorn Icon",
+        "7": "The Grand Hunt",
+        "8": "War in the Boardroom",
+        "9": "PR Rally",
+        "10": "Face Painting",
+        "11": "Wall Décor",
+        "12": "Crochet Making",
+        "13": "Auction",
+        "14": "Story Writing"
+    };
+
+    if (eventId && eventMapping[eventId]) {
+        const targetValue = eventMapping[eventId];
+        
+        // 3. Sahi radio button dhundna jiska value match karta ho
+        const radioBtn = document.querySelector(`input[name="Event"][value="${targetValue}"]`);
+        
+        if (radioBtn) {
+            radioBtn.checked = true;
+            
+            // 4. Form ke "Select Mission" section tak scroll karna taaki user ko dikhe
+            setTimeout(() => {
+                radioBtn.closest('label').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        }
+    }
+});

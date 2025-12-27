@@ -251,8 +251,8 @@ function renderEvents(filterType) {
                         <span class="text-white font-bold font-gaming text-sm">${event.team}</span>
                     </div>
                 </div>
-
-                <button class="w-full py-2 bg-white/5 hover:bg-emerald-glow hover:text-pitch border border-white/10 hover:border-emerald-glow transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                <button onclick="window.location.href='registration.html?event=${event.id}'" 
+                    class="w-full py-2 bg-white/5 hover:bg-emerald-glow hover:text-pitch border border-white/10 hover:border-emerald-glow transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]">
                     <span class="font-gaming font-bold text-sm tracking-widest">REGISTER_</span>
                 </button>
             </div>
