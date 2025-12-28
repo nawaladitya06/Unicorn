@@ -5,22 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration | UNICORN 2026</title>
-
+    <link rel="icon" type="image/png" href="assets/images/Unicorn_Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&family=VT323&family=Press+Start+2P&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script src="assets/js/tailwind-config.js"></script>
-
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
-        /* Lock Screen Animation */
         #lock-screen {
             position: fixed;
             inset: 0;
@@ -37,7 +33,6 @@
             transform: translateY(-100%);
         }
 
-        /* Specific Input Styles for this page */
         .gaming-input {
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(4, 120, 87, 0.5);
@@ -62,17 +57,8 @@
             background-size: 1em;
         }
 
-        .file-upload-label {
-            border: 2px dashed rgba(4, 120, 87, 0.5);
+        #custom-notification {
             transition: all 0.3s ease;
-        }
-
-        .file-upload-label:hover {
-            border-color: #D4AF37;
-            background: rgba(4, 120, 87, 0.1);
-        }
-        #custom-notification { 
-            transition: all 0.3s ease; 
         }
     </style>
 </head>
@@ -81,69 +67,17 @@
     <div id="intro-lock-screen">
         <div class="relative mb-8">
             <i id="intro-lock-icon" class="fa-solid fa-lock text-8xl text-gold transition-colors duration-300"></i>
-
             <div class="absolute inset-0 bg-gold/20 blur-xl rounded-full animate-pulse -z-10"></div>
         </div>
-
         <h1 id="intro-mode-text"
-            class="font-gaming text-4xl md:text-6xl font-black text-white opacity-0 tracking-widest text-center">
-            GAMING MODE <span class="text-emerald-glow">ON</span>
-        </h1>
-
+            class="font-gaming text-4xl md:text-6xl font-black text-white opacity-0 tracking-widest text-center">GAMING
+            MODE <span class="text-emerald-glow">ON</span></h1>
         <div class="w-64 h-1 bg-white/10 mt-8 rounded-full overflow-hidden">
             <div id="intro-bar" class="h-full bg-emerald-glow w-0 transition-all duration-[2000ms] ease-out"></div>
         </div>
     </div>
-    <div id="lock-screen">
-        <div
-            class="relative z-10 max-w-lg w-full p-8 md:p-12 bg-[#0a0a0a] rounded-2xl border border-white/5 shadow-2xl text-center mx-4">
-
-            <div class="mb-8 relative inline-flex items-center justify-center">
-                <div class="absolute inset-0 bg-gold/20 blur-xl rounded-full animate-pulse"></div>
-                <div class="relative z-10">
-                    <i class="fa-solid fa-lock text-3xl text-gold"></i>
-                </div>
-            </div>
-
-            <h3 class="font-gaming text-emerald-500 text-[10px] md:text-xs tracking-[0.3em] uppercase mb-3 font-bold">
-                Classified Information
-            </h3>
-
-            <h1 class="font-heading text-4xl md:text-5xl text-white font-bold mb-6 tracking-wide leading-tight">
-                THEME<br />CONCEALED
-            </h1>
-
-            <p class="font-body text-gray-400 text-sm leading-relaxed mb-10 px-2 font-light">
-                The details of the upcoming events are currently under process. Access will be granted automatically
-                upon the official launch.
-            </p>
-
-            <div
-                class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-white/5 mb-8 hover:bg-white/10 transition-colors cursor-default">
-                <i class="fa-regular fa-clock text-gold text-sm"></i>
-                <span class="font-gaming text-[10px] md:text-xs text-gray-300 tracking-wider">
-                    UNLOCKING: <span class="text-gold font-bold ml-1">DEC 13 // 09:30 PM</span>
-                </span>
-            </div>
-
-            <div>
-                <a href="index.html"
-                    class="group inline-flex items-center gap-2 text-[10px] font-gaming text-gray-500 hover:text-white transition-colors duration-300 uppercase tracking-[0.2em]">
-                    <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform text-xs"></i>
-                    Back to Home
-                </a>
-            </div>
-
-        </div>
-    </div>
 
     <div id="main-content" class="opacity-0 transition-opacity duration-1000">
-
-        <div class="fixed inset-0 z-[-1] bg-premium-gradient opacity-90"></div>
-        <div
-            class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-glow to-transparent opacity-50 z-50">
-        </div>
-
         <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
             <div
                 class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-6 py-3 flex justify-between items-center relative z-50">
@@ -188,9 +122,9 @@
                     </a>
                 </div>
                 <div class="flex items-center gap-4">
-                    <button onclick="window.location.href='index.html'" href="index.html"
+                    <button onclick="window.location.href='registration.html'" href="registration.html"
                         class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
-                        BACK
+                        REGISTER
                     </button>
                     <button onclick="toggleMobileMenu()" class="lg:hidden text-gold text-2xl">
                         <i class="fa-solid fa-bars"></i>
@@ -210,132 +144,68 @@
                 <a href="glimpse.html"
                     class="font-gaming text-sm text-beige hover:text-gold py-2 border-b border-white/5">GLIMPSES</a>
                 <a href="contact.html" class="font-gaming text-sm text-beige hover:text-gold py-2">CONTACT</a>
-                <button onclick="window.location.href='index.html'" href="index.html"
-                    class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">BACK</button>
+                <button onclick="window.location.href='registration.html'" href="registration.html"
+                    class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER
+                </button>
             </div>
         </nav>
 
         <main class="pt-32 pb-24 px-6 max-w-5xl mx-auto">
-
             <div class="text-center mb-12 relative">
                 <div
                     class="inline-block px-4 py-1 border border-emerald-glow/30 rounded-full bg-emerald-dark/30 backdrop-blur-md mb-4 animate-pulse">
-                    <span class="text-emerald-glow font-gaming text-xs tracking-widest uppercase">
-                        <i class="fa-solid fa-gamepad mr-2"></i> Player Registration
-                    </span>
+                    <span class="text-emerald-glow font-gaming text-xs tracking-widest uppercase"><i
+                            class="fa-solid fa-gamepad mr-2"></i> Player Registration</span>
                 </div>
-                <h1 class="font-heading text-4xl md:text-6xl font-bold text-white mb-2">
-                    JOIN THE <span class="text-gold">GAME</span>
-                </h1>
-                <p class="text-beige/60 font-mono text-sm tracking-wide">
-                    Complete your profile to unlock event access.
-                </p>
+                <h1 class="font-heading text-4xl md:text-6xl font-bold text-white mb-2">JOIN THE <span
+                        class="text-gold">GAME</span></h1>
+                <p class="text-beige/60 font-mono text-sm tracking-wide">Enter base details and select your mission to
+                    initialize player profiles.</p>
             </div>
 
             <div class="glass-panel rounded-2xl p-1 relative">
                 <div class="bg-black/40 rounded-xl p-8 md:p-12">
-
-                    <form id="registration-form" name="unicorn-registration" class="space-y-10">
+                    <form id="registration-form" name="unicorn-registration" class="space-y-12">
 
                         <div>
-                            <h3 class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6">
-                                01. PLAYER PROFILE
-                            </h3>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                01. BASE OPERATIONS</h3>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Codename
-                                    </label>
-                                    <input type="text" name="PlayerName" placeholder="Ex: Rahul Sharma" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Comms
-                                    </label>
-                                    <input type="email" name="Email" placeholder="agent@example.com" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Hotline
-                                    </label>
-                                    <input type="tel" name="Phone" placeholder="+91 98765 43210" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">PRN
-                                    </label>
-                                    <input type="text" name="PRN" placeholder="College ID Number" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Base
-                                        Name
-                                    </label>
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">College
+                                        Name</label>
                                     <input type="text" name="College" placeholder="Ex: Hinduja College" required
                                         class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Base
-                                        Code
-                                    </label>
-                                    <input type="text" name="CCCode" placeholder="Assigned College Code" required
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">College
+                                        Code</label>
+                                    <input type="text" name="CCCode" placeholder="Ex: HIN-001" required
                                         class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
-                                <div class="space-y-4">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Level
-                                    </label>
-                                    <select name="Year" class="w-full gaming-input rounded p-3 text-sm">
-                                        <option value="FY">Level 1 (FY)</option>
-                                        <option value="SY">Level 2 (SY)</option>
-                                        <option value="TY">Level 3 (TY)</option>
-                                        <option value="PG">Master Class (PG)</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                            <div class="w-full border-t border-white/5 pt-6">
-                                <label
-                                    class="text-xs font-bold text-emerald-glow uppercase tracking-widest block mb-2">Upload
-                                    Evidence</label>
-                                <label
-                                    class="file-upload-label flex flex-col items-center justify-center w-full h-32 rounded-lg cursor-pointer bg-black/40">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <i class="fa-solid fa-id-card text-2xl text-gold mb-2"></i>
-                                        <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Click
-                                                to upload</span> College ID Proof/Fee receipt</p>
-                                        <p class="text-xs text-gray-500">IMG, JPG, PNG (Max 5MB)</p>
-                                    </div>
-                                    <input id="id-receipt" type="file" class="hidden" accept="image/*" />
-                                </label>
-                                <p id="id-file-name-display" class="text-xs text-gold mt-2 hidden">Selected:
-                                    <span id="id-file-name"></span>
-                                </p>
                             </div>
                         </div>
 
                         <div>
-                            <h3 class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6">
-                                02. SELECT MISSION
-                            </h3>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                02. SELECT MISSION</h3>
                             <div class="grid md:grid-cols-2 gap-4">
                                 <label class="relative cursor-pointer group">
-                                    <input type="radio" name="Event" value="Crisis Cabinet" class="peer sr-only">
+                                    <input type="radio" name="Event" value="Crisis Cabinet" class="peer sr-only"
+                                        required>
                                     <div
                                         class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
                                         <i class="fa-solid fa-briefcase text-purple-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Crisis Cabinet</h4>
-                                            <p class="text-beige/50 text-xs">Business • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • 2 Players</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Flip the Argument" class="peer sr-only">
                                     <div
@@ -343,11 +213,10 @@
                                         <i class="fa-solid fa-comments text-green-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Flip the Argument</h4>
-                                            <p class="text-beige/50 text-xs">Business • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • Solo</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Flop Tank" class="peer sr-only">
                                     <div
@@ -355,71 +224,10 @@
                                         <i class="fa-solid fa-lightbulb text-red-500"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Flop Tank</h4>
-                                            <p class="text-beige/50 text-xs">Business • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • 3 Players</p>
                                         </div>
                                     </div>
                                 </label>
-
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="Event" value="Solo Surge" class="peer sr-only">
-                                    <div
-                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
-                                        <i class="fa-solid fa-microphone text-blue-400"></i>
-                                        <div>
-                                            <h4 class="text-white font-bold text-sm">Solo Surge</h4>
-                                            <p class="text-beige/50 text-xs">Performing Arts • Free</p>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="Event" value="The Grand Choreo" class="peer sr-only">
-                                    <div
-                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
-                                        <i class="fa-solid fa-music text-yellow-400"></i>
-                                        <div>
-                                            <h4 class="text-white font-bold text-sm">The Grand Choreo</h4>
-                                            <p class="text-beige/50 text-xs">Performing Arts • Free</p>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="Event" value="Unicorn Icon" class="peer sr-only">
-                                    <div
-                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
-                                        <i class="fa-solid fa-crown text-emerald-400"></i>
-                                        <div>
-                                            <h4 class="text-white font-bold text-sm">Unicorn Icon</h4>
-                                            <p class="text-beige/50 text-xs">Icon • Free</p>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="Event" value="The Grand Hunt" class="peer sr-only">
-                                    <div
-                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
-                                        <i class="fa-solid fa-map text-pink-400"></i>
-                                        <div>
-                                            <h4 class="text-white font-bold text-sm">The Grand Hunt</h4>
-                                            <p class="text-beige/50 text-xs">Management • Free</p>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="Event" value="War in the Boardroom" class="peer sr-only">
-                                    <div
-                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
-                                        <i class="fa-solid fa-handshake text-white"></i>
-                                        <div>
-                                            <h4 class="text-white font-bold text-sm">War in the Boardroom</h4>
-                                            <p class="text-beige/50 text-xs">Management • Free</p>
-                                        </div>
-                                    </div>
-                                </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="PR Rally" class="peer sr-only">
                                     <div
@@ -427,11 +235,10 @@
                                         <i class="fa-solid fa-bullhorn text-indigo-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">PR Rally</h4>
-                                            <p class="text-beige/50 text-xs">Business • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • Solo</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Face Painting" class="peer sr-only">
                                     <div
@@ -439,11 +246,10 @@
                                         <i class="fa-solid fa-palette text-orange-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Face Painting</h4>
-                                            <p class="text-beige/50 text-xs">Fine Arts • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Fine Arts • 2 Players</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Wall Décor" class="peer sr-only">
                                     <div
@@ -451,11 +257,10 @@
                                         <i class="fa-solid fa-paint-roller text-amber-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Wall Décor</h4>
-                                            <p class="text-beige/50 text-xs">Fine Arts • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Fine Arts • 2 Players</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Crochet Making" class="peer sr-only">
                                     <div
@@ -463,11 +268,10 @@
                                         <i class="fa-solid fa-scissors text-teal-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Crochet Making</h4>
-                                            <p class="text-beige/50 text-xs">Fine Arts • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Fine Arts • Solo</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Auction" class="peer sr-only">
                                     <div
@@ -475,11 +279,10 @@
                                         <i class="fa-solid fa-gavel text-rose-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Auction</h4>
-                                            <p class="text-beige/50 text-xs">Literacy Arts • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Literacy • 2 Players</p>
                                         </div>
                                     </div>
                                 </label>
-
                                 <label class="relative cursor-pointer group">
                                     <input type="radio" name="Event" value="Story Writing" class="peer sr-only">
                                     <div
@@ -487,7 +290,62 @@
                                         <i class="fa-solid fa-pen-nib text-cyan-400"></i>
                                         <div>
                                             <h4 class="text-white font-bold text-sm">Story Writing</h4>
-                                            <p class="text-beige/50 text-xs">Literacy Arts • Free</p>
+                                            <p class="text-beige/50 text-[10px] uppercase">Literacy • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Solo Surge" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-microphone text-blue-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Solo Surge</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Performing • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="The Grand Choreo" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-music text-yellow-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">The Grand Choreo</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Performing • 6 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Unicorn Icon" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-crown text-emerald-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Unicorn Icon</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Icon • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="The Grand Hunt" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-map text-pink-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">The Grand Hunt</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Mgmt • 3 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="War in the Boardroom" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-handshake text-white"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">War in Boardroom</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Mgmt • 2 Players</p>
                                         </div>
                                     </div>
                                 </label>
@@ -495,63 +353,49 @@
                         </div>
 
                         <div>
-                            <h3 class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6">
-                                03. CONTINGENT OPS
-                            </h3>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">CL
-                                        Name</label>
-                                    <input type="text" name="CLName" placeholder="Contingent Leader Name"
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">CL
-                                        Phone</label>
-                                    <input type="tel" name="CLPhone" placeholder="Contingent Leader Phone"
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
-                                        Name</label>
-                                    <input type="text" name="ACLName" placeholder="Asst. Contingent Leader Name"
-                                        class="w-full gaming-input rounded p-3 text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
-                                        Phone</label>
-                                    <input type="tel" name="ACLPhone" placeholder="Asst. Contingent Leader Phone"
-                                        class="w-full gaming-input rounded p-3 text-sm">
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                03. PLAYER PROFILES</h3>
+                            <div id="player-profiles-container" class="space-y-8">
+                                <div class="text-center py-10 border-2 border-dashed border-white/5 rounded-xl">
+                                    <p class="text-gray-500 font-mono text-xs uppercase tracking-widest animate-pulse">
+                                        Initialize Selection to deploy fields...</p>
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <h3 class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6">
-                                04. SQUAD INTEL
-                            </h3>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                04. CONTINGENT OPS</h3>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Team
-                                        Name (Optional)</label>
-                                    <input type="text" name="TeamName" placeholder="Ex: Code Warriors"
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">CL
+                                        Name</label>
+                                    <input type="text" name="CLName" placeholder="Contingent Leader" required
                                         class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs font-bold text-gold font-gaming uppercase tracking-widest ml-1">Squad
-                                        Size</label>
-                                    <select name="TeamSize" class="w-full gaming-input rounded p-3 text-sm">
-                                        <option value="Solo">Solo Operative</option>
-                                        <option value="Duo">Duo (2)</option>
-                                        <option value="Squad">Squad (3-5)</option>
-                                        <option value="Group">Big Group (8+)</option>
-                                    </select>
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">CL
+                                        Phone</label>
+                                    <input type="tel" name="CLPhone" placeholder="CL Hotline" required
+                                        class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
+                                        Name</label>
+                                    <input type="text" name="ACLName" placeholder="Asst. Leader" required
+                                        class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
+                                        Phone</label>
+                                    <input type="tel" name="ACLPhone" placeholder="ACL Hotline" required
+                                        class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
                             </div>
                         </div>
@@ -559,101 +403,90 @@
                         <div class="pt-6">
                             <button type="submit" id="submit-btn"
                                 class="group relative w-full py-4 bg-gold hover:bg-white text-pitch font-gaming font-black text-xl tracking-widest uppercase rounded shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
-                                <span class="relative z-10 group-hover:scale-105 inline-block transition-transform">
-                                    <i class="fa-solid fa-rocket mr-2"></i> Deploy Registration
-                                </span>
-                                <div
-                                    class="absolute inset-0 bg-white/20 blur-lg opacity-0 group-hover:opacity-100 transition duration-300">
-                                </div>
+                                <span class="relative z-10"><i class="fa-solid fa-rocket mr-2"></i> Deploy
+                                    Registration</span>
                             </button>
                         </div>
-
                     </form>
                 </div>
             </div>
         </main>
-
-        <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-                    <div>
-                        <h4 class="text-3xl font-heading font-black text-beige mb-4">
-                            UNI<span class="text-gold">CORN</span>
-                        </h4>
-                        <p class="text-beige/70 font-light leading-relaxed">
-                            An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation
-                            of
-                            entrepreneurial minds through innovation and excellence.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
-                        <ul class="space-y-2">
-                            <li><a href="index.html"
-                                    class="text-beige/70 hover:text-gold transition duration-300">Home</a>
-                            </li>
-                            <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About
-                                    the
-                                    Fest</a></li>
-                            <li><a href="events.html"
-                                    class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
-                            <li><a href="schedule.html"
-                                    class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
-                            <li><a href="contact.html"
-                                    class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
-                            <li><a href="glimpse.html"
-                                    class="text-beige/70 hover:text-gold transition duration-300">Past
-                                    Glimpses</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
-                        <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
-                                class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
-                        <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
-
-                        <div class="flex space-x-4 mt-6">
-                            <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
-                                target="_blank" title="@ecell_hindujacollege"
-                                class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
-                                <i class="fa-brands fa-instagram text-xl"></i>
-                            </a>
-
-                            <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
-                                title="E-Cell KPB Hinduja College"
-                                class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
-                                <i class="fa-brands fa-linkedin-in text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
-                    <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
-                        E-Cell K.P.B. Hinduja College.</p>
-                </div>
-            </div>
-        </footer>
     </div>
 
-    <div id="custom-notification" class="fixed inset-0 flex items-center justify-center z-[100] hidden backdrop-blur-sm bg-black/40">
-        <div class="bg-pitch border-2 border-emerald-glow p-8 rounded-xl shadow-[0_0_30px_rgba(16,185,129,0.4)] max-w-sm w-full text-center transform scale-90 transition-transform duration-300" id="notification-box">
-            <div class="mb-4 text-emerald-glow text-5xl">
-                <i class="fa-solid fa-circle-check" id="notification-icon"></i>
+    <div id="custom-notification"
+        class="fixed inset-0 flex items-center justify-center z-[100] hidden backdrop-blur-sm bg-black/40">
+        <div class="bg-pitch border-2 border-emerald-glow p-8 rounded-xl shadow-[0_0_30px_rgba(16,185,129,0.4)] max-w-sm w-full text-center transform scale-90 transition-transform duration-300"
+            id="notification-box">
+            <div class="mb-4 text-emerald-glow text-5xl"><i class="fa-solid fa-circle-check" id="notification-icon"></i>
             </div>
-            <h2 class="font-gaming text-2xl text-white mb-2 tracking-widest" id="notification-title">MISSION SUCCESS</h2>
-            <p class="font-mono text-beige/70 text-sm mb-6" id="notification-message">Your registration has been deployed to the mainframe.</p>
-            <button onclick="closeNotification()" class="px-8 py-2 bg-emerald-glow text-pitch font-gaming font-bold hover:bg-white transition-colors duration-300">
-                CONFIRM_
-            </button>
+            <h2 class="font-gaming text-2xl text-white mb-2 tracking-widest" id="notification-title">SUCCESS</h2>
+            <p class="font-mono text-beige/70 text-sm mb-6" id="notification-message">Deployed to mainframe.</p>
+            <button onclick="closeNotification()"
+                class="px-8 py-2 bg-emerald-glow text-pitch font-gaming font-bold hover:bg-white transition-colors duration-300">CONFIRM_</button>
         </div>
     </div>
 
+    <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div>
+                    <h4 class="text-3xl font-heading font-black text-beige mb-4">
+                        UNI<span class="text-gold">CORN</span>
+                    </h4>
+                    <p class="text-beige/70 font-light leading-relaxed">
+                        An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation of
+                        entrepreneurial minds through innovation and excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-beige/70 hover:text-gold transition duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About the
+                                Fest</a></li>
+                        <li><a href="events.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
+                        <li><a href="schedule.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
+                        <li><a href="contact.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
+                    <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
+                            class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
+                    <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
+
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                            target="_blank" title="@ecell_hindujacollege"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                            title="E-Cell KPB Hinduja College"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
+                <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
+                    E-Cell K.P.B. Hinduja College.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/registration.js"></script>
-
 </body>
 
 </html>
