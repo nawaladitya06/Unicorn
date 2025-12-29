@@ -6,7 +6,7 @@ const CONTENT = document.getElementById('encrypted-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
 
 // 🔴 SET THIS DATE (Format: YYYY-MM-DDTHH:MM:SS)
-const UNLOCK_DATE = new Date("2025-12-13T21:30:00");
+const UNLOCK_DATE = new Date("2026-02-01T09:00:00");
 
 function checkStatus() {
     const now = new Date();

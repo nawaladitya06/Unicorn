@@ -4,7 +4,7 @@
 const LOCK_SCREEN = document.getElementById('lock-screen');
 const MAIN = document.getElementById('main-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
-const UNLOCK_DATE = new Date("2024-12-13T21:30:00");
+const UNLOCK_DATE = new Date("2026-02-01T09:00:00");
 
 function checkLock() {
     const now = new Date();
@@ -36,7 +36,7 @@ function playIntroSequence() {
         if (INTRO_SCREEN) INTRO_SCREEN.classList.add('fade-out-intro');
         if (MAIN) {
             MAIN.style.opacity = '1';
-            checkInitialParams(); // Check URL params after reveal
+            checkInitialParams(); 
         }
     }, 2800);
     setTimeout(() => { if (INTRO_SCREEN) INTRO_SCREEN.style.display = 'none'; }, 3600);
@@ -45,62 +45,118 @@ function playIntroSequence() {
 window.onload = checkLock;
 
 // ==========================================
-//  2. DYNAMIC FIELD GENERATOR (ALL 14 EVENTS)
+//  2. DYNAMIC DATA MAPPING
 // ==========================================
 const teamSizeMapping = {
-    "Crisis Cabinet": 2, "Flip the Argument": 1, "Flop Tank": 3,
-    "Solo Surge": 1, "The Grand Choreo": 6, "Unicorn Icon": 1,
-    "The Grand Hunt": 3, "War in the Boardroom": 2, "PR Rally": 1,
-    "Face Painting": 2, "Wall Décor": 2, "Crochet Making": 1,
-    "Auction": 2, "Story Writing": 1
+    "Crisis Cabinet": { min: 2, max: 2 }, 
+    "Mind Switch": { min: 1, max: 1 }, 
+    "Flop Tank": { min: 3, max: 3 },
+    "PR Rally": { min: 0, max: 0 }, 
+    "FacePop": { min: 2, max: 2 }, 
+    "Wallistry": { min: 2, max: 2 }, 
+    "Crochet Chronicles": { min: 1, max: 1 },
+    "60 Seconds of Fame": { min: 1, max: 1 }, 
+    "From Prompt to Plot": { min: 1, max: 1 }, 
+    "Solo Surge": { min: 1, max: 1 }, 
+    "Battle of Steps": { min: 6, max: 10 }, 
+    "Vogue Vista": { min: 7, max: 10 },
+    "Face of Unicorn": { min: 2, max: 2 },
+    "Campus Chase": { min: 3, max: 3 },
+    "The Boardgame Arena": { min: 2, max: 2 }
 };
 
-function generatePlayerFields(size) {
+let currentPlayerCount = 0;
+let currentMaxPlayers = 0;
+
+function generatePlayerFields(config) {
     const container = document.getElementById('player-profiles-container');
     if (!container) return;
+    
     container.innerHTML = ''; 
+    currentPlayerCount = 0;
+    currentMaxPlayers = config.max;
 
-    for (let i = 1; i <= size; i++) {
-        const block = document.createElement('div');
-        block.className = "p-6 bg-white/5 border border-white/10 rounded-xl mb-6 animate-pop-in";
-        block.innerHTML = `
-            <h4 class="text-gold font-gaming text-sm mb-4 tracking-widest uppercase">PLAYER ${i} PROFILE</h4>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                    <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Full Name</label>
-                    <input type="text" name="Player${i}_Name" required class="w-full gaming-input rounded p-3 text-sm" placeholder="Codename">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Email</label>
-                    <input type="email" name="Player${i}_Email" required class="w-full gaming-input rounded p-3 text-sm" placeholder="Comms">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Phone</label>
-                    <input type="tel" name="Player${i}_Phone" required class="w-full gaming-input rounded p-3 text-sm" placeholder="Hotline">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">PRN Number</label>
-                    <input type="text" name="Player${i}_PRN" required class="w-full gaming-input rounded p-3 text-sm" placeholder="ID Number">
-                </div>
-                <div class="space-y-2 md:col-span-2">
-                    <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Class (Level)</label>
-                    <select name="Player${i}_Year" required class="w-full gaming-input rounded p-3 text-sm">
-                        <option value="">-- SELECT LEVEL --</option>
-                        <option value="FY">FY (Level 1)</option>
-                        <option value="SY">Level 2 (SY)</option>
-                        <option value="TY">Level 3 (TY)</option>
-                        <option value="PG">PG (Masters)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/5">
-                <label class="text-[10px] text-emerald-glow uppercase block mb-2 tracking-widest">Upload ID Evidence (Player ${i})</label>
-                <input type="file" name="Player${i}_ID" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-emerald-glow/20 file:text-emerald-glow hover:file:bg-emerald-glow transition-all">
-            </div>
-        `;
-        container.appendChild(block);
+    // Remove existing "Add" button if any
+    const oldBtn = document.getElementById('dynamic-controls');
+    if (oldBtn) oldBtn.remove();
+
+    if (config.max === 0) {
+        container.innerHTML = `
+            <div class="p-8 border-2 border-dashed border-emerald-glow/20 rounded-xl text-center bg-emerald-glow/5 animate-pop-in">
+                <i class="fa-solid fa-users-gear text-4xl text-emerald-glow mb-4"></i>
+                <h4 class="text-white font-gaming text-sm uppercase mb-2">Contingent Protocol Active</h4>
+                <p class="text-beige/60 font-mono text-[10px] leading-relaxed">
+                    PR Rally does not require individual profiles. Submission will be processed via Contingent Ops data.
+                </p>
+            </div>`;
+        return;
+    }
+
+    for (let i = 1; i <= config.min; i++) {
+        addPlayerBlock(i);
+    }
+
+    if (config.max > config.min) {
+        const btnContainer = document.createElement('div');
+        btnContainer.id = "dynamic-controls";
+        btnContainer.className = "flex justify-center pt-4";
+        btnContainer.innerHTML = `
+            <button type="button" onclick="addNewPlayer()" id="add-player-btn" 
+                class="px-6 py-2 border border-emerald-glow text-emerald-glow font-gaming text-[10px] hover:bg-emerald-glow hover:text-pitch transition-all uppercase tracking-widest">
+                <i class="fa-solid fa-plus mr-2"></i> Add Operative (<span id="count-display">${currentPlayerCount}</span>/${currentMaxPlayers})
+            </button>`;
+        container.after(btnContainer);
     }
 }
+
+function addPlayerBlock(index) {
+    const container = document.getElementById('player-profiles-container');
+    const block = document.createElement('div');
+    block.className = "p-6 bg-white/5 border border-white/10 rounded-xl mb-6 animate-pop-in";
+    block.innerHTML = `
+        <h4 class="text-gold font-gaming text-sm mb-4 tracking-widest uppercase">PLAYER ${index} PROFILE</h4>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+                <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Full Name</label>
+                <input type="text" name="Player${index}_Name" required class="w-full gaming-input rounded p-3 text-sm">
+            </div>
+            <div class="space-y-2">
+                <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Email</label>
+                <input type="email" name="Player${index}_Email" required class="w-full gaming-input rounded p-3 text-sm">
+            </div>
+            <div class="space-y-2">
+                <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Phone</label>
+                <input type="tel" name="Player${index}_Phone" required class="w-full gaming-input rounded p-3 text-sm">
+            </div>
+            <div class="space-y-2">
+                <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">PRN Number</label>
+                <input type="text" name="Player${index}_PRN" required class="w-full gaming-input rounded p-3 text-sm">
+            </div>
+            <div class="space-y-2 md:col-span-2">
+                <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Class (Level)</label>
+                <select name="Player${index}_Year" required class="w-full gaming-input rounded p-3 text-sm">
+                    <option value="">-- SELECT LEVEL --</option>
+                    <option value="FY">FY</option><option value="SY">SY</option><option value="TY">TY</option><option value="PG">PG</option>
+                </select>
+            </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-white/5">
+            <label class="text-[10px] text-emerald-glow uppercase block mb-2 tracking-widest">Upload ID Card</label>
+            <input type="file" name="Player${index}_ID" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-emerald-glow/20 file:text-emerald-glow hover:file:bg-emerald-glow transition-all">
+        </div>`;
+    container.appendChild(block);
+    currentPlayerCount++;
+}
+
+window.addNewPlayer = function() {
+    if (currentPlayerCount < currentMaxPlayers) {
+        addPlayerBlock(currentPlayerCount + 1);
+        document.getElementById('count-display').innerText = currentPlayerCount;
+        if (currentPlayerCount === currentMaxPlayers) {
+            document.getElementById('add-player-btn').remove();
+        }
+    }
+};
 
 // ==========================================
 //  3. SYNC LOGIC
@@ -109,11 +165,10 @@ function checkInitialParams() {
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('event');
     const eventMapping = { 
-        "1":"Crisis Cabinet", "2":"Flip the Argument", "3":"Flop Tank", 
-        "4":"Solo Surge", "5":"The Grand Choreo", "6":"Unicorn Icon", 
-        "7":"The Grand Hunt", "8":"War in the Boardroom", "9":"PR Rally",
-        "10":"Face Painting", "11":"Wall Décor", "12":"Crochet Making",
-        "13":"Auction", "14":"Story Writing"
+        "1": "Crisis Cabinet", "2": "Mind Switch", "3": "Flop Tank", "4": "PR Rally",
+        "5": "FacePop", "6": "Wallistry", "7": "Crochet Chronicles", "8": "60 Seconds of Fame",
+        "9": "From Prompt to Plot", "10": "Solo Surge", "11": "Battle of Steps", "12": "Vogue Vista",
+        "13": "Face of Unicorn", "14": "Campus Chase", "15": "The Boardgame Arena"
     };
 
     if (eventId && eventMapping[eventId]) {
@@ -128,11 +183,10 @@ function checkInitialParams() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const eventRadios = document.querySelectorAll('input[name="Event"]');
-    eventRadios.forEach(radio => {
+    document.querySelectorAll('input[name="Event"]').forEach(radio => {
         radio.addEventListener('change', (e) => {
-            const size = teamSizeMapping[e.target.value] || 1;
-            generatePlayerFields(size);
+            const config = teamSizeMapping[e.target.value] || { min: 1, max: 1 };
+            generatePlayerFields(config);
         });
     });
 });
@@ -157,7 +211,6 @@ if(form) {
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
-        // 1. Strict Validation Check (HTML5 + Manual)
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
@@ -168,32 +221,42 @@ if(form) {
         submitBtn.disabled = true;
 
         try {
+            const params = new URLSearchParams();
             const formData = new FormData(form);
-            const event = formData.get('Event');
-            const size = teamSizeMapping[event] || 1;
-
-            // Process IDs for all players as Base64
-            for (let i = 1; i <= size; i++) {
-                const input = form.querySelector(`input[name="Player${i}_ID"]`);
-                if (input && input.files[0]) {
-                    const data = await readFileAsBase64(input.files[0]);
-                    formData.append(`Player${i}_FileData`, data.data);
+            
+            for (const [key, value] of formData.entries()) {
+                if (!(value instanceof File)) {
+                    params.append(key, value);
                 }
             }
 
-            // Convert to URLSearchParams for Google Scripts
-            const params = new URLSearchParams();
-            for (const [key, value] of formData) { params.append(key, value); }
+            // Correctly loop through exactly how many players are currently on screen
+            for (let i = 1; i <= currentPlayerCount; i++) {
+                const input = form.querySelector(`input[name="Player${i}_ID"]`);
+                if (input && input.files[0]) {
+                    const data = await readFileAsBase64(input.files[0]);
+                    params.append(`Player${i}_FileData`, data.data);
+                    params.append(`Player${i}_FileName`, data.name);
+                }
+            }
 
-            await fetch(scriptURL, { method: 'POST', body: params });
+            const response = await fetch(scriptURL, { method: 'POST', body: params });
             
-            showNotification("SUCCESS", "Registration Deployed to Mainframe.");
-            form.reset();
-            document.getElementById('player-profiles-container').innerHTML = '<div class="text-center py-10 border-2 border-dashed border-white/5 rounded-xl"><p class="text-gray-500 font-mono text-xs uppercase tracking-widest animate-pulse">Select a Mission to deploy fields...</p></div>';
+            if (response.ok) {
+                showNotification("SUCCESS", "Registration Deployed to Mainframe.");
+                form.reset();
+                document.getElementById('player-profiles-container').innerHTML = 
+                    '<div class="text-center py-10 border-2 border-dashed border-white/5 rounded-xl"><p class="text-gray-500 font-mono text-xs uppercase tracking-widest animate-pulse">Select a Mission to deploy fields...</p></div>';
+                const oldBtn = document.getElementById('dynamic-controls');
+                if (oldBtn) oldBtn.remove();
+            } else {
+                throw new Error("Mainframe rejection");
+            }
         } catch (err) {
-            showNotification("ERROR", "Deployment failed. Check connection.", true);
+            showNotification("ERROR", "Deployment failed. Check connection or data size.", true);
         } finally {
-            submitBtn.innerHTML = origText; submitBtn.disabled = false;
+            submitBtn.innerHTML = origText; 
+            submitBtn.disabled = false;
         }
     });
 }
@@ -203,10 +266,11 @@ if(form) {
 // ==========================================
 function showNotification(title, message, isError = false) {
     const overlay = document.getElementById('custom-notification');
-    const box = document.getElementById('notification-box');
     document.getElementById('notification-title').innerText = title;
     document.getElementById('notification-message').innerText = message;
     overlay.classList.remove('hidden');
 }
 
-function closeNotification() { document.getElementById('custom-notification').classList.add('hidden'); }
+function closeNotification() { 
+    document.getElementById('custom-notification').classList.add('hidden'); 
+}

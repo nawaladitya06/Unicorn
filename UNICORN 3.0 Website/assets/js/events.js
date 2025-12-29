@@ -2,290 +2,285 @@
 //  1. FULL EVENT DATA (14 EVENTS)
 // ==========================================
 const events = [
+    // --- BUSINESS STRATEGY ---
     {
         id: 1,
         title: "Crisis Cabinet",
         tagline: "Leadership Under Pressure",
-        desc: "Represent a business in a global industry and navigate intense environmental and economic crises with strategic thinking.",
-        fullInfo: "Every participant represents a business from the same industry but located in different nations. Simulates real-world pressure faced by business leaders during moments of crisis.",
+        fullInfo: "Welcome to the World Crisis Cabinet, where every participant will represent a business from the same industry, but located in different nations. The game challenges leadership skills, communication, and strategic thinking, simulating real-world pressure faced by business leaders during moments of crisis.",
         rules: [
-            "Consists of 3 Rounds involving environmental, economic, and financial crises.",
-            "Each group must designate a CEO and a COO.",
-            "Questions directed at one role cannot be answered by the other (incurs negatives).",
-            "Use of electronic devices, AI, and cross-talking is strictly prohibited.",
-            "Participants must carry a laptop for Round 2."
+            "The event consists of 3 Rounds.",
+            "Participants will encounter crisis situations related to the environment, economy, and finance.",
+            "Each group must designate a CEO and a COO; questions directed at one role cannot be answered by the other.",
+            "Electronic devices and Cross talking between different contingents is not permitted.",
+            "Participants should carry their laptop compulsory for Round 2.",
+            "Use of AI is strictly prohibited."
         ],
         category: "Business",
-        day: "TBD",
         fee: "Free",
-        team: "2 Players (CEO & COO)",
-        color: "text-purple-400",
-        border: "border-purple-500",
-        img: "assets/images/events/event1.jpg"
+        team: "2 Players",
+        img: "assets/images/events/event1.jpg",
+        color: "text-purple-400"
     },
     {
         id: 2,
-        title: "Flip the Argument",
-        tagline: "Mind Switch",
-        desc: "A two-round challenge featuring a business quiz followed by a round where you must instantly defend opposing viewpoints.",
-        fullInfo: "Measures both what you know and how you think. Qualifiers must instantly switch perspectives and defend opposing viewpoints on the same motion.",
+        title: "Mind Switch",
+        tagline: "Dynamic Adaptation",
+        fullInfo: "Mind Switch is a dynamic two-round challenge designed to measure both what you know and how you think. Participants first face a quiz followed by a thought-provoking round where qualifiers must instantly switch perspectives and defend opposing viewpoints.",
         rules: [
-            "Round 1: Knowledge Check (20-25 min quiz) on business, brands, and current affairs.",
-            "Round 2: The Inner Debate (Self-Defense). Speak FOR a motion (30-45s) then AGAINST (30-45s).",
+            "The event consists of 2 Rounds.",
+            "Round 1: The Knowledge Check covering business, economics, brands, and startups (20-25 mins).",
+            "Round 2: The Inner Debate. Speak FOR a motion (30–45s) then immediately switch and speak AGAINST the same motion (30–45s).",
             "Mobile phones are strictly prohibited.",
-            "Abusive language or vulgarity leads to disqualification."
+            "Abusive language will lead to negative marking or disqualification."
         ],
         category: "Business",
-        day: "TBD",
         fee: "Free",
         team: "Solo",
-        color: "text-green-400",
-        border: "border-green-500",
-        img: "assets/images/events/event2.jpg"
+        img: "assets/images/events/event2.jpg",
+        color: "text-green-400"
     },
     {
         id: 3,
         title: "Flop Tank",
         tagline: "The Flop Factory",
-        desc: "A parody pitch event where you must creatively justify the most impractical and useless product ideas.",
-        fullInfo: "The challenge is to convince judges why a terrible idea deserves funding using confidence, creativity, and humor. Defend absurd business models and flaws.",
+        fullInfo: "A parody of Shark Tank where participants intentionally pitch the worst, most impractical, useless, or hilarious product ideas. Convince the judges why this terrible idea deserves funding using confidence, creativity, and humor.",
         rules: [
-            "Teams of 2-3 participants. Consists of 3 rounds.",
-            "Round 1: Presentation of ridiculous features and overpriced valuations.",
-            "Round 2: Shark Attack (Q&A). Round 3: Deal or Disaster.",
-            "Products must be fictional (no real brands).",
-            "Offensive or political content is strictly prohibited."
+            "Each team must consist of 2 to 3 participants.",
+            "The event consists of 3 rounds: Presentation, Shark Attack (Q&A), and Deal or Disaster.",
+            "The product must be intentionally bad, impractical, and fictional.",
+            "Offensive, political, religious, or explicit content is strictly prohibited.",
+            "Use of PPT, charts, or props is optional."
         ],
         category: "Business",
-        day: "TBD",
         fee: "Free",
         team: "2-3 Players",
-        color: "text-red-500",
-        border: "border-red-500",
-        img: "assets/images/events/event3.jpg"
+        img: "assets/images/events/event3.jpg",
+        color: "text-red-500"
     },
     {
         id: 4,
-        title: "Solo Surge",
-        tagline: "Echoes of One",
-        desc: "A power-packed solo singing battle where vocalists own the stage across all genres.",
-        fullInfo: "A celebration of confidence and vocal energy. Performers must electrify the audience and turn every note into a statement.",
-        rules: [
-            "Performance Duration: 3–5 minutes. Setup: 1–2 minutes.",
-            "Music (MP3/MP4) must be submitted 24 hours in advance.",
-            "Content must be appropriate for a college audience.",
-            "Backing tracks allowed but must not misrepresent vocal skill."
-        ],
-        category: "Performing Arts",
-        day: "TBD",
-        fee: "Free",
-        team: "Solo/Group",
-        color: "text-blue-400",
-        border: "border-blue-500",
-        img: "assets/images/events/event4.jpg"
-    },
-    {
-        id: 5,
-        title: "The Grand Choreo",
-        tagline: "Battle of Steps",
-        desc: "A high-intensity dance showdown focusing on power, precision, and perfect synchronization.",
-        fullInfo: "Teams compete head-to-head to claim supremacy. This event emphasizes innovation and jaw-dropping moves in a cohesive crew performance.",
-        rules: [
-            "Performance time: 5-7 minutes. Setup time: 3 minutes.",
-            "Use of Mashups, remixes, and medleys is allowed.",
-            "Song lyrics must be decent; item songs are not allowed.",
-            "Use of fire, smoke, or hazardous effects is prohibited."
-        ],
-        category: "Performing Arts",
-        day: "TBD",
-        fee: "Free",
-        team: "4-6 Players",
-        color: "text-yellow-400",
-        border: "border-yellow-500",
-        img: "assets/images/events/event5.jpg"
-    },
-    {
-        id: 6,
-        title: "Unicorn Icon",
-        tagline: "Icon of the Year",
-        desc: "The ultimate pageant featuring a ramp walk, monologue round, and talent showcase.",
-        fullInfo: "More than a competition; it's a celebration of talent and charisma to find the ultimate representative of the college.",
-        rules: [
-            "Round 1: Introduction (30-60s) and thematic ramp walk.",
-            "Round 2: Spin the wheel for a 1-minute monologue/speech based on a scenario.",
-            "Round 3: Talent showcase (max 3 mins) and final Q&A.",
-            "Evaluated on creativity, stage confidence, and eloquence."
-        ],
-        category: "Icon",
-        day: "TBD",
-        fee: "Free",
-        team: "Solo",
-        color: "text-emerald-400",
-        border: "border-emerald-500",
-        img: "assets/images/events/event6.jpg"
-    },
-    {
-        id: 7,
-        title: "The Grand Hunt",
-        tagline: "Campus Chase",
-        desc: "A high-speed scavenger hunt turning the campus into a giant puzzle.",
-        fullInfo: "Every clue is a trick and every answer is a step closer to the secret. Solve smart and move fast through a sequence of clues.",
-        rules: [
-            "All teams receive the first clue simultaneously.",
-            "Clues must not be damaged, removed, or shared.",
-            "Use of mobile phones is strictly prohibited.",
-            "First 8 teams to register (First Come First Serve)."
-        ],
-        category: "Management",
-        day: "TBD",
-        fee: "Free",
-        team: "3 Players",
-        color: "text-pink-400",
-        border: "border-pink-500",
-        img: "assets/images/events/event7.jpg"
-    },
-    {
-        id: 8,
-        title: "War in the Boardroom",
-        tagline: "The Decision Arena",
-        desc: "Step into a financial simulation to trade, negotiate, and speculate on Labour and property.",
-        fullInfo: "An innovative property trading game where currency and real estate are just the beginning. Navigate inflation and market shifts.",
-        rules: [
-            "Conducted in two rounds with 6 contingents each.",
-            "Winners declared based on overall performance across both rounds.",
-            "No electronic devices or cross-talk between contingents.",
-            "Disrespectful behavior leads to immediate disqualification."
-        ],
-        category: "Management",
-        day: "TBD",
-        fee: "Free",
-        team: "2 Players",
-        color: "text-white",
-        border: "border-gray-500",
-        img: "assets/images/events/event8.jpg"
-    },
-    {
-        id: 9,
         title: "PR Rally",
         tagline: "OTT Campaign Challenge",
-        desc: "Design creative PR campaigns to promote digital shows and streaming services.",
-        fullInfo: "Showcase strategic communication and branding in the era of binge-watching. Create campaigns for original digital content.",
+        fullInfo: "Participants create PR campaigns centered on the dynamic world of OTT platforms. Design campaigns that promote digital shows, streaming services, or original content.",
         rules: [
+            "No dangerous stunts or harmful actions.",
             "Props must be safe and banners must be lightweight.",
-            "No unapproved loudspeakers; handheld drums/whistles allowed.",
-            "Late arrival or delays result in point deductions.",
+            "No unapproved loudspeakers; handheld props like drums are allowed.",
+            "Late arrival/delay will result in points deduction.",
             "Vulgarity or abusive language leads to disqualification."
         ],
         category: "Rally",
-        day: "TBD",
         fee: "Free",
-        team: "TBD",
-        color: "text-indigo-400",
-        border: "border-indigo-500",
-        img: "assets/images/events/event9.jpg"
+        team: "Solo",
+        img: "assets/images/events/event4.jpg",
+        color: "text-indigo-400"
     },
+
+    // --- FINE ARTS ---
     {
-        id: 10,
-        title: "Face Painting",
-        tagline: "Canvas of the Soul",
-        desc: "Express your artistic vision through live face painting.",
-        fullInfo: "Transform the human face into a work of art based on a given theme. Creativity and precision are key.",
+        id: 5,
+        title: "FacePop",
+        tagline: "Faces Become Art",
+        fullInfo: "Participants transform faces into living canvases using bold designs and imagination to create striking visual stories. From abstract patterns to fantasy looks, it celebrates individuality and flair.",
         rules: [
-            "Participants must bring their own skin-friendly colors and brushes.",
-            "Time limit: 60 minutes.",
-            "Theme will be announced on the spot.",
-            "No use of stencils or reference images allowed."
+            "Teams of two: one painter and one model.",
+            "The theme will be announced on the spot.",
+            "Participants must bring their own paints, brushes, and mirrors.",
+            "Only skin-safe, non-toxic, and washable colors are allowed.",
+            "Models should not have pre-drawn sketches or base makeup before start."
         ],
         category: "Fine Arts",
-        day: "TBD",
         fee: "Free",
         team: "2 Players",
-        color: "text-orange-400",
-        border: "border-orange-500",
-        img: "assets/images/events/event10.jpg"
+        img: "assets/images/events/event5.jpg",
+        color: "text-orange-400"
+    },
+    {
+        id: 6,
+        title: "Wallistry",
+        tagline: "Art Meets Aesthetics",
+        fullInfo: "Design and decorate walls as immersive visual experiences, blending creativity and artistic technique. Wallistry encourages participants to explore innovative materials and concepts beyond paint.",
+        rules: [
+            "Time limit: 2 hours to complete the wall décor.",
+            "Theme announced on the spot.",
+            "Only removable and non-damaging materials are allowed.",
+            "Nails, drilling, spray paint, or permanent glue are strictly prohibited.",
+            "Damage to property results in disqualification."
+        ],
+        category: "Fine Arts",
+        fee: "Free",
+        team: "2 Players",
+        img: "assets/images/events/event6.jpg",
+        color: "text-amber-400"
+    },
+    {
+        id: 7,
+        title: "Crochet Chronicles",
+        tagline: "Stories Through Stitches",
+        fullInfo: "A creative crochet event that invites participants to tell stories through stitches, patterns, and textures. It highlights the charm of slow craft and thoughtful design.",
+        rules: [
+            "The piece must be created entirely during the event.",
+            "Participants must bring their own hooks, yarns, and scissors.",
+            "Pre-started or partially completed pieces are strictly prohibited.",
+            "Sharing of materials once the event begins is not permitted.",
+            "Designs must be executed from memory or creativity."
+        ],
+        category: "Fine Arts",
+        fee: "Free",
+        team: "Solo",
+        img: "assets/images/events/event7.jpg",
+        color: "text-teal-400"
+    },
+
+    // --- LITERACY ARTS ---
+    {
+        id: 8,
+        title: "60 Seconds of Fame",
+        tagline: "JAM Competition",
+        fullInfo: "A dynamic on-the-spot speaking competition that challenges participants to think fast and speak with confidence for one minute. Present thoughts clearly without hesitation, repetition, or deviation.",
+        rules: [
+            "Topics given on the spot; speech duration exactly 60 seconds.",
+            "15-20 seconds provided to think before starting.",
+            "Speech must be in English only.",
+            "Use of notes, mobile phones, or external aids is not allowed.",
+            "Vulgar language or gestures result in immediate disqualification."
+        ],
+        category: "Literacy Arts",
+        fee: "Free",
+        team: "Solo",
+        img: "assets/images/events/event8.jpg",
+        color: "text-rose-400"
+    },
+    {
+        id: 9,
+        title: "From Prompt to Plot",
+        tagline: "Creative Story Writing",
+        fullInfo: "Turn a simple prompt into an imaginative, expressive, and well-crafted narrative. Build characters and shape plots using just imagination and words.",
+        rules: [
+            "Round 1: 30 minutes to write a story based on a twist prompt.",
+            "Length: 400–500 words; English only.",
+            "Round 2: Preparation (15 mins) then narrate the story to judges (3–5 mins).",
+            "Dramatic delivery used with expressions and tone.",
+            "No use of smartphones or references."
+        ],
+        category: "Literacy Arts",
+        fee: "Free",
+        team: "Solo",
+        img: "assets/images/events/event9.jpg",
+        color: "text-cyan-400"
+    },
+
+    // --- PERFORMING ARTS ---
+    {
+        id: 10,
+        title: "Solo Surge",
+        tagline: "Echoes of One",
+        fullInfo: "A power-packed solo singing battle across all genres. Electrify the audience and turn every note into a statement.",
+        rules: [
+            "Performance duration: 3–5 minutes.",
+            "Music (MP3/MP4) must be submitted 24 hours in advance.",
+            "Content must be appropriate for a college audience.",
+            "Backing tracks are permitted but must not contain pre-recorded lead vocals.",
+            "Setup time: 1–2 minutes."
+        ],
+        category: "Performing Arts",
+        fee: "Free",
+        team: "Solo",
+        img: "assets/images/events/event10.jpg",
+        color: "text-blue-400"
     },
     {
         id: 11,
-        title: "Wall Décor",
-        tagline: "Design Your Space",
-        desc: "Create beautiful, thematic wall decorations using fine art techniques.",
-        fullInfo: "Showcase your interior design skills by creating decorative wall pieces using sustainable or craft materials.",
+        title: "Battle of Steps",
+        tagline: "High-Intensity Dance",
+        fullInfo: "Teams compete head-to-head to claim supremacy on the stage. Pushes participants to deliver jaw-dropping moves with perfect synchronization.",
         rules: [
-            "Materials provided must be used effectively.",
-            "Judgment based on aesthetics, neatness, and theme adherence.",
-            "Time limit: 90 minutes.",
-            "Pre-made items are not allowed."
+            "Performance time: 4-7 minutes; setup time: 3 minutes.",
+            "Mashups, remixes, and medleys are allowed.",
+            "Participants must submit costumes, props, and audio for vetting.",
+            "Song lyrics must be decent; item songs are prohibited.",
+            "Fire, smoke, or hazardous effects are not allowed."
         ],
-        category: "Fine Arts",
-        day: "TBD",
+        category: "Performing Arts",
         fee: "Free",
-        team: "2-3 Players",
-        color: "text-amber-400",
-        border: "border-amber-500",
-        img: "assets/images/events/event11.jpg"
+        team: "6-10 Players",
+        img: "assets/images/events/event11.jpg",
+        color: "text-yellow-400"
     },
     {
         id: 12,
-        title: "Crochet Making",
-        tagline: "Thread and Needle",
-        desc: "Showcase your craftsmanship in the delicate art of crochet.",
-        fullInfo: "A test of patience and skill. Create intricate patterns and functional art using just a hook and yarn.",
+        title: "Vogue Vista",
+        tagline: "Fashion Show",
+        fullInfo: "The runway becomes a canvas for participants to bring their vision, culture, and attitude to life. Showcases originality and stage presence through street style, ethnic fusion, or sustainable fashion.",
         rules: [
-            "Participants must carry their own hooks and yarn.",
-            "A specific pattern or object will be assigned.",
-            "Time limit: 120 minutes.",
-            "Selection based on stitch consistency and complexity."
+            "Team Size: 8-10 members (includes models and designers).",
+            "Maximum time limit: 7-8 minutes.",
+            "Costumes must be appropriate and uphold stage dignity.",
+            "Religiously offensive or inappropriate elements must be avoided.",
+            "Audio (MP3) must be submitted during venue registration."
         ],
-        category: "Fine Arts",
-        day: "TBD",
+        category: "Performing Arts",
         fee: "Free",
-        team: "Solo",
-        color: "text-teal-400",
-        border: "border-teal-500",
-        img: "assets/images/events/event12.jpg"
+        team: "8-10 Players",
+        img: "assets/images/events/event12.jpg",
+        color: "text-indigo-500"
     },
     {
         id: 13,
-        title: "Auction",
-        tagline: "Highest Bidder",
-        desc: "A literacy arts competition centered around the mechanics of a live auction.",
-        fullInfo: "Master the art of persuasion and strategy. Bid for rare items or literary works while managing a virtual budget.",
+        title: "Face of Unicorn",
+        tagline: "Mr. & Miss Unicorn",
+        fullInfo: "A celebration of talent, charisma, and personality to find the ultimate representatives of their college. Pageant assessing heroes, rebels, and icons within all.",
         rules: [
-            "Teams will be given a set starting budget.",
-            "Bidding logic and strategic reasoning will be judged.",
-            "Participants must not exceed their budget limits.",
-            "Collusion between teams leads to disqualification."
+            "Round 1: Elimination intro and thematic ramp walk (30-60s).",
+            "Round 2: Talent Round (singing, dancing, magic, etc.) - max 3 mins.",
+            "Round 3: Final Question assessing agility of thought and eloquence.",
+            "Evaluated on stage presence, confidence, and captivation."
         ],
-        category: "Literacy Arts",
-        day: "TBD",
+        category: "Icon",
         fee: "Free",
-        team: "2 Players",
-        color: "text-rose-400",
-        border: "border-rose-500",
-        img: "assets/images/events/event13.jpg"
+        team: "1 Male & 1 Female",
+        img: "assets/images/events/event13.jpg",
+        color: "text-emerald-400"
     },
+
+    // --- MANAGEMENT ---
     {
         id: 14,
-        title: "Story Writing",
-        tagline: "The Written Word",
-        desc: "Unleash your imagination and master the craft of storytelling.",
-        fullInfo: "Craft a compelling narrative based on specific prompts or genres provided at the start of the event.",
+        title: "Campus Chase",
+        tagline: "The Grand Hunt",
+        fullInfo: "The Grand Hunt turns the campus into a giant puzzle where every clue is a trick and teams chase the same secret. Solve smart and move fast to enjoy the chaos.",
         rules: [
-            "Word limit: 800 - 1000 words.",
-            "Theme/Prompt will be given at the venue.",
-            "Use of internet or AI for drafting is strictly prohibited.",
-            "Judgment based on plot, vocabulary, and emotional impact."
+            "All teams receive the first clue simultaneously.",
+            "Correct answers to clue sequences lead to the next location and finish point.",
+            "Clues must not be damaged, removed, or shared.",
+            "Use of mobile phones is strictly prohibited.",
+            "Any form of cheating results in immediate disqualification."
         ],
-        category: "Literacy Arts",
-        day: "TBD",
+        category: "Management",
         fee: "Free",
-        team: "Solo",
-        color: "text-cyan-400",
-        border: "border-cyan-500",
-        img: "assets/images/events/event14.jpg"
+        team: "3 Players",
+        img: "assets/images/events/event14.jpg",
+        color: "text-pink-400"
+    },
+    {
+        id: 15,
+        title: "The Boardgame Arena",
+        tagline: "Decision Battle",
+        fullInfo: "A financial simulation where textbooks are thrown out for real-world boardroom challenges. Trade, negotiate, and speculate on Labour in a property trading game with shifting inflation threats.",
+        rules: [
+            "Conducted in two rounds with 6 contingents competing in each.",
+            "Winners declared based on overall performance across both rounds.",
+            "Electronic devices and cross-talk between contingents are prohibited.",
+            "Unprofessional behavior leads to disqualification."
+        ],
+        category: "Management",
+        fee: "Free",
+        team: "2 Players",
+        img: "assets/images/events/event15.jpg",
+        color: "text-white"
     }
 ];
-
 // ==========================================
 //  2. UPDATED RENDER LOGIC (Optimized Expansion)
 // ==========================================
@@ -436,7 +431,7 @@ const MAIN = document.getElementById('main-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
 
 // SET DATE: Site unlocks automatically if current date is past this
-const UNLOCK_DATE = new Date("2025-12-11T00:00:00"); 
+const UNLOCK_DATE = new Date("2026-02-01T09:00:00"); 
 
 function checkLock() {
     const now = new Date();

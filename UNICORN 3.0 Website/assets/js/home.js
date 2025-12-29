@@ -5,7 +5,7 @@
 // 1. Countdown Timer Logic
 // ------------------------------------------
 // Set the date we're counting down to
-const countDownDate = new Date("Mar 15, 2026 09:00:00").getTime();
+const countDownDate = new Date("Feb 1, 2026 09:00:00").getTime();
 
 // Update the count down every 1 second
 const timerInterval = setInterval(function () {
@@ -167,7 +167,7 @@ renderPastGlory();
 
 // 🔴 CONFIGURATION: DATE TO UNLOCK
 // Format: YYYY-MM-DDTHH:MM:SS
-const EVENTS_REVEAL_DATE = new Date("2025-12-13T21:30:00");
+const EVENTS_REVEAL_DATE = new Date("2026-02-01T09:00:00");
 
 // DATA: LOCKED STATE (Mystery Cards)
 const lockedData = [
