@@ -51,7 +51,6 @@ const teamSizeMapping = {
     "Crisis Cabinet": { min: 2, max: 2 }, 
     "Mind Switch": { min: 1, max: 1 }, 
     "Flop Tank": { min: 3, max: 3 },
-    "PR Rally": { min: 0, max: 0 }, 
     "FacePop": { min: 2, max: 2 }, 
     "Wallistry": { min: 2, max: 2 }, 
     "Crochet Chronicles": { min: 1, max: 1 },
@@ -165,7 +164,7 @@ function checkInitialParams() {
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('event');
     const eventMapping = { 
-        "1": "Crisis Cabinet", "2": "Mind Switch", "3": "Flop Tank", "4": "PR Rally",
+        "1": "Crisis Cabinet", "2": "Mind Switch", "3": "Flop Tank",
         "5": "FacePop", "6": "Wallistry", "7": "Crochet Chronicles", "8": "60 Seconds of Fame",
         "9": "From Prompt to Plot", "10": "Solo Surge", "11": "Battle of Steps", "12": "Vogue Vista",
         "13": "Face of Unicorn", "14": "Campus Chase", "15": "The Boardgame Arena"

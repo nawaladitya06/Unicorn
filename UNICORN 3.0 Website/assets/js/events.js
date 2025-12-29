@@ -58,25 +58,6 @@ const events = [
         img: "assets/images/events/event3.jpg",
         color: "text-red-500"
     },
-    {
-        id: 4,
-        title: "PR Rally",
-        tagline: "OTT Campaign Challenge",
-        fullInfo: "Participants create PR campaigns centered on the dynamic world of OTT platforms. Design campaigns that promote digital shows, streaming services, or original content.",
-        rules: [
-            "No dangerous stunts or harmful actions.",
-            "Props must be safe and banners must be lightweight.",
-            "No unapproved loudspeakers; handheld props like drums are allowed.",
-            "Late arrival/delay will result in points deduction.",
-            "Vulgarity or abusive language leads to disqualification."
-        ],
-        category: "Rally",
-        fee: "Free",
-        team: "Solo",
-        img: "assets/images/events/event4.jpg",
-        color: "text-indigo-400"
-    },
-
     // --- FINE ARTS ---
     {
         id: 5,
