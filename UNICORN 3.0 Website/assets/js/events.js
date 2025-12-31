@@ -163,7 +163,8 @@ const events = [
             "Music (MP3/MP4) must be submitted 24 hours in advance.",
             "Content must be appropriate for a college audience.",
             "Backing tracks are permitted but must not contain pre-recorded lead vocals.",
-            "Setup time: 1–2 minutes."
+            "Setup time: 1–2 minutes.",
+            "Offensive lyrics or gestures are strictly prohibited."
         ],
         category: "Performing Arts",
         fee: "Free",
@@ -177,11 +178,12 @@ const events = [
         tagline: "High-Intensity Dance",
         fullInfo: "Teams compete head-to-head to claim supremacy on the stage. Pushes participants to deliver jaw-dropping moves with perfect synchronization.",
         rules: [
-            "Performance time: 4-7 minutes; setup time: 3 minutes.",
+            "Performance time: 4–7 minutes; setup time: 3 minutes.",
             "Mashups, remixes, and medleys are allowed.",
-            "Participants must submit costumes, props, and audio for vetting.",
-            "Song lyrics must be decent; item songs are prohibited.",
-            "Fire, smoke, or hazardous effects are not allowed."
+            "Participants must submit costumes, props, and audio (MP3 format) for vetting.",
+            "Song lyrics must be decent and non-insinuating; item songs are strictly prohibited.",
+            "Fire, smoke, or hazardous effects are not allowed.",
+            "Vulgarity, obscenity, and profanity will not be tolerated; abusive language will lead to negative marking or disqualification."
         ],
         category: "Performing Arts",
         fee: "Free",
@@ -351,7 +353,7 @@ function openRules(eventId) {
     // Initial state: invisible (opacity-0) and scaled down (scale-90)
     modal.className = "fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none";
     modal.id = "rules-modal";
-    
+
     modal.innerHTML = `
         <div id="modal-content" class="bg-[#0a0a0a] border-2 border-gold/30 w-full max-w-2xl p-8 rounded-lg shadow-[0_0_50px_rgba(212,175,55,0.1)] relative max-h-[90vh] overflow-y-auto transform scale-90 transition-transform duration-300 ease-out">
             <button onclick="closeRules()" class="absolute top-4 right-4 text-gold hover:text-white transition-colors">
@@ -385,7 +387,7 @@ function openRules(eventId) {
     // Trigger animations
     modal.classList.remove('opacity-0', 'pointer-events-none');
     modal.classList.add('opacity-100');
-    
+
     const content = document.getElementById('modal-content');
     if (content) {
         content.classList.remove('scale-90');
@@ -393,10 +395,10 @@ function openRules(eventId) {
     }
 }
 
-window.closeRules = function() {
+window.closeRules = function () {
     const modal = document.getElementById('rules-modal');
     const content = document.getElementById('modal-content');
-    
+
     if (modal && content) {
         modal.classList.replace('opacity-100', 'opacity-0');
         content.classList.replace('scale-100', 'scale-95');
@@ -412,7 +414,7 @@ const MAIN = document.getElementById('main-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
 
 // SET DATE: Site unlocks automatically if current date is past this
-const UNLOCK_DATE = new Date("2026-02-01T09:00:00"); 
+const UNLOCK_DATE = new Date("2026-02-01T09:00:00");
 
 function checkLock() {
     const now = new Date();
