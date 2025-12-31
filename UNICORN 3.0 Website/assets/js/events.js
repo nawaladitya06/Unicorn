@@ -20,7 +20,8 @@ const events = [
         fee: "Free",
         team: "2 Players",
         img: "assets/images/events/event1.jpg",
-        color: "text-purple-400"
+        color: "text-purple-400",
+        day: 1
     },
     {
         id: 2,
@@ -38,7 +39,8 @@ const events = [
         fee: "Free",
         team: "Solo",
         img: "assets/images/events/event2.jpg",
-        color: "text-green-400"
+        color: "text-green-400",
+        day: 1
     },
     {
         id: 3,
@@ -56,7 +58,8 @@ const events = [
         fee: "Free",
         team: "2-3 Players",
         img: "assets/images/events/event3.jpg",
-        color: "text-red-500"
+        color: "text-red-500",
+        day: 1
     },
     // --- FINE ARTS ---
     {
@@ -75,7 +78,8 @@ const events = [
         fee: "Free",
         team: "2 Players",
         img: "assets/images/events/event5.jpg",
-        color: "text-orange-400"
+        color: "text-orange-400",
+        day: 1
     },
     {
         id: 6,
@@ -93,7 +97,8 @@ const events = [
         fee: "Free",
         team: "2 Players",
         img: "assets/images/events/event6.jpg",
-        color: "text-amber-400"
+        color: "text-amber-400",
+        day: 1
     },
     {
         id: 7,
@@ -111,9 +116,9 @@ const events = [
         fee: "Free",
         team: "Solo",
         img: "assets/images/events/event7.jpg",
-        color: "text-teal-400"
+        color: "text-teal-400",
+        day: 1
     },
-
     // --- LITERACY ARTS ---
     {
         id: 8,
@@ -131,7 +136,8 @@ const events = [
         fee: "Free",
         team: "Solo",
         img: "assets/images/events/event8.jpg",
-        color: "text-rose-400"
+        color: "text-rose-400",
+        day: 1
     },
     {
         id: 9,
@@ -149,10 +155,10 @@ const events = [
         fee: "Free",
         team: "Solo",
         img: "assets/images/events/event9.jpg",
-        color: "text-cyan-400"
+        color: "text-cyan-400",
+        day: 1
     },
-
-    // --- PERFORMING ARTS ---
+    // --- PERFORMING ARTS (DAY 2) ---
     {
         id: 10,
         title: "Solo Surge",
@@ -170,7 +176,8 @@ const events = [
         fee: "Free",
         team: "Solo",
         img: "assets/images/events/event10.jpg",
-        color: "text-blue-400"
+        color: "text-blue-400",
+        day: 2
     },
     {
         id: 11,
@@ -189,7 +196,8 @@ const events = [
         fee: "Free",
         team: "6-10 Players",
         img: "assets/images/events/event11.jpg",
-        color: "text-yellow-400"
+        color: "text-yellow-400",
+        day: 2
     },
     {
         id: 12,
@@ -207,7 +215,8 @@ const events = [
         fee: "Free",
         team: "8-10 Players",
         img: "assets/images/events/event12.jpg",
-        color: "text-indigo-500"
+        color: "text-indigo-500",
+        day: 2
     },
     {
         id: 13,
@@ -224,9 +233,9 @@ const events = [
         fee: "Free",
         team: "1 Male & 1 Female",
         img: "assets/images/events/event13.jpg",
-        color: "text-emerald-400"
+        color: "text-emerald-400",
+        day: 2
     },
-
     // --- MANAGEMENT ---
     {
         id: 14,
@@ -244,7 +253,8 @@ const events = [
         fee: "Free",
         team: "3 Players",
         img: "assets/images/events/event14.jpg",
-        color: "text-pink-400"
+        color: "text-pink-400",
+        day: 1
     },
     {
         id: 15,
@@ -261,21 +271,36 @@ const events = [
         fee: "Free",
         team: "2 Players",
         img: "assets/images/events/event15.jpg",
-        color: "text-white"
+        color: "text-white",
+        day: 1
     }
 ];
+
 // ==========================================
 //  2. UPDATED RENDER LOGIC (Optimized Expansion)
 // ==========================================
 const grid = document.getElementById('events-grid');
+window.filterEvents = function(filterValue) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active-filter');
+        if (btn.getAttribute('onclick').includes(`'${filterValue}'`)) {
+            btn.classList.add('active-filter');
+        }
+    });
 
-function renderEvents(filterType) {
+    renderEvents(filterValue);
+};
+
+function renderEvents(filterType = 'all') {
     if (!grid) return;
     grid.innerHTML = '';
-
     const filteredEvents = filterType === 'all'
         ? events
-        : events.filter(e => e.day.includes(filterType));
+        : events.filter(e => {
+            const dayNum = parseInt(filterType.replace('Day ', ''));
+            return e.day === dayNum;
+        });
 
     filteredEvents.forEach((event, index) => {
         const delay = index * 50;
