@@ -80,75 +80,80 @@
     <div id="main-content" class="opacity-0 transition-opacity duration-1000">
         <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
             <div
-                class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-6 py-3 flex justify-between items-center relative z-50">
+                class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-4 sm:px-6 py-3 flex justify-between items-center relative z-50">
 
-                <a href="index.html" class="flex items-center gap-3 group">
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
                     <img src="assets/images/Unicorn_Logo.png"
                         onerror="this.src='https://placehold.co/100x100/012E34/D4AF37?text=U'" alt="Unicorn Logo"
-                        class="h-10 w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
+                        class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
                     <span
-                        class="font-heading font-bold text-xl text-beige hidden sm:block group-hover:text-gold transition">UNICORN</span>
+                        class="font-heading font-bold text-lg sm:text-xl text-beige block group-hover:text-gold transition whitespace-nowrap">
+                        UNICORN '26
+                    </span>
                 </a>
 
-                <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:flex items-center gap-1 lg:gap-2">
                     <a href="index.html"
-                        class="nav-item flex items-center px-4 py-2 text-beige hover:text-gold transition-colors">
-                        <i class="fa-solid fa-house text-lg"></i>
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-house text-sm"></i>
                         <span class="nav-label font-semibold text-sm">Home</span>
                     </a>
                     <a href="about.html"
-                        class="nav-item flex items-center px-4 py-2 text-beige hover:text-gold transition-colors">
-                        <i class="fa-solid fa-circle-info text-lg"></i>
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-circle-info text-sm"></i>
                         <span class="nav-label font-semibold text-sm">About</span>
                     </a>
                     <a href="events.html"
-                        class="nav-item flex items-center px-4 py-2 text-beige hover:text-gold transition-colors">
-                        <i class="fa-solid fa-calendar-days text-lg"></i>
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-calendar-days text-sm"></i>
                         <span class="nav-label font-semibold text-sm">Events</span>
                     </a>
                     <a href="glimpse.html"
-                        class="nav-item flex items-center px-4 py-2 text-beige hover:text-gold transition-colors">
-                        <i class="fa-solid fa-images text-lg"></i>
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-images text-sm"></i>
                         <span class="nav-label font-semibold text-sm">Glimpses</span>
                     </a>
                     <a href="schedule.html"
-                        class="nav-item flex items-center px-4 py-2 text-beige hover:text-gold transition-colors">
-                        <i class="fa-solid fa-clock text-lg"></i>
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-clock text-sm"></i>
                         <span class="nav-label font-semibold text-sm">Schedule</span>
                     </a>
-                    <a href="contact.html" class="nav-item flex items-center px-4 py-2 text-gold transition-colors">
-                        <i class="fa-solid fa-envelope text-lg"></i>
+                    <a href="contact.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-envelope text-sm"></i>
                         <span class="nav-label font-semibold text-sm">Contact</span>
                     </a>
                 </div>
+
                 <div class="flex items-center gap-4">
-                    <button onclick="window.location.href='registration.html'" href="registration.html"
+                    <button onclick="window.location.href='registration.html'"
                         class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
                         REGISTER
                     </button>
-                    <button onclick="toggleMobileMenu()" class="lg:hidden text-gold text-2xl">
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gold text-2xl">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
 
             <div id="mobile-menu"
-                class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 lg:hidden z-40 flex flex-col gap-4 text-center">
+                class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 md:hidden z-40 flex flex-col gap-4 text-center">
                 <a href="index.html"
-                    class="font-gaming text-sm text-beige hover:text-gold py-2 border-b border-white/5">HOME</a>
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">HOME</a>
                 <a href="about.html"
-                    class="font-gaming text-sm text-beige hover:text-gold py-2 border-b border-white/5">ABOUT</a>
-                <a href="events.html" class="font-gaming text-sm text-gold py-2 border-b border-white/5">EVENTS</a>
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">ABOUT</a>
+                <a href="events.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">EVENTS</a>
                 <a href="schedule.html"
-                    class="font-gaming text-sm text-beige hover:text-gold py-2 border-b border-white/5">SCHEDULE</a>
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">SCHEDULE</a>
                 <a href="glimpse.html"
-                    class="font-gaming text-sm text-beige hover:text-gold py-2 border-b border-white/5">GLIMPSES</a>
-                <a href="contact.html" class="font-gaming text-sm text-beige hover:text-gold py-2">CONTACT</a>
-                <button onclick="window.location.href='registration.html'" href="registration.html"
-                    class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER
-                </button>
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">GLIMPSES</a>
+                <a href="contact.html" class="nav-link-mobile font-gaming text-sm text-beige py-2">CONTACT</a>
+                <button onclick="window.location.href='registration.html'"
+                    class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER</button>
             </div>
         </nav>
+
 
         <main class="pt-32 pb-24 px-6 max-w-5xl mx-auto">
             <div class="text-center mb-12 relative">
@@ -176,15 +181,15 @@
                                     <label
                                         class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">Base
                                         Name</label>
-                                    <input type="text" name="College" placeholder="Enter Full Name of your College" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
+                                    <input type="text" name="College" placeholder="Enter Full Name of your College"
+                                        required class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
                                 <div class="space-y-2">
                                     <label
                                         class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">Base
                                         Code</label>
-                                    <input type="text" name="CCCode" placeholder="Enter your College's assigned CC Code" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
+                                    <input type="text" name="CCCode" placeholder="Enter your College's assigned CC Code"
+                                        required class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
                             </div>
                         </div>
@@ -390,8 +395,8 @@
                                     <label
                                         class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
                                         Name</label>
-                                    <input type="text" name="ACLName" placeholder="Enter Asst. Contingent Leader Name" required
-                                        class="w-full gaming-input rounded p-3 text-sm">
+                                    <input type="text" name="ACLName" placeholder="Enter Asst. Contingent Leader Name"
+                                        required class="w-full gaming-input rounded p-3 text-sm">
                                 </div>
                                 <div class="space-y-2">
                                     <label

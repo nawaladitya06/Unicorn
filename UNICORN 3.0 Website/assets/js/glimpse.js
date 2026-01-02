@@ -40,7 +40,7 @@ const galleryImages = [
     // 4. Networking / Meet
     {
         type: 'image',
-        src: 'assets/images/glimpses/img10.jpg',
+        src: 'assets/images/glimpses/img10.png',
         category: 'Meet',
         title: 'Netwrking Time',
         span: 'md:col-span-1 md:row-span-1'
@@ -49,7 +49,7 @@ const galleryImages = [
     // 5. Organizers / Team
     {
         type: 'image',
-        src: 'assets/images/glimpses/img5.jpg',
+        src: 'assets/images/glimpses/img5.png',
         category: 'Team',
         title: 'The Organizers',
         span: 'md:col-span-2 md:row-span-1'

@@ -93,3 +93,27 @@ function toggleMobileMenu() {
 
 // Make function global
 window.toggleMobileMenu = toggleMobileMenu;
+
+// ==========================================
+//  Active Page Highlighter
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    // Get current filename (e.g., 'about.html')
+    const path = window.location.pathname;
+    const currentPage = path.split("/").pop() || "index.html";
+
+    // Select both Desktop and Mobile links
+    const navLinks = document.querySelectorAll(".nav-link, .nav-link-mobile");
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        
+        // Match link to current page
+        if (href === currentPage) {
+            link.classList.add("active");
+            link.classList.remove("text-beige");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+});
