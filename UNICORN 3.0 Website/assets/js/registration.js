@@ -75,7 +75,6 @@ function generatePlayerFields(config) {
     currentPlayerCount = 0;
     currentMaxPlayers = config.max;
 
-    // Remove existing "Add" button if any
     const oldBtn = document.getElementById('dynamic-controls');
     if (oldBtn) oldBtn.remove();
 
@@ -150,9 +149,11 @@ function addPlayerBlock(index) {
 window.addNewPlayer = function () {
     if (currentPlayerCount < currentMaxPlayers) {
         addPlayerBlock(currentPlayerCount + 1);
-        document.getElementById('count-display').innerText = currentPlayerCount;
+        const countDisplay = document.getElementById('count-display');
+        if (countDisplay) countDisplay.innerText = currentPlayerCount;
         if (currentPlayerCount === currentMaxPlayers) {
-            document.getElementById('add-player-btn').remove();
+            const addBtn = document.getElementById('add-player-btn');
+            if (addBtn) addBtn.remove();
         }
     }
 };
@@ -193,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 //  4. SUBMISSION & GOOGLE SHEETS SYNC
 // ==========================================
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzIASHJZexn8puBesQ3uZiHZlkD-E5nZm7GgFg8sVv-0uZwjXYBSMn0ujSQBZ3iy3Vj/exec';
+const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
 const form = document.forms['unicorn-registration'];
 const submitBtn = document.getElementById('submit-btn');
 
@@ -221,47 +222,45 @@ if (form) {
 
         try {
             const formData = new FormData(form);
-            const params = new URLSearchParams();
+            const payload = {};
 
-            // 1. Capture ALL standard inputs (Names, Emails, PRNs, Years)
+            // 1. Capture ALL standard inputs (Names, Emails, PRNs, etc.)
             for (const [key, value] of formData.entries()) {
                 if (!(value instanceof File)) {
-                    params.append(key, value);
+                    payload[key] = value;
                 }
             }
 
-            // 2. Explicitly handle File Data
+            // 2. Capture and process files for EACH active player
             for (let i = 1; i <= currentPlayerCount; i++) {
                 const fileInput = form.querySelector(`input[name="Player${i}_ID"]`);
                 if (fileInput && fileInput.files[0]) {
                     const fileData = await readFileAsBase64(fileInput.files[0]);
-                    params.append(`Player${i}_FileData`, fileData.data);
-                    params.append(`Player${i}_FileName`, fileData.name);
+                    payload[`Player${i}_FileData`] = fileData.data;
+                    payload[`Player${i}_FileName`] = fileData.name;
                 }
             }
 
-            // 3. Post to Google Apps Script
-            const response = await fetch(scriptURL, { 
-                method: 'POST', 
-                body: params,
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            // 3. Send using URLSearchParams to ensure Apps Script e.parameter parsing
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', // Essential for Google Apps Script
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(payload).toString()
             });
 
-            const result = await response.json();
+            // Since we use 'no-cors', we cannot read the response object.
+            // We assume success if no error was thrown during fetch.
+            showNotification("SUCCESS", "Registration Deployed to Mainframe.");
+            form.reset();
+            document.getElementById('player-profiles-container').innerHTML =
+                '<div class="text-center py-10 border-2 border-dashed border-white/5 rounded-xl"><p class="text-gray-500 font-mono text-xs uppercase tracking-widest animate-pulse">Select a Mission to deploy fields...</p></div>';
+            const oldBtn = document.getElementById('dynamic-controls');
+            if (oldBtn) oldBtn.remove();
 
-            if (result.result === 'success') {
-                showNotification("SUCCESS", "Registration Deployed to Mainframe.");
-                form.reset();
-                document.getElementById('player-profiles-container').innerHTML =
-                    '<div class="text-center py-10 border-2 border-dashed border-white/5 rounded-xl"><p class="text-gray-500 font-mono text-xs uppercase tracking-widest animate-pulse">Select a Mission to deploy fields...</p></div>';
-                const oldBtn = document.getElementById('dynamic-controls');
-                if (oldBtn) oldBtn.remove();
-            } else {
-                throw new Error(result.error);
-            }
         } catch (err) {
-            console.error(err);
-            showNotification("ERROR", "Deployment failed: " + err.message, true);
+            console.error("Submission error:", err);
+            showNotification("ERROR", "Deployment failed. Check connection or data size.", true);
         } finally {
             submitBtn.innerHTML = origText;
             submitBtn.disabled = false;
@@ -274,11 +273,14 @@ if (form) {
 // ==========================================
 function showNotification(title, message, isError = false) {
     const overlay = document.getElementById('custom-notification');
-    document.getElementById('notification-title').innerText = title;
-    document.getElementById('notification-message').innerText = message;
-    overlay.classList.remove('hidden');
+    const titleEl = document.getElementById('notification-title');
+    const msgEl = document.getElementById('notification-message');
+    if (titleEl) titleEl.innerText = title;
+    if (msgEl) msgEl.innerText = message;
+    if (overlay) overlay.classList.remove('hidden');
 }
 
-function closeNotification() {
-    document.getElementById('custom-notification').classList.add('hidden');
-}
+window.closeNotification = function () {
+    const overlay = document.getElementById('custom-notification');
+    if (overlay) overlay.classList.add('hidden');
+};
