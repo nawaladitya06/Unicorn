@@ -129,7 +129,7 @@ function addPlayerBlock(index) {
             </div>
             <div class="space-y-2">
                 <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">PRN Number</label>
-                <input type="text" name="Player${index}_PRN" required class="w-full gaming-input rounded p-3 text-sm">
+                <input type="string" name="Player${index}_PRN" required class="w-full gaming-input rounded p-3 text-sm">
             </div>
             <div class="space-y-2 md:col-span-2">
                 <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Class (Level)</label>
