@@ -14,7 +14,7 @@ function checkLock() {
 
 function unlockSite() {
     if (LOCK_SCREEN) LOCK_SCREEN.style.display = 'none';
-    if (INTRO_SCREEN) { INTRO_SCREEN.style.display = 'flex'; playIntroSequence(); } 
+    if (INTRO_SCREEN) { INTRO_SCREEN.style.display = 'flex'; playIntroSequence(); }
     else { if (MAIN) MAIN.style.opacity = '1'; }
     localStorage.setItem('unicorn_bypass', 'true');
 }
@@ -36,7 +36,7 @@ function playIntroSequence() {
         if (INTRO_SCREEN) INTRO_SCREEN.classList.add('fade-out-intro');
         if (MAIN) {
             MAIN.style.opacity = '1';
-            checkInitialParams(); 
+            checkInitialParams();
         }
     }, 2800);
     setTimeout(() => { if (INTRO_SCREEN) INTRO_SCREEN.style.display = 'none'; }, 3600);
@@ -48,16 +48,16 @@ window.onload = checkLock;
 //  2. DYNAMIC DATA MAPPING
 // ==========================================
 const teamSizeMapping = {
-    "Crisis Cabinet": { min: 2, max: 2 }, 
-    "Mind Switch": { min: 1, max: 1 }, 
+    "Crisis Cabinet": { min: 2, max: 2 },
+    "Mind Switch": { min: 1, max: 1 },
     "Flop Tank": { min: 3, max: 3 },
-    "FacePop": { min: 2, max: 2 }, 
-    "Wallistry": { min: 2, max: 2 }, 
+    "FacePop": { min: 2, max: 2 },
+    "Wallistry": { min: 2, max: 2 },
     "Crochet Chronicles": { min: 1, max: 1 },
-    "60 Seconds of Fame": { min: 1, max: 1 }, 
-    "From Prompt to Plot": { min: 1, max: 1 }, 
-    "Solo Surge": { min: 1, max: 1 }, 
-    "Battle of Steps": { min: 6, max: 10 }, 
+    "60 Seconds of Fame": { min: 1, max: 1 },
+    "From Prompt to Plot": { min: 1, max: 1 },
+    "Solo Surge": { min: 1, max: 1 },
+    "Battle of Steps": { min: 6, max: 10 },
     "Vogue Vista": { min: 7, max: 10 },
     "Face of Unicorn": { min: 2, max: 2 },
     "Campus Chase": { min: 3, max: 3 },
@@ -70,8 +70,8 @@ let currentMaxPlayers = 0;
 function generatePlayerFields(config) {
     const container = document.getElementById('player-profiles-container');
     if (!container) return;
-    
-    container.innerHTML = ''; 
+
+    container.innerHTML = '';
     currentPlayerCount = 0;
     currentMaxPlayers = config.max;
 
@@ -129,7 +129,7 @@ function addPlayerBlock(index) {
             </div>
             <div class="space-y-2">
                 <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">PRN Number</label>
-                <input type="string" name="Player${index}_PRN" required class="w-full gaming-input rounded p-3 text-sm">
+                <input type="text" name="Player${index}_PRN" required class="w-full gaming-input rounded p-3 text-sm">
             </div>
             <div class="space-y-2 md:col-span-2">
                 <label class="text-[10px] text-gray-400 font-gaming uppercase tracking-widest">Class (Level)</label>
@@ -147,7 +147,7 @@ function addPlayerBlock(index) {
     currentPlayerCount++;
 }
 
-window.addNewPlayer = function() {
+window.addNewPlayer = function () {
     if (currentPlayerCount < currentMaxPlayers) {
         addPlayerBlock(currentPlayerCount + 1);
         document.getElementById('count-display').innerText = currentPlayerCount;
@@ -163,7 +163,7 @@ window.addNewPlayer = function() {
 function checkInitialParams() {
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('event');
-    const eventMapping = { 
+    const eventMapping = {
         "1": "Crisis Cabinet", "2": "Mind Switch", "3": "Flop Tank",
         "5": "FacePop", "6": "Wallistry", "7": "Crochet Chronicles", "8": "60 Seconds of Fame",
         "9": "From Prompt to Plot", "10": "Solo Surge", "11": "Battle of Steps", "12": "Vogue Vista",
@@ -206,7 +206,7 @@ function readFileAsBase64(file) {
     });
 }
 
-if(form) {
+if (form) {
     form.addEventListener('submit', async e => {
         e.preventDefault();
 
@@ -216,45 +216,54 @@ if(form) {
         }
 
         const origText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> DEPLOYING...'; 
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> DEPLOYING...';
         submitBtn.disabled = true;
 
         try {
-            const params = new URLSearchParams();
             const formData = new FormData(form);
-            
+            const params = new URLSearchParams();
+
+            // 1. Capture ALL standard inputs (Names, Emails, PRNs, Years)
             for (const [key, value] of formData.entries()) {
                 if (!(value instanceof File)) {
                     params.append(key, value);
                 }
             }
 
-            // Correctly loop through exactly how many players are currently on screen
+            // 2. Explicitly handle File Data
             for (let i = 1; i <= currentPlayerCount; i++) {
-                const input = form.querySelector(`input[name="Player${i}_ID"]`);
-                if (input && input.files[0]) {
-                    const data = await readFileAsBase64(input.files[0]);
-                    params.append(`Player${i}_FileData`, data.data);
-                    params.append(`Player${i}_FileName`, data.name);
+                const fileInput = form.querySelector(`input[name="Player${i}_ID"]`);
+                if (fileInput && fileInput.files[0]) {
+                    const fileData = await readFileAsBase64(fileInput.files[0]);
+                    params.append(`Player${i}_FileData`, fileData.data);
+                    params.append(`Player${i}_FileName`, fileData.name);
                 }
             }
 
-            const response = await fetch(scriptURL, { method: 'POST', body: params });
-            
-            if (response.ok) {
+            // 3. Post to Google Apps Script
+            const response = await fetch(scriptURL, { 
+                method: 'POST', 
+                body: params,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            });
+
+            const result = await response.json();
+
+            if (result.result === 'success') {
                 showNotification("SUCCESS", "Registration Deployed to Mainframe.");
                 form.reset();
-                document.getElementById('player-profiles-container').innerHTML = 
+                document.getElementById('player-profiles-container').innerHTML =
                     '<div class="text-center py-10 border-2 border-dashed border-white/5 rounded-xl"><p class="text-gray-500 font-mono text-xs uppercase tracking-widest animate-pulse">Select a Mission to deploy fields...</p></div>';
                 const oldBtn = document.getElementById('dynamic-controls');
                 if (oldBtn) oldBtn.remove();
             } else {
-                throw new Error("Mainframe rejection");
+                throw new Error(result.error);
             }
         } catch (err) {
-            showNotification("ERROR", "Deployment failed. Check connection or data size.", true);
+            console.error(err);
+            showNotification("ERROR", "Deployment failed: " + err.message, true);
         } finally {
-            submitBtn.innerHTML = origText; 
+            submitBtn.innerHTML = origText;
             submitBtn.disabled = false;
         }
     });
@@ -270,6 +279,6 @@ function showNotification(title, message, isError = false) {
     overlay.classList.remove('hidden');
 }
 
-function closeNotification() { 
-    document.getElementById('custom-notification').classList.add('hidden'); 
+function closeNotification() {
+    document.getElementById('custom-notification').classList.add('hidden');
 }
