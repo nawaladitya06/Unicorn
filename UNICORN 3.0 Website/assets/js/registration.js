@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 //  4. SUBMISSION & GOOGLE SHEETS SYNC
 // ==========================================
-const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzIASHJZexn8puBesQ3uZiHZlkD-E5nZm7GgFg8sVv-0uZwjXYBSMn0ujSQBZ3iy3Vj/exec';
 const form = document.forms['unicorn-registration'];
 const submitBtn = document.getElementById('submit-btn');
 
