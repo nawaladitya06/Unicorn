@@ -167,7 +167,7 @@ renderPastGlory();
 
 // 🔴 CONFIGURATION: DATE TO UNLOCK
 // Format: YYYY-MM-DDTHH:MM:SS
-const EVENTS_REVEAL_DATE = new Date("2026-02-01T09:00:00");
+const EVENTS_REVEAL_DATE = new Date("2026-01-19T16:00:00");
 
 // DATA: LOCKED STATE (Mystery Cards)
 const lockedData = [

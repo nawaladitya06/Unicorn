@@ -450,7 +450,7 @@ const MAIN = document.getElementById('main-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
 
 // SET DATE: Site unlocks automatically if current date is past this
-const UNLOCK_DATE = new Date("2026-02-01T09:00:00");
+const UNLOCK_DATE = new Date("2026-01-19T16:00:00");
 
 function checkLock() {
     const now = new Date();
