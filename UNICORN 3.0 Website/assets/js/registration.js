@@ -4,7 +4,7 @@
 const LOCK_SCREEN = document.getElementById('lock-screen');
 const MAIN = document.getElementById('main-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
-const UNLOCK_DATE = new Date("2026-02-01T09:00:00");
+const UNLOCK_DATE = new Date("2026-02-02T10:00:00");
 
 function checkLock() {
     const now = new Date();
