@@ -8,9 +8,32 @@ const UNLOCK_DATE = new Date("2026-02-02T10:00:00");
 
 function checkLock() {
     const now = new Date();
-    const isDev = localStorage.getItem('unicorn_bypass') === 'true';
-    if (now >= UNLOCK_DATE || isDev) { unlockSite(); }
+    if (now >= UNLOCK_DATE) {
+        unlockSite();
+    } else {
+        lockSite();
+    }
 }
+
+function lockSite() {
+    if (MAIN) MAIN.style.display = 'none';
+    if (INTRO_SCREEN) INTRO_SCREEN.style.display = 'none';
+
+    document.body.innerHTML = `
+        <div class="fixed inset-0 flex flex-col items-center justify-center bg-black text-center px-6">
+            <i class="fa-solid fa-lock text-gold text-7xl mb-6"></i>
+            <h1 class="font-heading text-4xl md:text-5xl text-white mb-4">
+                Registrations Closed
+            </h1>
+            <p class="text-beige/70 max-w-xl">
+                Player registrations for UNICORN 2026 are currently closed.
+                Registration for players will be opening on <span class="text-emerald-glow font-mono">February 2, 2026 at 10:00 AM</span>.
+                Please check back then to secure your spot in the action-packed events!
+            </p>
+        </div>
+    `;
+}
+
 
 function unlockSite() {
     if (LOCK_SCREEN) LOCK_SCREEN.style.display = 'none';

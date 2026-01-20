@@ -1,23 +1,14 @@
-// ==========================================
-//  HOME PAGE SPECIFIC LOGIC
-// ==========================================
-
 // 1. Countdown Timer Logic
-// ------------------------------------------
-// Set the date we're counting down to
-const countDownDate = new Date("Feb 1, 2026 09:00:00").getTime();
+const countDownDate = new Date("Feb 12, 2026 11:00:00").getTime();
 
-// Update the count down every 1 second
 const timerInterval = setInterval(function () {
     const now = new Date().getTime();
     const distance = countDownDate - now;
 
-    // Time calculations for days, hours, minutes
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-    // Display the result in the elements with corresponding IDs
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
     const minsEl = document.getElementById("mins");
@@ -38,10 +29,7 @@ const timerInterval = setInterval(function () {
 }, 1000);
 
 
-// 2. Past Glory Section Logic
-// ------------------------------------------
-// Data Source: Images from assets/images/glimpses folder
-// We need ~9 items total for a balanced grid
+// 2. Past Glory Section Rendering
 const pastGloryData = [
     {
         type: 'image',
@@ -103,19 +91,17 @@ const pastGloryData = [
 
 function renderPastGlory() {
     const container = document.getElementById('past-glory-container');
-    if (!container) return; // Exit if element not found (e.g. on other pages)
+    if (!container) return; 
 
     let html = '';
 
     pastGloryData.forEach((item) => {
-        // Determine text color based on category for visual variety
         let categoryColorClass = 'text-gold';
         if (item.category === 'Audience' || item.category === 'Team') {
             categoryColorClass = 'text-emerald-glow';
         }
 
         if (item.type === 'quote') {
-            // Render Quote Block (Fixed Height)
             html += `
                 <div class="reveal h-80 w-full group">
                     <div class="glass-panel h-full w-full p-8 rounded-xl border border-gold/30 flex flex-col items-center justify-center text-center hover:bg-emerald-dark/40 transition duration-500">
@@ -129,8 +115,6 @@ function renderPastGlory() {
                 </div>
             `;
         } else {
-            // Render Image Block (Fixed Height)
-            // Note the updated src path logic in case of error
             html += `
                 <div class="reveal h-80 w-full">
                     <div class="relative group h-full w-full overflow-hidden rounded-xl border border-white/10">
@@ -149,21 +133,14 @@ function renderPastGlory() {
     });
 
     container.innerHTML = html;
-
-    // Re-trigger observer for new elements so animations play
     setTimeout(() => {
         if (typeof observer !== 'undefined') {
             document.querySelectorAll('#past-glory-container .reveal').forEach((el) => observer.observe(el));
         }
     }, 100);
 }
-
-// Run the render function when script loads
 renderPastGlory();
 
-// ==========================================
-//  3. FEATURED EVENTS (Locked vs Unlocked)
-// ==========================================
 
 // 🔴 CONFIGURATION: DATE TO UNLOCK
 // Format: YYYY-MM-DDTHH:MM:SS
@@ -194,17 +171,16 @@ const lockedData = [
     }
 ];
 
-// home.js mein unlockedData ko aise update karein
 const unlockedData = [
     {
-        id: 1, // ID wahi rakhein jo events.js mein hai
+        id: 1,
         title: "Crisis Cabinet",
         subtitle: "Leadership Under Pressure",
         category: "BUSINESS",
         colorClass: "border-purple-500 text-purple-400",
         desc: "Represent a business in a global industry...",
         img: "assets/images/events/event1.jpg",
-        link: "registration.html?event=1" // Yahan ID attach karein
+        link: "registration.html?event=1" 
     },
     {
         id: 2,
@@ -236,15 +212,12 @@ function renderFeaturedEvents() {
     if (!container) return;
 
     const now = new Date();
-    // Check if Developer Bypass is on (optional, helpful for testing)
-    const isDev = localStorage.getItem('unicorn_bypass') === 'true';
 
     const isUnlocked = now >= EVENTS_REVEAL_DATE || isDev;
 
     let html = '';
 
-    if (!isUnlocked) {
-        // --- RENDER LOCKED STATE ---
+    if (!isUnlocked) {        
         subtitle.innerHTML = "Competitions · Workshops · Speaker Sessions";
 
         badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-gold/30 bg-gold/5 rounded backdrop-blur-sm";
@@ -273,7 +246,6 @@ function renderFeaturedEvents() {
         });
 
     } else {
-        // --- RENDER UNLOCKED STATE ---
         subtitle.innerHTML = "Top Tier Competitions & Challenges";
 
         badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-emerald-glow/30 bg-emerald-dark/30 rounded backdrop-blur-sm";
@@ -305,8 +277,6 @@ function renderFeaturedEvents() {
     }
 
     container.innerHTML = html;
-
-    // Re-trigger reveal animations
     setTimeout(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -318,20 +288,15 @@ function renderFeaturedEvents() {
     }, 100);
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', renderFeaturedEvents);
 
-// ==========================================
 //  4. EVENT TIMELINE (Locked vs Unlocked)
-// ==========================================
 
 function renderEventTimeline() {
     const container = document.getElementById('timeline-dynamic-container');
     if (!container) return;
 
     const now = new Date();
-    // Re-use the same date configuration and bypass check
-    const isDev = localStorage.getItem('unicorn_bypass') === 'true';
     const isUnlocked = now >= EVENTS_REVEAL_DATE || isDev;
 
     let html = '';
