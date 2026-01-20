@@ -454,7 +454,6 @@ const UNLOCK_DATE = new Date("2026-01-19T16:00:00");
 
 function checkLock() {
     const now = new Date();
-    const isDev = localStorage.getItem('unicorn_bypass') === 'true';
 
     if (now >= UNLOCK_DATE || isDev) {
         unlockSite();
