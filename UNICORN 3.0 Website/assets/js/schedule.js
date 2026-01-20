@@ -6,11 +6,10 @@ const CONTENT = document.getElementById('encrypted-content');
 const INTRO_SCREEN = document.getElementById('intro-lock-screen');
 
 // 🔴 SET THIS DATE (Format: YYYY-MM-DDTHH:MM:SS)
-const UNLOCK_DATE = new Date("2026-02-01T09:00:00");
+const UNLOCK_DATE = new Date("2026-02-02T10:00:00");
 
 function checkStatus() {
     const now = new Date();
-    const isDev = localStorage.getItem('unicorn_schedule_bypass') === 'true';
 
     // If time is up OR previously unlocked
     if (now >= UNLOCK_DATE || isDev) {
@@ -49,9 +48,6 @@ function unlockSite() {
 
     setUnlockedStyle(badge1);
     setUnlockedStyle(badge2);
-
-    // 4. Mark as unlocked
-    localStorage.setItem('unicorn_schedule_bypass', 'true');
 }
 function playIntroSequence() {
     const lockIcon = document.getElementById('intro-lock-icon');

@@ -145,7 +145,7 @@ renderPastGlory();
 // 🔴 CONFIGURATION: DATE TO UNLOCK
 // Format: YYYY-MM-DDTHH:MM:SS
 const EVENTS_REVEAL_DATE = new Date("2026-01-19T16:00:00");
-
+const SCHEDULE_REVEAL_DATE = new Date("2026-02-02T16:00:00");
 // DATA: LOCKED STATE (Mystery Cards)
 const lockedData = [
     {
@@ -175,32 +175,61 @@ const unlockedData = [
     {
         id: 1,
         title: "Crisis Cabinet",
-        subtitle: "Leadership Under Pressure",
-        category: "BUSINESS",
-        colorClass: "border-purple-500 text-purple-400",
-        desc: "Represent a business in a global industry...",
+        tagline: "Leadership Under Pressure",
+        fullInfo: "Welcome to the World Crisis Cabinet, where every participant will represent a business from the same industry, but located in different nations. The game challenges leadership skills, communication, and strategic thinking, simulating real-world pressure faced by business leaders during moments of crisis.",
+        rules: [
+            "The event consists of 3 Rounds.",
+            "Participants will encounter crisis situations related to the environment, economy, and finance, and will be directly questioned by the moderator.",
+            "Each group must designate a CEO and a COO, with questions directed at one role not being answerable by the other; failure to adhere to this will incur negatives.",
+            "The use of electronic devices and Cross talking between different contingents is not permitted.",
+            "Participants should carry their laptop compulsory for Round 2.",
+            "Use of AI is strictly prohibited.",
+            "Disrespect towards any member or physical aggression will lead to negatives or disqualification."
+        ],
+        category: "Business",
+        fee: "Free",
+        team: "2 Players",
         img: "assets/images/events/event1.jpg",
-        link: "registration.html?event=1" 
+        color: "text-purple-400",
+        day: 1
     },
     {
-        id: 2,
-        title: "Flip the Argument",
-        subtitle: "Mind Switch",
-        category: "BUSINESS",
-        colorClass: "border-green-500 text-green-400",
-        desc: "A two-round challenge featuring a business quiz...",
-        img: "assets/images/events/event2.jpg",
-        link: "registration.html?event=2"
+        id: 13,
+        title: "Face of Unicorn",
+        tagline: "Mr. & Miss Unicorn",
+        fullInfo: "A celebration of talent, charisma, and personality to find the ultimate representatives of their college. Pageant assessing heroes, rebels, and icons within all.",
+        rules: [
+            "Round 1: Introduction (30-60s) and thematic ramp walk evaluating stage presence and style.",
+            "Round 2: Talent Round. Each performance has 2 to 3 minutes to present their talent.",
+            "Round 3: Final Question (Q&A) to test wit, personality, and spontaneous articulation.",
+            "Music tracks must be submitted 3 days before the event in MP3 format.",
+            "Vulgarity, obscenity, and profanity will lead to disqualification."
+        ],
+        category: "Icon",
+        fee: "Free",
+        team: "1 Male & 1 Female",
+        img: "assets/images/events/event13.jpg",
+        color: "text-emerald-400",
+        day: 2
     },
     {
-        id: 3,
-        title: "Flop Tank",
-        subtitle: "The Flop Factory",
-        category: "BUSINESS",
-        colorClass: "border-red-500 text-red-500",
-        desc: "A parody pitch event where you must creatively...",
-        img: "assets/images/events/event3.jpg",
-        link: "registration.html?event=3"
+        id: 15,
+        title: "The Boardgame Arena",
+        tagline: "Decision Battle",
+        fullInfo: "A financial simulation where textbooks are thrown out for real-world boardroom challenges. Trade, negotiate, and speculate on Labour in a property trading game with shifting inflation threats.",
+        rules: [
+            "Conducted in two rounds held one after the other, with 6 contingents competing in each.",
+            "Winners are declared based on overall performance across both rounds.",
+            "Use of electronic devices during the game is not allowed.",
+            "Cross-talk between different contingents is prohibited.",
+            "Disrespectful language, swearing, or unprofessional behavior towards committee members results in disqualification."
+        ],
+        category: "Management",
+        fee: "Free",
+        team: "2 Players",
+        img: "assets/images/events/event15.jpg",
+        color: "text-white",
+        day: 1
     }
 ];
 
@@ -266,9 +295,9 @@ function renderFeaturedEvents() {
                 
                 <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
                     <h3 class="font-gaming text-2xl font-bold text-white mb-1 group-hover:text-gold transition-colors">${item.title}</h3>
-                    <p class="text-xs text-gold uppercase tracking-wider mb-3">${item.subtitle}</p>
-                    <p class="text-sm text-beige/70 font-body mb-6 line-clamp-2">${item.desc}</p>
-                    <a href="${item.link}" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-emerald-glow transition-colors">
+                    <p class="text-xs text-gold uppercase tracking-wider mb-3">${item.tagline}</p>
+                    <p class="text-sm text-beige/70 font-body mb-6 line-clamp-2">${item.team}</p>
+                    <a href="registration.html?event=${item.id}" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-emerald-glow transition-colors">
                         REGISTER NOW <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -297,7 +326,7 @@ function renderEventTimeline() {
     if (!container) return;
 
     const now = new Date();
-    const isUnlocked = now >= EVENTS_REVEAL_DATE || isDev;
+    const isUnlocked = now >= SCHEDULE_REVEAL_DATE || isDev;
 
     let html = '';
 
@@ -315,7 +344,7 @@ function renderEventTimeline() {
                         <span class="text-white/40 font-bold text-xs tracking-widest uppercase">
                             <i class="fa-solid fa-lock text-gold mr-1 text-[10px]"></i> ${day}
                         </span>
-                        <span class="text-beige/20 text-xs font-mono">Jan 2026</span>
+                        <span class="text-beige/20 text-xs font-mono">Feb 2026</span>
                     </div>
                     <h3 class="text-xl font-heading font-bold text-white/50 mt-1 group-hover:text-gold/70 transition-colors">
                         Agenda Locked
@@ -332,16 +361,16 @@ function renderEventTimeline() {
         const unlockedDays = [
             {
                 day: "Day 01",
-                date: "Jan 16",
+                date: "Feb 12",
                 title: "The Launch",
-                desc: "Opening Ceremony, Wolf of Dalal St, Startup Heist & EA FC Showdown.",
+                desc: "Inauguration Ceremony, Keynote Speeches & starting with Crisis Cabinet.",
                 color: "emerald-glow" // Accent color
             },
             {
                 day: "Day 02",
-                date: "Jan 17",
+                date: "Feb 13",
                 title: "The Finale",
-                desc: "Valorant LAN, Ad-Pocalypse, Loot Drop, Skin Showcase & DJ Night.",
+                desc: "Finals of Crisis Cabinet, Flip the Argument & Flop Tank. Closing Ceremony.",
                 color: "neon" // Accent color
             }
         ];
