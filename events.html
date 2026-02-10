@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Select | UNICORN 2026</title>
+    <link rel="icon" type="image/png" href="assets/images/Unicorn_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&family=VT323&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="assets/js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-pitch selection:bg-gold selection:text-pitch font-body relative min-h-screen">
+    <div id="intro-lock-screen">
+        <div class="relative mb-8">
+            <i id="intro-lock-icon" class="fa-solid fa-lock text-8xl text-gold transition-colors duration-300"></i>
+
+            <div class="absolute inset-0 bg-gold/20 blur-xl rounded-full animate-pulse -z-10"></div>
+        </div>
+
+        <h1 id="intro-mode-text"
+            class="font-gaming text-4xl md:text-6xl font-black text-white opacity-0 tracking-widest text-center">
+            GAMING MODE <span class="text-emerald-glow">ON</span>
+        </h1>
+
+        <div class="w-64 h-1 bg-white/10 mt-8 rounded-full overflow-hidden">
+            <div id="intro-bar" class="h-full bg-emerald-glow w-0 transition-all duration-[2000ms] ease-out"></div>
+        </div>
+    </div>
+    <div id="lock-screen">
+        <div
+            class="relative z-10 max-w-lg w-full p-8 md:p-12 bg-[#0a0a0a] rounded-2xl border border-white/5 shadow-2xl text-center mx-4">
+
+            <div class="mb-8 relative inline-flex items-center justify-center">
+                <div class="absolute inset-0 bg-gold/20 blur-xl rounded-full animate-pulse"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-lock text-3xl text-gold"></i>
+                </div>
+            </div>
+
+            <h3 class="font-gaming text-emerald-500 text-[10px] md:text-xs tracking-[0.3em] uppercase mb-3 font-bold">
+                Classified Information
+            </h3>
+
+            <h1 class="font-heading text-4xl md:text-5xl text-white font-bold mb-6 tracking-wide leading-tight">
+                THEME<br />CONCEALED
+            </h1>
+
+            <p class="font-body text-gray-400 text-sm leading-relaxed mb-10 px-2 font-light">
+                The details of the upcoming events are currently under process. Access will be granted automatically
+                upon the official launch.
+            </p>
+
+            <div
+                class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-white/5 mb-8 hover:bg-white/10 transition-colors cursor-default">
+                <i class="fa-regular fa-clock text-gold text-sm"></i>
+                <span class="font-gaming text-[10px] md:text-xs text-gray-300 tracking-wider">
+                    UNLOCKING: <span class="text-gold font-bold ml-1">Jan 19 - 02:30 PM</span>
+                </span>
+            </div>
+
+            <div>
+                <a href="index.html"
+                    class="group inline-flex items-center gap-2 text-[10px] font-gaming text-gray-500 hover:text-white transition-colors duration-300 uppercase tracking-[0.2em]">
+                    <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform text-xs"></i>
+                    Back to Home
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <div class="fixed inset-0 z-[-1] bg-premium-gradient opacity-90"></div>
+        <div class="retro-grid"></div>
+        <div
+            class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-glow to-transparent opacity-50 z-50">
+        </div>
+
+        <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+            <div
+                class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-4 sm:px-6 py-3 flex justify-between items-center relative z-50">
+
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                    <img src="assets/images/Unicorn_Logo.png"
+                        onerror="this.src='https://placehold.co/100x100/012E34/D4AF37?text=U'" alt="Unicorn Logo"
+                        class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
+                    <span
+                        class="font-heading font-bold text-lg sm:text-xl text-beige block group-hover:text-gold transition whitespace-nowrap">
+                        UNICORN '26
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="index.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-house text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Home</span>
+                    </a>
+                    <a href="about.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-circle-info text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">About</span>
+                    </a>
+                    <a href="events.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-calendar-days text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Events</span>
+                    </a>
+                    <a href="glimpse.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-images text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Glimpses</span>
+                    </a>
+                    <a href="schedule.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-clock text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Schedule</span>
+                    </a>
+                    <a href="contact.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-envelope text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Contact</span>
+                    </a>
+                    <a href="assets/brochure.pdf" download
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Brochure</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="registration.html"
+                        class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                        REGISTER NOW
+                    </a>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gold text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 md:hidden z-40 flex flex-col gap-4 text-center">
+                <a href="index.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">HOME</a>
+                <a href="about.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">ABOUT</a>
+                <a href="events.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">EVENTS</a>
+                <a href="schedule.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">SCHEDULE</a>
+                <a href="glimpse.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">GLIMPSES</a>
+                <a href="assets/brochure.pdf" download
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">BROCHURE</a>
+                <a href="contact.html" class="nav-link-mobile font-gaming text-sm text-beige py-2">CONTACT</a>
+                <button onclick="window.location.href='registration.html'"
+                    class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER</button>
+            </div>
+        </nav>
+
+        <header class="relative pt-36 pb-10 text-center px-4">
+            <div class="inline-block px-4 py-1 border border-gold/30 rounded-full bg-black/50 backdrop-blur-md mb-6">
+                <span class="text-gold font-retro text-lg tracking-widest animate-pulse">● Feb 18-20, 2026</span>
+            </div>
+            <h1 class="glitch font-gaming text-5xl md:text-8xl font-black mb-4 text-white tracking-tighter"
+                data-text="MISSION SELECT">
+                MISSION SELECT
+            </h1>
+            <p class="font-retro text-emerald-glow text-xl tracking-widest uppercase">
+                >> CHOOSE YOUR CHARACTER_
+            </p>
+        </header>
+
+        <div class="max-w-7xl mx-auto px-6 mb-12 relative z-20">
+            <div class="flex flex-wrap justify-center gap-4" id="filter-container">
+
+                <!-- ALL QUESTS -->
+                <button onclick="filterEvents('all')"
+                    class="filter-btn active-filter px-8 py-2 border border-gold text-gold font-gaming font-bold skew-x-[-15deg] hover:bg-gold hover:text-pitch transition duration-300">
+                    <span class="block skew-x-[15deg]">ALL QUESTS</span>
+                </button>
+
+                <!-- DAY 01 -->
+                <button onclick="filterEvents('Day 1')"
+                    class="filter-btn px-8 py-2 border border-emerald-glow text-emerald-glow font-gaming font-bold skew-x-[-15deg] hover:bg-emerald-glow hover:text-pitch transition duration-300">
+                    <span class="block skew-x-[15deg]">DAY 01</span>
+                </button>
+
+                <!-- DAY 02 -->
+                <button onclick="filterEvents('Day 2')" class="filter-btn px-8 py-2 border border-beige text-beige
+           font-gaming font-bold skew-x-[-15deg]
+           hover:bg-beige hover:text-[#2A2418]
+           hover:border-beige
+           hover:shadow-[0_0_14px_rgba(232,217,181,0.6)]
+           transition duration-300">
+                    <span class="block skew-x-[15deg]">DAY 02</span>
+                </button>
+
+
+                <!-- DAY 03 -->
+                <button onclick="filterEvents('Day 3')"
+                    class="filter-btn px-8 py-2 border border-neon text-neon font-gaming font-bold skew-x-[-15deg] hover:bg-neon hover:text-pitch transition duration-300">
+                    <span class="block skew-x-[15deg]">DAY 03</span>
+                </button>
+
+            </div>
+        </div>
+
+
+        <main class="max-w-7xl mx-auto px-6 pb-24 relative z-10">
+            <div id="events-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </main>
+        <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                    <div>
+                        <h4 class="text-3xl font-heading font-black text-beige mb-4">
+                            UNI<span class="text-gold">CORN</span>
+                        </h4>
+                        <p class="text-beige/70 font-light leading-relaxed">
+                            An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation
+                            of entrepreneurial minds through innovation and excellence.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
+                        <ul class="space-y-2">
+                            <li><a href="index.html"
+                                    class="text-beige/70 hover:text-gold transition duration-300">Home</a></li>
+                            <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About
+                                    the Fest</a></li>
+                            <li><a href="events.html"
+                                    class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
+                            <li><a href="schedule.html"
+                                    class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
+                            <li><a href="contact.html"
+                                    class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
+                            <li><a href="glimpse.html"
+                                    class="text-beige/70 hover:text-gold transition duration-300">Glimpses</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
+                        <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
+                                class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
+                        <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
+
+                        <div class="flex space-x-4 mt-6">
+                            <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                                target="_blank" title="@ecell_hindujacollege"
+                                class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                                title="E-Cell KPB Hinduja College"
+                                class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                                <i class="fa-brands fa-linkedin-in text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
+                    <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
+                        E-Cell K.P.B. Hinduja College.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/events.js"></script>
+
+</body>
+
+</html>

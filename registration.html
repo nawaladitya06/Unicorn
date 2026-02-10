@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | UNICORN 2026</title>
+    <link rel="icon" type="image/png" href="assets/images/Unicorn_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&family=VT323&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        #lock-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        #lock-screen.unlocked {
+            transform: translateY(-100%);
+        }
+
+        .gaming-input {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(4, 120, 87, 0.5);
+            color: #F0EAD6;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gaming-input:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            outline: none;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        #custom-notification {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-pitch selection:bg-gold selection:text-pitch font-body relative">
+    <div id="intro-lock-screen">
+        <div class="relative mb-8">
+            <i id="intro-lock-icon" class="fa-solid fa-lock text-8xl text-gold transition-colors duration-300"></i>
+            <div class="absolute inset-0 bg-gold/20 blur-xl rounded-full animate-pulse -z-10"></div>
+        </div>
+        <h1 id="intro-mode-text"
+            class="font-gaming text-4xl md:text-6xl font-black text-white opacity-0 tracking-widest text-center">GAMING
+            MODE <span class="text-emerald-glow">ON</span></h1>
+        <div class="w-64 h-1 bg-white/10 mt-8 rounded-full overflow-hidden">
+            <div id="intro-bar" class="h-full bg-emerald-glow w-0 transition-all duration-[2000ms] ease-out"></div>
+        </div>
+    </div>
+
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+        <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+            <div
+                class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-4 sm:px-6 py-3 flex justify-between items-center relative z-50">
+
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                    <img src="assets/images/Unicorn_Logo.png"
+                        onerror="this.src='https://placehold.co/100x100/012E34/D4AF37?text=U'" alt="Unicorn Logo"
+                        class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
+                    <span
+                        class="font-heading font-bold text-lg sm:text-xl text-beige block group-hover:text-gold transition whitespace-nowrap">
+                        UNICORN '26
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="index.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-house text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Home</span>
+                    </a>
+                    <a href="about.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-circle-info text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">About</span>
+                    </a>
+                    <a href="events.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-calendar-days text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Events</span>
+                    </a>
+                    <a href="glimpse.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-images text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Glimpses</span>
+                    </a>
+                    <a href="schedule.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-clock text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Schedule</span>
+                    </a>
+                    <a href="contact.html"
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-envelope text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Contact</span>
+                    </a>
+                    <a href="assets/brochure.pdf" download
+                        class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                        <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                        <span class="nav-label font-semibold text-sm">Brochure</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button onclick="window.location.href='registration.html'"
+                        class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                        REGISTER
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gold text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 md:hidden z-40 flex flex-col gap-4 text-center">
+                <a href="index.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">HOME</a>
+                <a href="about.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">ABOUT</a>
+                <a href="events.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">EVENTS</a>
+                <a href="schedule.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">SCHEDULE</a>
+                <a href="glimpse.html"
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">GLIMPSES</a>
+                <a href="assets/brochure.pdf" download
+                    class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">BROCHURE</a>
+                <a href="contact.html" class="nav-link-mobile font-gaming text-sm text-beige py-2">CONTACT</a>
+                <button onclick="window.location.href='registration.html'"
+                    class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER</button>
+            </div>
+        </nav>
+
+        <main class="pt-32 pb-24 px-6 max-w-5xl mx-auto">
+            <div class="text-center mb-12 relative">
+                <div
+                    class="inline-block px-4 py-1 border border-emerald-glow/30 rounded-full bg-emerald-dark/30 backdrop-blur-md mb-4 animate-pulse">
+                    <span class="text-emerald-glow font-gaming text-xs tracking-widest uppercase"><i
+                            class="fa-solid fa-gamepad mr-2"></i> Player Registration</span>
+                </div>
+                <h1 class="font-heading text-4xl md:text-6xl font-bold text-white mb-2">JOIN THE <span
+                        class="text-gold">GAME</span></h1>
+                <p class="text-beige/60 font-mono text-sm tracking-wide">Enter base details and select your mission to
+                    initialize player profiles.</p>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-1 relative">
+                <div class="bg-black/40 rounded-xl p-8 md:p-12">
+                    <form id="registration-form" name="unicorn-registration" class="space-y-12">
+
+                        <div>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                01. BASE OPERATIONS</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">Base
+                                        Name</label>
+                                    <input type="text" name="College" placeholder="Enter Full Name of your College"
+                                        required class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">Base
+                                        Code</label>
+                                    <input type="text" name="CCCode" placeholder="Enter your College's assigned CC Code"
+                                        required class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                02. SELECT MISSION</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Crisis Cabinet" class="peer sr-only"
+                                        required>
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-briefcase text-purple-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Crisis Cabinet</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • 2 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Mind Switch" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-comments text-green-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Mind Switch</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Flop Tank" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-lightbulb text-red-500"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Flop Tank</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Business • 3 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="FacePop" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-palette text-orange-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">FacePop</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Fine Arts • 2 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Wallistry" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-paint-roller text-amber-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Wallistry</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Fine Arts • 2 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Crochet Chronicles" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-scissors text-teal-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Crochet Chronicles</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Fine Arts • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="60 Seconds of Fame" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-clock text-rose-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">60 Seconds of Fame</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Literacy • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="From Prompt to Plot" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-pen-nib text-cyan-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">From Prompt to Plot</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Literacy • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Solo Surge" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-microphone text-blue-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Solo Surge</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Performing • Solo</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Battle of Steps" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-music text-yellow-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Battle of Steps</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Performing • 6-10 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Vogue Vista" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-shirt text-indigo-500"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Vogue Vista</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Performing • 7-10 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Face of Unicorn" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-crown text-emerald-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Face of Unicorn</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Icon • 2 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Campus Chase" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-map text-pink-400"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Campus Chase</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Mgmt • 3 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Level Up Bids (IPL Auctions)"
+                                        class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-handshake text-white"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Level Up Bids (IPL Auctions)</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">Mgmt • 2 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="Free Fire" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-gamepad text-white"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Free Fire</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">E-Sport • 2-4 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="Event" value="BGMI" class="peer sr-only">
+                                    <div
+                                        class="p-4 rounded border border-white/10 bg-white/5 peer-checked:border-gold peer-checked:bg-gold/10 transition hover:bg-white/10 flex items-center gap-3">
+                                        <i class="fa-solid fa-gamepad text-white"></i>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">BGMI</h4>
+                                            <p class="text-beige/50 text-[10px] uppercase">E-Sport • 2-4 Players</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                03. PLAYER PROFILES</h3>
+                            <div id="player-profiles-container" class="mt-10 text-center text-white/40">
+                                <p class="font-mono text-xs uppercase tracking-widest">
+                                    Select Mission to deploy fields...
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <h3
+                                class="text-emerald-glow font-gaming text-lg border-b border-emerald-glow/20 pb-2 mb-6 uppercase tracking-tighter">
+                                04. CONTINGENT OPS</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">CL
+                                        Name</label>
+                                    <input type="text" name="CLName" placeholder="Enter Contingent Leader Name" required
+                                        class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">CL
+                                        Phone</label>
+                                    <input type="tel" name="CLPhone" placeholder="CL Hotline" required
+                                        class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
+                                        Name</label>
+                                    <input type="text" name="ACLName" placeholder="Enter Asst. Contingent Leader Name"
+                                        required class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] font-bold text-gold font-gaming uppercase tracking-widest ml-1">ACL
+                                        Phone</label>
+                                    <input type="tel" name="ACLPhone" placeholder="ACL Hotline" required
+                                        class="w-full gaming-input rounded p-3 text-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <button type="submit" id="submit-btn"
+                                class="group relative w-full py-4 bg-gold hover:bg-white text-pitch font-gaming font-black text-xl tracking-widest uppercase rounded shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
+                                <span class="relative z-10"><i class="fa-solid fa-rocket mr-2"></i> Deploy
+                                    Registration</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="custom-notification"
+        class="fixed inset-0 flex items-center justify-center z-[100] hidden backdrop-blur-sm bg-black/40">
+        <div class="bg-pitch border-2 border-emerald-glow p-8 rounded-xl shadow-[0_0_30px_rgba(16,185,129,0.4)] max-w-sm w-full text-center transform scale-90 transition-transform duration-300"
+            id="notification-box">
+            <div class="mb-4 text-emerald-glow text-5xl"><i class="fa-solid fa-circle-check" id="notification-icon"></i>
+            </div>
+            <h2 class="font-gaming text-2xl text-white mb-2 tracking-widest" id="notification-title">SUCCESS</h2>
+            <p class="font-mono text-beige/70 text-sm mb-6" id="notification-message">Deployed to mainframe.</p>
+            <button onclick="closeNotification()"
+                class="px-8 py-2 bg-emerald-glow text-pitch font-gaming font-bold hover:bg-white transition-colors duration-300">CONFIRM_</button>
+        </div>
+    </div>
+
+    <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div>
+                    <h4 class="text-3xl font-heading font-black text-beige mb-4">
+                        UNI<span class="text-gold">CORN</span>
+                    </h4>
+                    <p class="text-beige/70 font-light leading-relaxed">
+                        An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation of
+                        entrepreneurial minds through innovation and excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-beige/70 hover:text-gold transition duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About the
+                                Fest</a></li>
+                        <li><a href="events.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
+                        <li><a href="schedule.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
+                        <li><a href="contact.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
+                    <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
+                            class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
+                    <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
+
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                            target="_blank" title="@ecell_hindujacollege"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                            title="E-Cell KPB Hinduja College"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
+                <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
+                    E-Cell K.P.B. Hinduja College.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/events.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/registration.js"></script>
+</body>
+
+</html>

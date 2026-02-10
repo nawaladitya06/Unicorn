@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | UNICORN 2026</title>
+    <link rel="icon" type="image/png" href="assets/images/Unicorn_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="assets/js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .custom-input {
+            background: rgba(5, 5, 5, 0.6);
+            border: 1px solid rgba(1, 46, 52, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .custom-input:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="bg-pitch selection:bg-gold selection:text-pitch font-body relative">
+
+    <div id="loader"
+        class="fixed inset-0 z-[100] bg-pitch flex items-center justify-center transition-opacity duration-700">
+        <div class="text-center">
+            <h1 class="font-heading text-4xl text-gold animate-pulse">UNICORN</h1>
+            <div class="w-32 h-1 bg-emerald mt-4 mx-auto relative overflow-hidden">
+                <div class="absolute inset-0 bg-gold w-full -translate-x-full animate-[shine_1s_infinite]"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-[-1] bg-premium-gradient opacity-80"></div>
+    <div class="fixed inset-0 z-[-1] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+    </div>
+
+<nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div
+            class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-4 sm:px-6 py-3 flex justify-between items-center relative z-50">
+
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                <img src="assets/images/Unicorn_Logo.png"
+                    onerror="this.src='https://placehold.co/100x100/012E34/D4AF37?text=U'" alt="Unicorn Logo"
+                    class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
+                <span
+                    class="font-heading font-bold text-lg sm:text-xl text-beige block group-hover:text-gold transition whitespace-nowrap">
+                    UNICORN '26
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="index.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-house text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Home</span>
+                </a>
+                <a href="about.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-circle-info text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">About</span>
+                </a>
+                <a href="events.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-calendar-days text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Events</span>
+                </a>
+                <a href="glimpse.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-images text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Glimpses</span>
+                </a>
+                <a href="schedule.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-clock text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Schedule</span>
+                </a>
+                <a href="contact.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Contact</span>
+                </a>
+                <a href="assets/brochure.pdf" download
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Brochure</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="window.location.href='registration.html'"
+                    class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                    REGISTER
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gold text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 md:hidden z-40 flex flex-col gap-4 text-center">
+            <a href="index.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">HOME</a>
+            <a href="about.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">ABOUT</a>
+            <a href="events.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">EVENTS</a>
+            <a href="schedule.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">SCHEDULE</a>
+            <a href="glimpse.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">GLIMPSES</a>
+            <a href="assets/brochure.pdf" download
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">BROCHURE</a>
+            <a href="contact.html" class="nav-link-mobile font-gaming text-sm text-beige py-2">CONTACT</a>
+            <button onclick="window.location.href='registration.html'"
+                class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER</button>
+        </div>
+    </nav>
+
+
+    <header class="relative pt-40 pb-12 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-4">
+                Get In <span class="text-gradient-gold">Touch</span>
+            </h1>
+            <p class="text-xl text-beige/80 font-light">
+                Have questions about Unicorn? Reach out to our team.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+
+        <div class="grid md:grid-cols-3 gap-6 mb-16 reveal">
+            <div class="glass-panel p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                <div
+                    class="w-16 h-16 mx-auto bg-emerald-dark rounded-full flex items-center justify-center mb-4 border border-gold/30 group-hover:border-gold transition">
+                    <i class="fa-solid fa-user-tie text-2xl text-gold"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-white mb-1">President</h3>
+                <p class="text-emerald-glow font-bold text-lg mb-2">Parag Suthar</p>
+                <a href="tel:+919867618804"
+                    class="inline-flex items-center gap-2 text-beige/80 hover:text-white transition bg-white/5 px-4 py-2 rounded-full border border-white/10 text-sm">
+                    <i class="fa-solid fa-phone text-emerald-glow"></i>
+                    <span>+91 98676 18804</span>
+                </a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                <div
+                    class="w-16 h-16 mx-auto bg-emerald-dark rounded-full flex items-center justify-center mb-4 border border-gold/30 group-hover:border-gold transition">
+                    <i class="fa-solid fa-user-group text-2xl text-gold"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-white mb-1">Vice-President</h3>
+                <p class="text-emerald-glow font-bold text-lg mb-2">Shweta Jadhav</p>
+                <a href="tel:+917700055330"
+                    class="inline-flex items-center gap-2 text-beige/80 hover:text-white transition bg-white/5 px-4 py-2 rounded-full border border-white/10 text-sm">
+                    <i class="fa-solid fa-phone text-emerald-glow"></i>
+                    <span>+91 77000 55330</span>
+                </a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                <div
+                    class="w-16 h-16 mx-auto bg-emerald-dark rounded-full flex items-center justify-center mb-4 border border-gold/30 group-hover:border-gold transition">
+                    <i class="fa-solid fa-user-gear text-2xl text-gold"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-white mb-1">Admin</h3>
+                <p class="text-emerald-glow font-bold text-lg mb-2">Indu Singh</p>
+                <a href="tel:+919324259779"
+                    class="inline-flex items-center gap-2 text-beige/80 hover:text-white transition bg-white/5 px-4 py-2 rounded-full border border-white/10 text-sm">
+                    <i class="fa-solid fa-phone text-emerald-glow"></i>
+                    <span>+91 93242 59779</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+            <div class="space-y-8 reveal">
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-gold/10 rounded-full blur-2xl group-hover:bg-gold/20 transition duration-500">
+                    </div>
+
+                    <h3 class="font-heading text-2xl text-white font-bold mb-6 border-l-4 border-gold pl-4">College Info
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-emerald-dark flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gold font-bold mb-1">K.P.B. Hinduja College of Commerce</h4>
+                                <a href="https://hindujacollege.in/" target="_blank"
+                                    class="text-beige/70 text-sm hover:text-white transition underline">Visit Official
+                                    Website</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-emerald-dark flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gold font-bold mb-1">Visit Us</h4>
+                                <a href="https://maps.app.goo.gl/7cUpLEnVRYdoYDmN7"
+                                    class="text-beige/70 text-sm hover:text-white transition" target="_blank">
+                                    <p class="text-beige/70 text-sm leading-relaxed">
+                                        315, New Charni Road, Charni Road East,<br>
+                                        Opera House, Girgaon, Mumbai,<br>
+                                        Maharashtra 400004 </p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-emerald-dark flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gold font-bold mb-1">Email Us</h4>
+                                <a href="mailto:hinduja.ecell@gmail.com"
+                                    class="text-beige/70 text-sm hover:text-white transition block">hinduja.ecell@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-emerald-dark flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gold font-bold mb-2">Follow Us</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                                        target="_blank"
+                                        class="w-10 h-10 rounded-lg bg-black/50 border border-white/10 flex items-center justify-center text-white hover:border-gold hover:text-gold transition duration-300">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                                        class="w-10 h-10 rounded-lg bg-black/50 border border-white/10 flex items-center justify-center text-white hover:border-gold hover:text-gold transition duration-300">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="glass-panel p-2 rounded-2xl h-64 overflow-hidden relative grayscale-0 transition duration-500">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15094.75998938679!2d72.815856!3d18.945111!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce1a80a3f3a3%3A0x731e3ea4762ab091!2sK.%20P.%20B.%20Hinduja%20College%20of%20Commerce!5e0!3m2!1sen!2sin!4v1765015250132!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;border-radius: 8px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 md:p-10 rounded-2xl reveal relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-emerald-dark/20 to-transparent pointer-events-none rounded-2xl">
+                </div>
+
+                <form id="contact-form" name="contact-form" class="space-y-6 relative z-10">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-emerald-glow uppercase tracking-wider ml-1">Your
+                                Name</label>
+                            <input type="text" name="Name" placeholder="John Doe" required
+                                class="w-full custom-input rounded-lg p-4 text-white placeholder-white/30">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-emerald-glow uppercase tracking-wider ml-1">College
+                                Name</label>
+                            <input type="text" name="College" placeholder="KPB Hinduja College" required
+                                class="w-full custom-input rounded-lg p-4 text-white placeholder-white/30">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-emerald-glow uppercase tracking-wider ml-1">Email
+                            Address</label>
+                        <input type="email" name="Email" placeholder="you@example.com" required
+                            class="w-full custom-input rounded-lg p-4 text-white placeholder-white/30">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-emerald-glow uppercase tracking-wider ml-1">Select Inquiry
+                            Type</label>
+                        <select name="Inquiry Type" class="w-full custom-input rounded-lg p-4 text-white bg-black">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Event Registration">Event Registration</option>
+                            <option value="Sponsorship">Sponsorship</option>
+                            <option value="Technical Issue">Technical Issue</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-emerald-glow uppercase tracking-wider ml-1">Message</label>
+                        <textarea name="Message" rows="5" placeholder="How can we help you?" required
+                            class="w-full custom-input rounded-lg p-4 text-white placeholder-white/30 resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn"
+                        class="w-full py-4 bg-gold text-pitch font-heading font-bold text-lg rounded-lg hover:bg-white hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div>
+                    <h4 class="text-3xl font-heading font-black text-beige mb-4">
+                        UNI<span class="text-gold">CORN</span>
+                    </h4>
+                    <p class="text-beige/70 font-light leading-relaxed">
+                        An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation of
+                        entrepreneurial minds through innovation and excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-beige/70 hover:text-gold transition duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About the
+                                Fest</a></li>
+                        <li><a href="events.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
+                        <li><a href="schedule.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
+                        <li><a href="contact.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
+                        <li><a href="glimpse.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Glimpses</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
+                    <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
+                            class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
+                    <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
+
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                            target="_blank" title="@ecell_hindujacollege"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                            title="E-Cell KPB Hinduja College"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
+                <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
+                    E-Cell K.P.B. Hinduja College.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
+</body>
+
+</html>

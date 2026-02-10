@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNICORN 2026 | KPB Hinduja E-Cell</title>
+    <link rel="icon" type="image/png" href="assets/images/Unicorn_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="assets/js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-pitch selection:bg-gold selection:text-pitch font-body relative">
+
+    <div id="loader"
+        class="fixed inset-0 z-[100] bg-pitch flex items-center justify-center transition-opacity duration-700">
+        <div class="text-center">
+            <h1 class="font-heading text-4xl text-gold animate-pulse">UNICORN</h1>
+            <div class="w-32 h-1 bg-emerald mt-4 mx-auto relative overflow-hidden">
+                <div class="absolute inset-0 bg-gold w-full -translate-x-full animate-[shine_1s_infinite]"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-[-1] bg-premium-gradient opacity-80"></div>
+    <div class="fixed inset-0 z-[-1] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+    </div>
+
+        <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div
+            class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-4 sm:px-6 py-3 flex justify-between items-center relative z-50">
+
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                <img src="assets/images/Unicorn_Logo.png"
+                    onerror="this.src='https://placehold.co/100x100/012E34/D4AF37?text=U'" alt="Unicorn Logo"
+                    class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
+                <span
+                    class="font-heading font-bold text-lg sm:text-xl text-beige block group-hover:text-gold transition whitespace-nowrap">
+                    UNICORN '26
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="index.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-house text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Home</span>
+                </a>
+                <a href="about.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-circle-info text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">About</span>
+                </a>
+                <a href="events.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-calendar-days text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Events</span>
+                </a>
+                <a href="glimpse.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-images text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Glimpses</span>
+                </a>
+                <a href="schedule.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-clock text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Schedule</span>
+                </a>
+                <a href="contact.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Contact</span>
+                </a>
+                <a href="assets/brochure.pdf" download
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Brochure</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="window.location.href='registration.html'"
+                    class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                    REGISTER
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gold text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 md:hidden z-40 flex flex-col gap-4 text-center">
+            <a href="index.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">HOME</a>
+            <a href="about.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">ABOUT</a>
+            <a href="events.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">EVENTS</a>
+            <a href="schedule.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">SCHEDULE</a>
+            <a href="glimpse.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">GLIMPSES</a>
+            <a href="assets/brochure.pdf" download
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">BROCHURE</a>
+            <a href="contact.html" class="nav-link-mobile font-gaming text-sm text-beige py-2">CONTACT</a>
+            <button onclick="window.location.href='registration.html'"
+                class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER</button>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <img src="assets/images/Unicorn_Logo.png" onerror="this.style.display='none'"
+                class="w-[80vw] md:w-[40vw] opacity-5 animate-float grayscale blur-sm">
+        </div>
+
+        <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
+            <p class="text-emerald-glow tracking-[0.3em] text-sm md:text-base font-bold uppercase mb-4 animate-fade-up">
+                Entrepreneurship Cell Presents
+            </p>
+
+            <h1 class="font-heading text-6xl sm:text-7xl md:text-9xl font-black mb-2 animate-fade-up"
+                style="animation-delay: 0.2s;">
+                <span class="text-gradient-gold">UNICORN</span> '26
+            </h1>
+
+            <p class="font-serif italic font-light tracking-wide text-xl md:text-3xl text-beige/80 mb-10 animate-fade-up"
+                style="animation-delay: 0.4s;">
+                &ldquo;Where <span class="font-normal text-gold">Imagination</span> Meets <span
+                    class="font-normal text-emerald-glow">Reality</span>&rdquo;
+            </p>
+
+            <div class="flex justify-center gap-4 md:gap-8 mb-12 animate-fade-up" style="animation-delay: 0.5s;">
+                <div class="glass-panel p-4 rounded-xl min-w-[80px] md:min-w-[100px]">
+                    <span id="days" class="block text-2xl md:text-4xl font-bold text-white font-heading">00</span>
+                    <span class="text-xs text-gold uppercase tracking-wider">Days</span>
+                </div>
+                <div class="glass-panel p-4 rounded-xl min-w-[80px] md:min-w-[100px]">
+                    <span id="hours" class="block text-2xl md:text-4xl font-bold text-white font-heading">00</span>
+                    <span class="text-xs text-gold uppercase tracking-wider">Hours</span>
+                </div>
+                <div class="glass-panel p-4 rounded-xl min-w-[80px] md:min-w-[100px]">
+                    <span id="mins" class="block text-2xl md:text-4xl font-bold text-white font-heading">00</span>
+                    <span class="text-xs text-gold uppercase tracking-wider">Mins</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 justify-center animate-fade-up" style="animation-delay: 0.6s;">
+                <a href="#events"
+                    class="px-8 py-4 bg-transparent border-2 border-gold text-gold rounded-none skew-x-[-10deg] hover:bg-gold hover:text-pitch transition-all duration-300 font-bold tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)]">
+                    <span class="block skew-x-[10deg]">EXPLORE EVENTS</span>
+                </a>
+                <a href="#past-glory"
+                    class="px-8 py-4 bg-emerald-dark border-2 border-emerald-dark text-white rounded-none skew-x-[-10deg] hover:bg-emerald hover:border-emerald transition-all duration-300 font-bold tracking-wider shadow-lg">
+                    <span class="block skew-x-[10deg]">PAST GLORY</span>
+                </a>
+                <a href="assets/brochure.pdf" download
+                    class="px-8 py-4 bg-transparent border-2 border-beige text-beige rounded-none skew-x-[-10deg] hover:bg-gold hover:text-pitch transition-all duration-300 font-bold tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)]">
+                    <span class="block skew-x-[10deg]">BROCHURE</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 animate-bounce text-gold/50">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative z-10 bg-black/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <img src="assets/images/ECELL_Logo.png"
+                        onerror="this.src='https://placehold.co/600x600/012E34/F0EAD6?text=E-CELL'"
+                        class="w-3/4 mx-auto drop-shadow-[0_0_30px_rgba(212,175,55,0.2)] animate-float">
+                </div>
+                <div class="space-y-8 reveal">
+                    <div
+                        class="inline-block px-3 py-1 border border-gold/30 rounded-full text-gold text-xs tracking-widest uppercase">
+                        The Legacy
+                    </div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold">
+                        Curating <span class="text-emerald-glow">Excellence</span>
+                    </h2>
+
+                    <div
+                        class="prose prose-invert prose-lg text-beige/80 text-justify font-light border-l-4 border-gold pl-6">
+                        <p>
+                            Orchestrated by the visionary students of <strong class="text-white">K.P.B. Hinduja
+                                College's Entrepreneurship Cell</strong>, UNICORN is more than a festival—it is a
+                            convergence of youth, business acumen, and cultural artistry.
+                        </p>
+                        <br>
+                        <p>
+                            Now in its distinguished <strong class="text-gold">Third Year</strong>, this intercollegiate
+                            spectacle merges high-stakes finance simulations, innovative marketing strategies, and
+                            cutting-edge tech hackathons with the vibrant energy of cultural showcases and competitive
+                            gaming.
+                        </p>
+                    </div>
+
+                    <a href="about.html"
+                        class="inline-flex items-center gap-3 text-gold font-bold hover:gap-6 transition-all duration-300 group">
+                        READ OUR FULL STORY
+                        <i class="fa-solid fa-arrow-right-long group-hover:text-emerald-glow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact"
+        class="py-24 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] relative">
+        <div class="absolute inset-0 bg-emerald-dark/90 z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">A Legacy of <span
+                        class="text-gold">Impact</span></h2>
+                <p class="text-beige/70 max-w-3xl mx-auto">
+                    Previously a massive success, UNICORN has set the benchmark for student-led innovation in Mumbai.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition duration-500 reveal">
+                    <i class="fa-solid fa-users text-4xl text-emerald-glow mb-4"></i>
+                    <h3 class="text-3xl font-heading font-bold text-white">100+</h3>
+                    <p class="text-sm text-gold uppercase tracking-wider mt-2">Event Footfall</p>
+                </div>
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition duration-500 reveal">
+                    <i class="fa-brands fa-instagram text-4xl text-emerald-glow mb-4"></i>
+                    <h3 class="text-3xl font-heading font-bold text-white">700+</h3>
+                    <p class="text-sm text-gold uppercase tracking-wider mt-2">Instagram Reach</p>
+                </div>
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition duration-500 reveal">
+                    <i class="fa-solid fa-graduation-cap text-4xl text-emerald-glow mb-4"></i>
+                    <h3 class="text-3xl font-heading font-bold text-white">20+</h3>
+                    <p class="text-sm text-gold uppercase tracking-wider mt-2">Colleges Participating</p>
+                </div>
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition duration-500 reveal">
+                    <i class="fa-solid fa-chalkboard-user text-4xl text-emerald-glow mb-4"></i>
+                    <h3 class="text-3xl font-heading font-bold text-white">7+</h3>
+                    <p class="text-sm text-gold uppercase tracking-wider mt-2">Expert Workshops</p>
+                </div>
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition duration-500 reveal">
+                    <i class="fa-solid fa-trophy text-4xl text-emerald-glow mb-4"></i>
+                    <h3 class="text-3xl font-heading font-bold text-white">5+</h3>
+                    <p class="text-sm text-gold uppercase tracking-wider mt-2">Live Competitions</p>
+                </div>
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition duration-500 reveal">
+                    <i class="fa-solid fa-user-group text-4xl text-emerald-glow mb-4"></i>
+                    <h3 class="text-3xl font-heading font-bold text-white">16-23</h3>
+                    <p class="text-sm text-gold uppercase tracking-wider mt-2">Age Group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="py-20 relative bg-pitch overflow-hidden border-t border-white/5">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-pitch via-transparent to-pitch z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 mb-12 relative z-20 text-center reveal">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">
+                Our <span class="text-gold">Partners</span>
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-emerald-glow to-transparent mx-auto mb-6"></div>
+            <p class="text-beige/60 font-body text-sm tracking-wider uppercase">
+                Powering The Vision
+            </p>
+        </div>
+
+        <div class="relative z-20 w-full space-y-12">
+            <div
+                class="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-pitch to-transparent z-30 pointer-events-none">
+            </div>
+            <div
+                class="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-pitch to-transparent z-30 pointer-events-none">
+            </div>
+
+            <div class="flex overflow-hidden relative w-full group">
+                <div
+                    class="flex gap-12 md:gap-24 animate-scroll-right whitespace-nowrap items-center hover:[animation-play-state:paused]">
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img1.jpg" alt="Sponsor 1"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img2.jpg" alt="Sponsor 2"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img3.jpg" alt="Sponsor 3"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img4.jpg" alt="Sponsor 4"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img5.jpg" alt="Sponsor 5"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img6.jpg" alt="Sponsor 6"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img7.jpg" alt="Sponsor 7"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img8.jpg" alt="Sponsor 8"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img9.jpg" alt="Sponsor 9"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img10.jpg" alt="Sponsor 10"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex overflow-hidden relative w-full group">
+                <div
+                    class="flex gap-12 md:gap-24 animate-scroll-left whitespace-nowrap items-center hover:[animation-play-state:paused]">
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img11.jpg" alt="Sponsor 11"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img12.jpg" alt="Sponsor 12"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img13.jpg" alt="Sponsor 13"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img14.jpg" alt="Sponsor 14"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img15.jpg" alt="Sponsor 15"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img16.jpg" alt="Sponsor 16"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img17.jpg" alt="Sponsor 17"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img18.jpg" alt="Sponsor 18"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img19.jpg" alt="Sponsor 19"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img20.jpg" alt="Sponsor 20"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div
+                        class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img src="assets/images/Logo/img21.jpg" alt="Sponsor 21"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="events" class="py-24 relative bg-pitch overflow-hidden">
+        <div class="absolute inset-0 opacity-5"
+            style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-white">Featured <span
+                            class="text-emerald-glow">Events</span></h2>
+                    <p id="events-subtitle" class="text-beige/60 font-body text-sm tracking-wider">
+                        Loading Event Details...
+                    </p>
+                </div>
+                <div id="events-status-badge"
+                    class="mt-4 md:mt-0 px-4 py-2 rounded backdrop-blur-sm border transition-all duration-300">
+                </div>
+            </div>
+
+            <div id="home-events-grid" class="grid md:grid-cols-3 gap-8">
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="events.html"
+                    class="inline-block px-8 py-3 bg-white/5 hover:bg-gold text-white hover:text-pitch rounded-lg transition-all duration-300 font-bold tracking-wide border border-white/10 hover:border-gold">
+                    VIEW ALL EVENTS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="past-glory" class="py-24 relative border-y border-white/5 bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <i class="fa-solid fa-camera-retro text-gold text-4xl mb-4"></i>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">Past <span class="text-white">Glory</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
+            </div>
+
+            <div id="past-glory-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="glimpse.html"
+                    class="inline-block px-8 py-3 bg-white/5 hover:bg-gold text-white hover:text-pitch rounded-lg transition-all duration-300 font-bold tracking-wide">
+                    VIEW FULL GALLERY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none"
+            style="background-image: radial-gradient(#D4AF37 1px, transparent 1px); background-size: 30px 30px;">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="font-heading text-4xl font-bold mb-16 text-center reveal">Event <span
+                    class="text-emerald-glow">Timeline</span></h2>
+
+            <div class="relative border-l-2 border-gold/30 ml-4 md:ml-12 space-y-12">
+
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div
+                        class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-emerald-glow border-4 border-pitch shadow-[0_0_10px_rgba(16,185,129,0.5)]">
+                    </div>
+
+                    <div
+                        class="glass-panel p-6 rounded-xl border border-emerald-glow/30 hover:border-emerald-glow transition transform hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-2">
+                            <span
+                                class="text-emerald-glow font-bold text-xs tracking-widest uppercase bg-emerald-dark/50 px-2 py-1 rounded">
+                                Active Phase
+                            </span>
+                            <span class="text-beige/40 text-xs font-mono">02:00 PM - Jan 19</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mt-1">Contingent Leaders Briefing</h3>
+                        <p class="text-beige/60 mt-2 text-sm leading-relaxed">
+                             Assembly for Contingent Leaders of other Colleges and revealing the Theme.  
+                        </p>
+                    </div>
+                </div>
+
+                <div id="timeline-dynamic-container" class="contents">
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="schedule.html"
+                    class="inline-block px-6 py-2 border border-gold/30 rounded-full text-gold text-sm font-bold hover:bg-gold hover:text-pitch transition-all duration-300">
+                    View Full Itinerary &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div>
+                    <h4 class="text-3xl font-heading font-black text-beige mb-4">
+                        UNI<span class="text-gold">CORN</span>
+                    </h4>
+                    <p class="text-beige/70 font-light leading-relaxed">
+                        An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation of
+                        entrepreneurial minds through innovation and excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-beige/70 hover:text-gold transition duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About the
+                                Fest</a></li>
+                        <li><a href="events.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
+                        <li><a href="schedule.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
+                        <li><a href="contact.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
+                        <li><a href="glimpse.html" class="text-beige/70 hover:text-gold transition duration-300">Past
+                                Glimpses</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
+                    <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
+                            class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
+                    <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
+
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                            target="_blank" title="@ecell_hindujacollege"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                            title="E-Cell KPB Hinduja College"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
+                <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
+                    E-Cell K.P.B. Hinduja College.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/home.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Determine the current page filename
+            const path = window.location.pathname;
+            const currentPage = path.split("/").pop() || "index.html";
+
+            // 2. Select all links
+            const navLinks = document.querySelectorAll(".nav-link, .nav-link-mobile");
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute("href");
+
+                // 3. Match logic: check if href matches currentPage
+                if (href === currentPage) {
+                    link.classList.add("active");
+                    link.classList.remove("text-beige");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

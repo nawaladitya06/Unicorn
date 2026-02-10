@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | UNICORN 2026</title>
+    <link rel="icon" type="image/png" href="assets/images/Unicorn_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="assets/js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-pitch selection:bg-gold selection:text-pitch font-body relative">
+
+    <div id="loader"
+        class="fixed inset-0 z-[100] bg-pitch flex items-center justify-center transition-opacity duration-700">
+        <div class="text-center">
+            <h1 class="font-heading text-4xl text-gold animate-pulse">UNICORN</h1>
+            <div class="w-32 h-1 bg-emerald mt-4 mx-auto relative overflow-hidden">
+                <div class="absolute inset-0 bg-gold w-full -translate-x-full animate-[shine_1s_infinite]"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-[-1] bg-premium-gradient opacity-80"></div>
+    <div class="fixed inset-0 z-[-1] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div
+            class="backdrop-blur-xl bg-black/60 border-b border-white/5 mx-auto max-w-7xl mt-4 rounded-full px-4 sm:px-6 py-3 flex justify-between items-center relative z-50">
+
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                <img src="assets/images/Unicorn_Logo.png"
+                    onerror="this.src='https://placehold.co/100x100/012E34/D4AF37?text=U'" alt="Unicorn Logo"
+                    class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-gold/50 group-hover:rotate-12 transition duration-500">
+                <span
+                    class="font-heading font-bold text-lg sm:text-xl text-beige block group-hover:text-gold transition whitespace-nowrap">
+                    UNICORN '26
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="index.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-house text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Home</span>
+                </a>
+                <a href="about.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-circle-info text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">About</span>
+                </a>
+                <a href="events.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-calendar-days text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Events</span>
+                </a>
+                <a href="glimpse.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-images text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Glimpses</span>
+                </a>
+                <a href="schedule.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-clock text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Schedule</span>
+                </a>
+                <a href="contact.html"
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Contact</span>
+                </a>
+                <a href="assets/brochure.pdf" download
+                    class="nav-link flex items-center px-3 lg:px-4 py-2 text-beige hover:text-gold transition-colors">
+                    <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                    <span class="nav-label font-semibold text-sm">Brochure</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="window.location.href='registration.html'"
+                    class="hidden sm:block bg-emerald-glow/20 border border-emerald-glow text-emerald-glow px-6 py-2 rounded-full font-gaming text-xs hover:bg-emerald-glow hover:text-pitch transition shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                    REGISTER
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gold text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-xl border border-gold/30 rounded-xl p-6 md:hidden z-40 flex flex-col gap-4 text-center">
+            <a href="index.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">HOME</a>
+            <a href="about.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">ABOUT</a>
+            <a href="events.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">EVENTS</a>
+            <a href="schedule.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">SCHEDULE</a>
+            <a href="glimpse.html"
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">GLIMPSES</a>
+            <a href="assets/brochure.pdf" download
+                class="nav-link-mobile font-gaming text-sm text-beige py-2 border-b border-white/5">BROCHURE</a>
+            <a href="contact.html" class="nav-link-mobile font-gaming text-sm text-beige py-2">CONTACT</a>
+            <button onclick="window.location.href='registration.html'"
+                class="w-full bg-emerald-glow text-pitch py-3 rounded font-bold font-gaming mt-2">REGISTER</button>
+        </div>
+    </nav>
+
+
+    <header class="relative pt-40 pb-20 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none opacity-30">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-dark blur-[150px] rounded-full">
+            </div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-4">
+                About <span class="text-gradient-gold">The Legacy</span>
+            </h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"></div>
+            <p class="text-xl text-beige/80 italic font-heading">
+                "Where Ambition Meets Opportunity"
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24 space-y-24">
+
+        <section class="grid lg:grid-cols-2 gap-12 items-center reveal">
+            <div class="order-2 lg:order-1 space-y-6 text-justify">
+                <h2 class="font-heading text-3xl text-emerald-glow font-bold mb-4">The Powerhouse: E-Cell</h2>
+                <p class="text-beige/90 leading-relaxed text-lg font-light">
+                    The <strong class="text-gold font-semibold">Entrepreneurship Cell (E-Cell)</strong> at Hinduja
+                    College is a powerhouse of creativity, innovation, and unstoppable student energy. With <span
+                        class="text-white border-b border-gold/50">300+ passionate members</span>, E-Cell buzzes with
+                    action through electrifying events, power-packed workshops, and inspiring seminars that bring
+                    students face-to-face with industry leaders and real-world startup culture.
+                </p>
+                <p class="text-beige/90 leading-relaxed text-lg font-light">
+                    E-Cell is more than a committee—it is a launchpad where ideas take flight. Here, students sharpen
+                    their entrepreneurial mindset, build powerful networks, and turn bold visions into real ventures. At
+                    E-Cell, ambition meets opportunity, and every member becomes part of a dynamic-driven and
+                    future-shaping community.
+                </p>
+            </div>
+            <div class="order-1 lg:order-2 relative">
+                <div class="absolute inset-0 bg-gold/10 blur-3xl rounded-full"></div>
+                <img src="assets/images/glimpses/img7.jpg" alt="Team Work"
+                    class="relative z-10 rounded-xl border border-white/10 shadow-[0_0_30px_rgba(4,120,87,0.3)] animate-float">
+            </div>
+        </section>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent w-full"></div>
+
+        <section class="relative reveal">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">What is <span
+                        class="text-white">Unicorn?</span></h2>
+                <p class="text-beige/60">The Flagship Business Conclave of E-Cell Hinduja</p>
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 rounded-2xl relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl"></div>
+
+                <div class="space-y-6 text-beige/90 text-lg leading-relaxed text-justify relative z-10">
+                    <p>
+                        Unicorn is the flagship business conclave of E-Cell Hinduja, bringing together <strong
+                            class="text-gold">800+ enthusiastic participants</strong>
+                        from colleges across Mumbai, making it one of the city’s largest entrepreneurship gatherings for
+                        students.
+                    </p>
+                    <p>
+                        The event served as a launchpad where aspiring innovators meet real-world changemakers, through
+                        keynote talks, case competitions, and high-energy networking. We were honoured to host <strong
+                            class="text-emerald-glow">Mr. Kushal Lodha</strong> and <strong
+                            class="text-emerald-glow">Mr. Amrit Achipalya</strong>, who captivated the audience's
+                        insights and navigated an ever-evolving business landscape. Their perspectives, along with added
+                        wisdom from past Shark Tank pitchers, gave participants a rare inside look into the mindset,
+                        struggles, and breakthroughs behind successful ventures.
+                    </p>
+                    <p>
+                        Unicorn is more than just an event — it is a movement. A dynamic space filled with learning,
+                        collaboration, and limitless ambition. From high-value discussions to powerful networking
+                        moments, the experience motivated every attendee to dream boldly, think creatively, and take
+                        meaningful steps toward building their own entrepreneurial journey. With its unmatched energy
+                        and transformative impact, Unicorn continues to stand as a defining milestone for students who
+                        aspire to shape the future.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="font-heading text-3xl font-bold mb-10 text-center"><span class="text-gold">Event</span>
+                Highlights</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:bg-emerald-dark/30 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-gold/20 to-transparent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-layer-group text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">A Platform for All Sectors</h3>
+                    <p class="text-beige/70 text-sm leading-relaxed">
+                        An inclusive stage where brands from banking, tech, retail, finance, lifestyle, and more can
+                        connect with a vibrant and receptive youth audience.
+                    </p>
+                </div>
+
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:bg-emerald-dark/30 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-gold/20 to-transparent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-users-viewfinder text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Diverse & High-Value Audience</h3>
+                    <p class="text-beige/70 text-sm leading-relaxed">
+                        A powerful mix of students, young professionals, entrepreneurs, and enthusiasts—creating
+                        meaningful engagement and cross-industry networking.
+                    </p>
+                </div>
+
+                <div
+                    class="glass-panel p-8 rounded-xl text-center group hover:bg-emerald-dark/30 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-gold/20 to-transparent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-lightbulb text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Innovation, Ideas & Impact</h3>
+                    <p class="text-beige/70 text-sm leading-relaxed">
+                        A dynamic environment that blends creativity, insights, and real-world perspectives, sparking
+                        conversations that matter across every sector.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black border-t border-emerald-dark/30 pt-16 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div>
+                    <h4 class="text-3xl font-heading font-black text-beige mb-4">
+                        UNI<span class="text-gold">CORN</span>
+                    </h4>
+                    <p class="text-beige/70 font-light leading-relaxed">
+                        An initiative by the E-Cell Unit of K.P.B. Hinduja College. Empowering the next generation of
+                        entrepreneurial minds through innovation and excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-beige/70 hover:text-gold transition duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-beige/70 hover:text-gold transition duration-300">About the
+                                Fest</a></li>
+                        <li><a href="events.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Events</a></li>
+                        <li><a href="schedule.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Itinerary</a></li>
+                        <li><a href="contact.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Register Now</a></li>
+                        <li><a href="glimpse.html"
+                                class="text-beige/70 hover:text-gold transition duration-300">Glimpses</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-heading font-bold text-emerald-glow mb-4">Get In Touch</h5>
+                    <p class="text-beige/70 mb-2">Email: <a href="mailto:hinduja.ecell@gmail.com"
+                            class="hover:text-gold transition duration-300">hinduja.ecell@gmail.com</a></p>
+                    <p class="text-beige/70 text-sm">Follow us for real-time updates:</p>
+
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/ecell_hindujacollege?igsh=MTZwcXJtdG54OTh4cg=="
+                            target="_blank" title="@ecell_hindujacollege"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/e-cell-hinduja/" target="_blank"
+                            title="E-Cell KPB Hinduja College"
+                            class="w-10 h-10 rounded-full bg-emerald-dark flex items-center justify-center text-white hover:bg-gold hover:text-black transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-emerald-dark/30 text-center">
+                <p class="text-sm text-beige/50">&copy; 2026 UNICORN Fest. All Rights Reserved. <br>
+                    E-Cell K.P.B. Hinduja College.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
