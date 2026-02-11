@@ -45,7 +45,7 @@ const pastGloryData = [
     },
     {
         type: 'image',
-        src: 'assets/images/glimpses/img10.jpg',
+        src: 'assets/images/glimpses/img10.png',
         category: 'Meet',
         title: 'Netwrking Time'
     },
@@ -65,7 +65,7 @@ const pastGloryData = [
 
     {
         type: 'image',
-        src: 'assets/images/glimpses/img5.jpg',
+        src: 'assets/images/glimpses/img5.png',
         title: 'Keynote Session',
         category: 'Highlights'
     },
@@ -91,7 +91,7 @@ const pastGloryData = [
 
 function renderPastGlory() {
     const container = document.getElementById('past-glory-container');
-    if (!container) return; 
+    if (!container) return;
 
     let html = '';
 
@@ -234,7 +234,7 @@ const unlockedData = [
         category: "Management",
         fee: "Free",
         team: "Solo",
-        img: "assets/images/events/event15.jpg",
+        img: "assets/images/events/event15.jpeg",
         color: "text-white",
         day: 1
     },
@@ -253,7 +253,7 @@ function renderFeaturedEvents() {
 
     let html = '';
 
-    if (!isUnlocked) {        
+    if (!isUnlocked) {
         subtitle.innerHTML = "Competitions · Workshops · Speaker Sessions";
 
         badgeContainer.className = "mt-4 md:mt-0 px-4 py-2 border border-gold/30 bg-gold/5 rounded backdrop-blur-sm";

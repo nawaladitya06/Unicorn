@@ -298,7 +298,7 @@ const events = [
         category: "Management",
         fee: "Free",
         team: "Solo",
-        img: "assets/images/events/event15.jpg",
+        img: "assets/images/events/event15.jpeg",
         color: "text-white",
         day: 1
     },
