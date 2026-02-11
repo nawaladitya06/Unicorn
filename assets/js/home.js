@@ -65,7 +65,7 @@ const pastGloryData = [
 
     {
         type: 'image',
-        src: 'assets/images/glimpses/img5.png',
+        src: 'assets/images/glimpses/img3.jpg',
         title: 'Keynote Session',
         category: 'Highlights'
     },
