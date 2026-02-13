@@ -49,7 +49,7 @@ const galleryImages = [
     // 5. Organizers / Team
     {
         type: 'image',
-        src: 'assets/images/glimpses/img6.png',
+        src: 'assets/images/glimpses/img6.jpg',
         category: 'Team',
         title: 'The Organizers',
         span: 'md:col-span-2 md:row-span-1'

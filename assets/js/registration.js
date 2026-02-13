@@ -134,7 +134,7 @@ const teamSizeMapping = {
     "Mind Switch": { min: 1, max: 1 },
     "Flop Tank": { min: 2, max: 3 },
     "FacePop": { min: 2, max: 2 },
-    "Wallistry": { min: 2, max: 2 },
+    "Poster Making": { min: 2, max: 2 },
     "Crochet Chronicles": { min: 1, max: 1 },
     "60 Seconds of Fame": { min: 1, max: 1 },
     "From Prompt to Plot": { min: 1, max: 1 },
@@ -142,7 +142,7 @@ const teamSizeMapping = {
     "Battle of Steps": { min: 6, max: 10 },
     "Vogue Vista": { min: 8, max: 10 },
     "Face of Unicorn": { min: 2, max: 2 },
-    "Campus Chase": { min: 3, max: 3 },
+    "The Grand Hunt": { min: 3, max: 3 },
     "Level Up Bids (IPL Auctions)": { min: 1, max: 1 },
     "BGMI": { min: 2, max: 4 },
     "Free Fire": { min: 2, max: 4 }

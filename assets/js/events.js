@@ -90,16 +90,14 @@ const events = [
     },
     {
         id: 6,
-        title: "Wallistry",
+        title: "Poster Making",
         startTime: "2026-02-18T11:00:00",
         tagline: "Art Meets Aesthetics",
-        fullInfo: "Design and decorate walls as immersive visual experiences...",
+        fullInfo: "Design and decorate your posters with immersive visual experiences...",
         rules: [
-            "Each team will be given 2 hours to complete the wall décor in their allotted specific wall/board area.",
+            "Each team will be given 2 hours to complete the poster in their allotted specific area.",
             "The theme will be announced on the spot (or pre-declared).",
-            "Participants must bring their own materials (paints, paper, fabric, props, adhesives, etc.).",
-            "Only removable and non-damaging materials are allowed.",
-            "Nails, permanent glue, drilling, spray paint, or wall-damaging tools are strictly prohibited.",
+            "Participants must bring their own materials (paints, paper, crayons, adhesives, etc.)",
             "Use of mobile phones for reference images is not permitted.",
             "Any damage to college property will result in disqualification."
         ],
@@ -259,10 +257,10 @@ const events = [
     // --- MANAGEMENT ---
     {
         id: 14,
-        title: "Campus Chase",
+        title: "The Grand Hunt",
         startTime: "2026-02-18T11:00:00",
-        tagline: "The Grand Hunt",
-        fullInfo: "The Grand Hunt turns the campus into a giant puzzle...",
+        tagline: "Seeek. Solve. Secure.",
+        fullInfo: "A race against time where decoding clues becomes the key to success.",
         rules: [
             "Teams will be given clues leading to different locations around the city; first to find the final treasure wins.",
             "All teams receive the first clue simultaneously.",
@@ -319,7 +317,7 @@ const events = [
             "Consoles and external controllers are not allowed.",
             "Any rule violation will result in immediate disqualification of the entire squad.",
             "The decision of the organizers shall be final and binding.",
-            "Slots are limited and will be allocated on a first-come, first-served basis upon registration."
+            "Slots are limited and will be allocated on a first-come, first-served basis, upon registration."
         ],
         category: "E-Sports",
         fee: "Free",
@@ -345,7 +343,7 @@ const events = [
             "Failure to follow instructions or rules will lead to disqualification.",
             "Organizers reserve the right to modify match flow to ensure fair play.",
             "The organizers’ decision will be final in all matters.",
-            "Slots are limited and will be allocated on a first-come, first-served basis upon registration."
+            "Slots are limited and will be allocated on a first-come, first-served basis, upon registration."
         ],
         category: "E-Sports",
         fee: "Free",
