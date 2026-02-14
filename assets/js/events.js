@@ -99,7 +99,8 @@ const events = [
             "The theme will be announced on the spot (or pre-declared).",
             "Participants must bring their own materials (paints, paper, crayons, adhesives, etc.)",
             "Use of mobile phones for reference images is not permitted.",
-            "Any damage to college property will result in disqualification."
+            "Any damage to college property will result in disqualification.",
+            "The size of paper will be A3 sized 11.7 x 16.5 inches"
         ],
         category: "Fine Arts",
         fee: "Free",
