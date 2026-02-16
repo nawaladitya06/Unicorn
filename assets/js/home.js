@@ -368,16 +368,23 @@ function renderEventTimeline() {
         const unlockedDays = [
             {
                 day: "Day 01",
-                date: "Feb 12",
+                date: "Feb 18",
                 title: "The Launch",
-                desc: "Inauguration Ceremony, Keynote Speeches & starting with Crisis Cabinet.",
+                desc: "Inauguration Ceremony, Keynote Speeches & starting with Business, Fine Arts, and Literacy Arts.",
                 color: "emerald-glow" // Accent color
             },
             {
                 day: "Day 02",
-                date: "Feb 13",
+                date: "Feb 19",
+                title: "The E-Survival",
+                desc: "Online Events like BGMI and Free Fire.",
+                color: "biege" // Accent color
+            },
+            {
+                day: "Day 03",
+                date: "Feb 20",
                 title: "The Finale",
-                desc: "Finals of Crisis Cabinet, Flip the Argument & Flop Tank. Closing Ceremony.",
+                desc: " Performing Arts and Closing Ceremony followed by Prize Distribution.",
                 color: "neon" // Accent color
             }
         ];
