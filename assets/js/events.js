@@ -6,7 +6,7 @@ const events = [
     {
         id: 1,
         title: "Crisis Cabinet",
-        startTime: "2026-02-17T20:00:00", // Example: "2026-02-18T10:30:00"
+        startTime: "2026-02-17T22:00:00", // Example: "2026-02-18T10:30:00"
         tagline: "Leadership Under Pressure",
         fullInfo: "Welcome to the World Crisis Cabinet...",
         rules: [
@@ -28,7 +28,7 @@ const events = [
     {
         id: 2,
         title: "Mind Switch",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Dynamic Adaptation",
         fullInfo: "Mind Switch is a dynamic two-round challenge...",
         rules: [
@@ -48,7 +48,7 @@ const events = [
     {
         id: 3,
         title: "Flop Tank",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "The Flop Factory",
         fullInfo: "A parody of Shark Tank where participants...",
         rules: [
@@ -70,7 +70,7 @@ const events = [
     {
         id: 5,
         title: "FacePop",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Faces Become Art",
         fullInfo: "Participants transform faces into living canvases...",
         rules: [
@@ -91,7 +91,7 @@ const events = [
     {
         id: 6,
         title: "Poster Making",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Art Meets Aesthetics",
         fullInfo: "Design and decorate your posters with immersive visual experiences...",
         rules: [
@@ -112,7 +112,7 @@ const events = [
     {
         id: 7,
         title: "Crochet Chronicles",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Stories Through Stitches",
         fullInfo: "A creative crochet event that invites participants...",
         rules: [
@@ -133,7 +133,7 @@ const events = [
     {
         id: 8,
         title: "60 Seconds of Fame",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "JAM Competition",
         fullInfo: "A dynamic on-the-spot speaking competition...",
         rules: [
@@ -149,12 +149,12 @@ const events = [
         team: "Solo",
         img: "assets/images/events/event8.jpg",
         color: "text-rose-400",
-        day: 1
+        day: 1 
     },
     {
         id: 9,
         title: "From Prompt to Plot",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Creative Story Writing",
         fullInfo: "Turn a simple prompt into an imaginative...",
         rules: [
@@ -175,7 +175,7 @@ const events = [
     {
         id: 10,
         title: "Solo Surge",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Echoes of One",
         fullInfo: "A power-packed solo singing battle...",
         rules: [
@@ -195,7 +195,7 @@ const events = [
     {
         id: 11,
         title: "Battle of Steps",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "High-Intensity Dance",
         fullInfo: "Teams compete head-to-head to claim supremacy...",
         rules: [
@@ -216,7 +216,7 @@ const events = [
     {
         id: 12,
         title: "Vogue Vista",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Fashion Show",
         fullInfo: "The runway becomes a canvas for participants...",
         rules: [
@@ -238,7 +238,7 @@ const events = [
     {
         id: 13,
         title: "Face of Unicorn",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Mr. & Miss Unicorn",
         fullInfo: "A celebration of talent, charisma, and personality...",
         rules: [
@@ -259,7 +259,7 @@ const events = [
     {
         id: 14,
         title: "The Grand Hunt",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Seeek. Solve. Secure.",
         fullInfo: "A race against time where decoding clues becomes the key to success.",
         rules: [
@@ -280,7 +280,7 @@ const events = [
     {
         id: 15,
         title: "Level Up Bids (IPL Auctions)",
-        startTime: "2026-02-17T20:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Strategy Meets Cricketing Passion",
         fullInfo: "Enter the thrilling arena of Level Up Bids, where strategy meets cricketing passion. In this high-stakes IPL auction, participants must outwit rivals, manage limited resources, and assemble the perfect team. With every bid, the tension rises as you inch closer to victory.",
         rules: [
@@ -304,7 +304,7 @@ const events = [
     {
         id: 16,
         title: "BGMI",
-        startTime: "2026-02-18T22:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Battle Royale Showdown",
         fullInfo: "An intense Battlegrounds Mobile India (BGMI) e-sport competition organized. Squads compete across multiple maps with a structured points system based on position and kills. Fair play, strategy, and teamwork are key to winning.",
         rules: [
@@ -330,7 +330,7 @@ const events = [
     {
         id: 17,
         title: "Free Fire",
-        startTime: "2026-02-18T22:00:00",
+        startTime: "2026-02-17T22:00:00",
         tagline: "Survival of the Sharpest",
         fullInfo: "A high-energy Free Fire e-sport competition organized. Players battle it out following strict fair-play rules, showcasing skill, coordination, and quick decision-making.",
         rules: [
